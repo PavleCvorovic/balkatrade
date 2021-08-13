@@ -29,7 +29,7 @@ export class PocetnaService {
 
   }
   getTypesAutomoto(){
-    return this.http.get('http://localhost:8000/api/getAutomotoTip');
+    return this.http.get('http://localhost:8000/api/getAutoTip');
 
   }
   getTypesPosao(){

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PocetnaService} from "../pocetna.service";
+import {ProductsService} from "../products/products.service";
 
 @Component({
   selector: 'app-homepage',
@@ -8,7 +9,7 @@ import {PocetnaService} from "../pocetna.service";
 })
 export class HomepageComponent implements OnInit {
 
-  constructor(public s: PocetnaService) { }
+  constructor(public s: PocetnaService ,public s1: ProductsService) { }
 
   ngOnInit(): void {
     this.getTypeTehnika();
@@ -19,6 +20,18 @@ export class HomepageComponent implements OnInit {
     this.getTypesRazno()
     this.getTypesOdjeca()
   }
+
+
+
+getPostsbyType(tabela:string,tip:any){
+    this.s1.GetPostsbyType(tabela,tip).subscribe(res=>{
+      this.s1.getPostsbyType=res;
+      console.log(res)
+
+    })
+}
+
+
 
   nekretnineType:any;
   getTypeNekretnina(){

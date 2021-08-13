@@ -84,7 +84,7 @@
 
 <li>
                     <ul class="submenu-item"  *ngFor="let a of tehnikaType">
-                      <li><a>{{a.tip}}</a> <hr></li>
+                      <li (click)="getPostsbyType('tehnikapolja',a.id)"><a>{{a.tip}}</a> <hr></li>
 
 
                     </ul>
@@ -98,7 +98,7 @@
                 <ul class="sub-menu sub-menu-2">
                   <li>
                     <ul class="submenu-item"  *ngFor="let a of automotoType">
-                      <li><a>{{a.tip}}</a> <hr></li>
+                      <li (click)="getPostsbyType('automotopolja',a.id)"><a>{{a.tip}}</a> <hr></li>
 
                     </ul>
                   </li>
@@ -110,7 +110,7 @@
                 <ul class="sub-menu sub-menu-2">
                   <li>
                     <ul class="submenu-item"  *ngFor="let a of nekretnineType ">
-                      <li><a>{{a.tip}}</a> <hr></li>
+                      <li  (click)="getPostsbyType('nekretninepolja',a.id)"><a>{{a.tip}}</a> <hr></li>
 
                     </ul>
                   </li>
@@ -120,7 +120,7 @@
                 <ul class="sub-menu sub-menu-2">
                   <li>
                     <ul class="submenu-item"  *ngFor="let a of posaoType">
-                      <li><a>{{a.tip}}</a> <hr></li>
+                      <li (click)="getPostsbyType('poslovipolja',a.id)"><a>{{a.tip}}</a> <hr></li>
 
                     </ul>
                   </li>
@@ -130,7 +130,7 @@
                 <ul class="sub-menu sub-menu-2">
                   <li>
                     <ul class="submenu-item"  *ngFor="let a of hranaType">
-                      <li><a>{{a.tip}}</a> <hr></li>
+                      <li (click)="getPostsbyType('hranapolja',a.id)"><a>{{a.tip}}</a> <hr></li>
 
                     </ul>
                   </li>
@@ -140,7 +140,7 @@
                 <ul class="sub-menu sub-menu-2">
                   <li>
                     <ul class="submenu-item"  *ngFor="let a of odjecaType">
-                      <li><a>{{a.tip}}</a> <hr></li>
+                      <li (click)="getPostsbyType('odjecapolja',a.id)"><a>{{a.tip}}</a> <hr></li>
 
                     </ul>
                   </li>
@@ -150,7 +150,7 @@
                 <ul class="sub-menu sub-menu-2">
                   <li>
                     <ul class="submenu-item"  *ngFor="let a of raznoType">
-                      <li><a>{{a.tip}}</a> <hr></li>
+                      <li (click)="getPostsbyType('raznopolja',a.id)"><a>{{a.tip}}</a> <hr></li>
 
                     </ul>
                   </li>
@@ -888,7 +888,16 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
+
+
+        <app-products></app-products>
         <div class="section-title">
+
+
+
+
+
+
           <h2 class="section-heading">Featured Products</h2>
         </div>
       </div>
