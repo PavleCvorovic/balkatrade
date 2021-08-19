@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProductsComponent } from './products/products.component';
 import { FilterComponent } from './products/filter/filter.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { FilterComponent } from './products/filter/filter.component';
     HomepageComponent,
     ProductsComponent,
     FilterComponent,
+    LoginComponent,
+    RegisterComponent,
 
   ],
   imports: [
