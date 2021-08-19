@@ -55,12 +55,15 @@
 
 <body class="bg-dark">
 <div id="shop-1" class="tab-pane ">
-  <div class="row responsive-md-class responsive-xl-class responsive-lg-class">
+  <div class="col-md-12">
+    <div class="row">
     <div class="col-md-3">
       <app-filter></app-filter>
 
     </div>
-    <div class="col-md-2 "*ngFor="let a of this.s1.getPostsbyType">
+    <div class="col-md-9">
+      <div class="row">
+    <div class="col-md-3 "*ngFor="let a of this.s1.getPostsbyType">
       <article class="list-product">
         <div class="img-block">
           <a href="single-product.html" class="thumbnail">
@@ -107,9 +110,11 @@
         </div>
       </article>
     </div>
+    </div>
   </div>
 </div>
-
+</div>
+</div>
 
 </body>
 
