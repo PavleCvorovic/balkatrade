@@ -23,9 +23,7 @@
                 <button type="button" style="color: whitesmoke" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Podešavanja <i class="ion-ios-arrow-down"></i></button>
 
                 <ul class="dropdown-menu animation slideDownIn" aria-labelledby="dropdownMenuButton" style="color: whitesmoke">
-                  <li><a href="my-account.html">Moj nalog</a></li>
-                  <li><a href="checkout.html">Prijavi se</a></li>
-                  <li><a href="login.html">Registruj se</a></li>
+                  <li (click)="login()"><a href="#register">Prijavi se/Registruj se</a></li>
                 </ul>
               </div>
             </li>
@@ -744,7 +742,7 @@
 
 
         <app-products ></app-products>
-        <app-register ></app-register>
+        <app-register *ngIf="log==1" id="register"></app-register>
         <div class="section-title">
 
 

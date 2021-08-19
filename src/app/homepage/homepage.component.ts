@@ -11,6 +11,7 @@ export class HomepageComponent implements OnInit {
 
   constructor(public s: PocetnaService ,public s1: ProductsService) { }
 
+  log:any;
   ngOnInit(): void {
     this.getTypeTehnika();
     this.getTypeAutomoto()
@@ -87,6 +88,11 @@ getPostsbyType(tabela:string,tip:any){
         this.odjecaType=res;
       }
     )
+  }
+
+  login()
+  {
+    this.log = 1;
   }
 
 
