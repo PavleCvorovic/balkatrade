@@ -7704,30 +7704,23 @@
 </div>
 <!-- Footer Area End -->
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" >
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
       </div>
       <div class="modal-body">
-        <div class="row">
+        <div class="row" >
           <div class="col-md-5 col-sm-12 col-xs-12 mb-lm-100px mb-sm-30px">
             <!-- Swiper -->
             <div class="swiper-container gallery-top">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img class="img-responsive m-auto" src="assets/images/product-image/11.jpg" alt="">
+                <div class="swiper-slide" *ngFor="let a of s.productSlike">
+                  <img class="img-responsive m-auto" src="http://localhost:8000/storage/file/{{a.url}}" alt="">
                 </div>
-                <div class="swiper-slide">
-                  <img class="img-responsive m-auto" src="assets/images/product-image/12.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                  <img class="img-responsive m-auto" src="assets/images/product-image/13.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                  <img class="img-responsive m-auto" src="assets/images/product-image/14.jpg" alt="">
-                </div>
+
               </div>
             </div>
             <div class="swiper-container gallery-thumbs">

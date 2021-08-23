@@ -71,7 +71,7 @@
             <img  class="second-img" src="http://localhost:8000/storage/file/{{a.slika[1].url}}" alt="" />
           </a>
           <div class="quick-view">
-            <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="s.getId(a.id,a.index)">
               <i class="ion-ios-search-strong"></i>
             </a>
           </div>

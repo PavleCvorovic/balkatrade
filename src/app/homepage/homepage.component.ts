@@ -20,6 +20,7 @@ export class HomepageComponent implements OnInit {
     this.getTypePosao()
     this.getTypesRazno()
     this.getTypesOdjeca()
+
   }
 
 
@@ -89,6 +90,8 @@ getPostsbyType(tabela:string,tip:any){
       }
     )
   }
+
+
 
   login()
   {
