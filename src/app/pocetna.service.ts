@@ -37,7 +37,7 @@ export class PocetnaService {
 
   }
   productId:any;
-  productSlike:any;
+  productSlike:string[]=[];
   hasId:boolean=false;
   getId(id:string,tabela:string){
     var tableId={
@@ -48,7 +48,20 @@ export class PocetnaService {
     tableId.tabela=tabela;
     return this.http.post('http://localhost:8000/api/getAllId',tableId).subscribe(res=>{
       this.productId=res;
-      this.productSlike=this.productId.podaci;
+
+      for(let i=0 ;i<this.productId.podaci.length;i++){
+        this.productSlike[i]=this.productId.podaci[i].url;
+
+      }
+      if (this.productSlike[1]==null ){
+        this.productSlike[1]='baner.jpg';
+      }
+      if (this.productSlike[2]==null ){
+        this.productSlike[2]='baner.jpg';
+      }
+      if (this.productSlike[3]==null ){
+        this.productSlike[3]='baner.jpg';
+      }
       console.log(this.productSlike)
       this.hasId=true;
       console.log(res)

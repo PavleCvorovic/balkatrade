@@ -7717,26 +7717,38 @@
             <!-- Swiper -->
             <div class="swiper-container gallery-top">
               <div class="swiper-wrapper">
-                <div class="swiper-slide" *ngFor="let a of s.productSlike">
-                  <img class="img-responsive m-auto" src="http://localhost:8000/storage/file/{{a.url}}" alt="">
+               <div class="swiper-slide" >
+                <img class="img-responsive m-auto" src="http://localhost:8000/storage/file/{{s.productSlike[0]}}" >
+               </div>
+                <div class="swiper-slide" >
+                  <img class="img-responsive m-auto" src="http://localhost:8000/storage/file/{{s.productSlike[1]}}" >
                 </div>
+                <div class="swiper-slide" >
+                  <img class="img-responsive m-auto" src="http://localhost:8000/storage/file/{{s.productSlike[2]}}" >
+                </div>      <div class="swiper-slide" >
+                <img class="img-responsive m-auto" src="http://localhost:8000/storage/file/{{s.productSlike[3]}}" >
+              </div>
+
 
               </div>
             </div>
             <div class="swiper-container gallery-thumbs">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img class="img-responsive m-auto" src="assets/images/product-image/11.jpg" alt="">
+                <div class="swiper-slide"  >
+                  <img class="img-responsive m-auto"  src="http://localhost:8000/storage/file/{{s.productSlike[0]}}" >
                 </div>
-                <div class="swiper-slide">
-                  <img class="img-responsive m-auto" src="assets/images/product-image/12.jpg" alt="">
+                <div class="swiper-slide"  >
+                  <img class="img-responsive m-auto"  src="http://localhost:8000/storage/file/{{s.productSlike[1]}}" >
                 </div>
-                <div class="swiper-slide">
-                  <img class="img-responsive m-auto" src="assets/images/product-image/13.jpg" alt="">
+
+                <div class="swiper-slide"  >
+                  <img class="img-responsive m-auto"  src="http://localhost:8000/storage/file/{{s.productSlike[2]}}" >
                 </div>
-                <div class="swiper-slide">
-                  <img class="img-responsive m-auto" src="assets/images/product-image/14.jpg" alt="">
+                <div class="swiper-slide"  >
+                  <img class="img-responsive m-auto"  src="http://localhost:8000/storage/file/{{s.productSlike[3]}}" >
                 </div>
+
+
               </div>
             </div>
           </div>
