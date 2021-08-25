@@ -9,6 +9,7 @@ import { ProductsComponent } from './products/products.component';
 import { FilterComponent } from './products/filter/filter.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import {NgxSliderModule} from "@angular-slider/ngx-slider";
 
 @NgModule({
   declarations: [
@@ -20,11 +21,12 @@ import { RegisterComponent } from './register/register.component';
     RegisterComponent,
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        NgxSliderModule
+    ],
   providers: [ HttpClient],
   bootstrap: [AppComponent]
 })
