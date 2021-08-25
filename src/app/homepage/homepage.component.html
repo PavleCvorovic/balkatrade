@@ -18,18 +18,14 @@
         </div>
         <div class="header-menu-nav">
           <ul class="menu-nav">
-            <li>
-              <div class="dropdown">
-                <button type="button" style="color: whitesmoke" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Podešavanja <i class="ion-ios-arrow-down"></i></button>
+                <div class="dropdown">
+              <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: whitesmoke">Podesavanja<i class="ion-ios-arrow-down "></i></button>
 
-                <ul class="dropdown-menu animation slideDownIn" aria-labelledby="dropdownMenuButton" style="color: whitesmoke">
-                  <li (click)="login()"><a href="#register">Prijavi se/Registruj se</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
+              <ul class="dropdown-menu animation slideDownIn" aria-labelledby="dropdownMenuButton">
+                <li (click)="login()"><a href="#register">Prijavi se/Registruj se</a></li>
+              </ul>
+            </div>
 
-            </li>
           </ul>
         </div>
       </div>
@@ -379,8 +375,8 @@
               <li class="menu-item-has-children menu-item-has-children-7">
                 <a >Razno<i class="ion-ios-arrow-down"></i></a>
 
-                <ul  class="category-mega-menu category-mega-menu-7">
-                  <li *ngFor="let a of raznoType"><a (click)="getPostsbyType('raznopolja',a.id)" >{{a.tip}}</a></li>
+                <ul  class="category-mega-menu category-mega-menu-7" >
+                  <li *ngFor="let a of raznoType" ><a (click)="getPostsbyType('raznopolja',a.id)" >{{a.tip}}</a></li>
 
                 </ul>
               </li>
