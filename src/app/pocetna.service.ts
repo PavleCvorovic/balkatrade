@@ -38,7 +38,7 @@ export class PocetnaService {
   }
   productId:any;
   productSlike:string[]=[];
-  hasId:boolean=false;
+ 
   getId(id:string,tabela:string){
     var tableId={
       id:'',
@@ -63,8 +63,8 @@ export class PocetnaService {
         this.productSlike[3]='baner.jpg';
       }
       console.log(this.productSlike)
-      this.hasId=true;
-      console.log(res)
+
+
   });
 
 

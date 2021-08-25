@@ -339,7 +339,7 @@
                 <a >Automoto<i class="ion-ios-arrow-down"></i></a>
 
                 <ul  class="category-mega-menu category-mega-menu-2">
-                  <li *ngFor="let a of automotoType"><a (click)="getPostsbyType('automotopolje',a.id)" >{{a.tip}}</a></li>
+                  <li *ngFor="let a of automotoType"><a (click)="getPostsbyType('automotopolja',a.id)" >{{a.tip}}</a></li>
 
                 </ul>
               </li>
@@ -348,7 +348,7 @@
                 <a >Hrana<i class="ion-ios-arrow-down"></i></a>
 
                 <ul  class="category-mega-menu category-mega-menu-3">
-                  <li *ngFor="let a of hranaType"><a (click)="getPostsbyType('hranapolje',a.id)" >{{a.tip}}</a></li>
+                  <li *ngFor="let a of hranaType"><a (click)="getPostsbyType('hranapolja',a.id)" >{{a.tip}}</a></li>
 
                 </ul>
               </li>
@@ -356,7 +356,7 @@
                 <a >Odjeca<i class="ion-ios-arrow-down"></i></a>
 
                 <ul  class="category-mega-menu category-mega-menu-4">
-                  <li *ngFor="let a of odjecaType"><a (click)="getPostsbyType('odjecapolje',a.id)" >{{a.tip}}</a></li>
+                  <li *ngFor="let a of odjecaType"><a (click)="getPostsbyType('odjecapolja',a.id)" >{{a.tip}}</a></li>
 
                 </ul>
               </li>
@@ -364,7 +364,7 @@
                 <a >Posao<i class="ion-ios-arrow-down"></i></a>
 
                 <ul  class="category-mega-menu category-mega-menu-5">
-                  <li *ngFor="let a of posaoType"><a (click)="getPostsbyType('posaopolje',a.id)" >{{a.tip}}</a></li>
+                  <li *ngFor="let a of posaoType"><a (click)="getPostsbyType('posaopolja',a.id)" >{{a.tip}}</a></li>
 
                 </ul>
               </li>
@@ -372,7 +372,7 @@
                 <a >Nekretnine<i class="ion-ios-arrow-down"></i></a>
 
                 <ul  class="category-mega-menu category-mega-menu-6">
-                  <li *ngFor="let a of nekretnineType"><a (click)="getPostsbyType('nekretninapolje',a.id)" >{{a.tip}}</a></li>
+                  <li *ngFor="let a of nekretnineType"><a (click)="getPostsbyType('nekretninepolja',a.id)" >{{a.tip}}</a></li>
 
                 </ul>
               </li>
@@ -380,7 +380,7 @@
                 <a >Razno<i class="ion-ios-arrow-down"></i></a>
 
                 <ul  class="category-mega-menu category-mega-menu-7">
-                  <li *ngFor="let a of raznoType"><a (click)="getPostsbyType('raznopolje',a.id)" >{{a.tip}}</a></li>
+                  <li *ngFor="let a of raznoType"><a (click)="getPostsbyType('raznopolja',a.id)" >{{a.tip}}</a></li>
 
                 </ul>
               </li>
@@ -390,7 +390,6 @@
 
 
 
-              <a href="#" id="more-btn"><i class="ion-ios-plus-empty" aria-hidden="true"></i> More Categories</a>
 
             </ul>
           </nav>
@@ -7720,12 +7719,13 @@
                <div class="swiper-slide" >
                 <img class="img-responsive m-auto" src="http://localhost:8000/storage/file/{{s.productSlike[0]}}" >
                </div>
-                <div class="swiper-slide" >
+                <div class="swiper-slide">
                   <img class="img-responsive m-auto" src="http://localhost:8000/storage/file/{{s.productSlike[1]}}" >
                 </div>
-                <div class="swiper-slide" >
+                <div class="swiper-slide">
                   <img class="img-responsive m-auto" src="http://localhost:8000/storage/file/{{s.productSlike[2]}}" >
-                </div>      <div class="swiper-slide" >
+                </div>
+                <div class="swiper-slide">
                 <img class="img-responsive m-auto" src="http://localhost:8000/storage/file/{{s.productSlike[3]}}" >
               </div>
 
@@ -7735,17 +7735,17 @@
             <div class="swiper-container gallery-thumbs">
               <div class="swiper-wrapper">
                 <div class="swiper-slide"  >
-                  <img class="img-responsive m-auto"  src="http://localhost:8000/storage/file/{{s.productSlike[0]}}" >
+                  <img class="img-responsive m-auto" style="height: 50px" src="http://localhost:8000/storage/file/{{s.productSlike[0]}}" >
                 </div>
                 <div class="swiper-slide"  >
-                  <img class="img-responsive m-auto"  src="http://localhost:8000/storage/file/{{s.productSlike[1]}}" >
+                  <img class="img-responsive m-auto" style="height: 50px"  src="http://localhost:8000/storage/file/{{s.productSlike[1]}}" >
                 </div>
 
                 <div class="swiper-slide"  >
-                  <img class="img-responsive m-auto"  src="http://localhost:8000/storage/file/{{s.productSlike[2]}}" >
+                  <img class="img-responsive m-auto" style="height: 50px" src="http://localhost:8000/storage/file/{{s.productSlike[2]}}" >
                 </div>
                 <div class="swiper-slide"  >
-                  <img class="img-responsive m-auto"  src="http://localhost:8000/storage/file/{{s.productSlike[3]}}" >
+                  <img class="img-responsive m-auto" style="height: 50px" src="http://localhost:8000/storage/file/{{s.productSlike[3]}}" >
                 </div>
 
 
