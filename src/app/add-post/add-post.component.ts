@@ -1,10 +1,10 @@
-<<<<<<< Updated upstream
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-=======
-import { Component, OnInit } from '@angular/core';
->>>>>>> Stashed changes
+
+
+
 
 @Component({
   selector: 'app-add-post',
@@ -13,20 +13,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddPostComponent implements OnInit {
 
-<<<<<<< Updated upstream
+
   constructor(private fb:FormBuilder, private http:HttpClient) { }
 
   kategorija=''
   automotoVrsta=''
 
   url: any;
-    onSelectFile(event:any) { // called each time file input changes
+    onSelectFile(event:any) {
         if (event.target.files && event.target.files[0]) {
           var reader = new FileReader();
 
-          reader.readAsDataURL(event.target.files[0]); // read file as data url
-
-          reader.onload = (event) => { // called once readAsDataURL is completed
+          reader.readAsDataURL(event.target.files[0]);
+          reader.onload = (event) => {
             this.url = event.target?.result;
           }
         }
@@ -73,11 +72,11 @@ export class AddPostComponent implements OnInit {
         boja:'31',
         datum_isteka_registracije:'32'
   }
-=======
-  constructor() { }
 
-  kategorija=''
->>>>>>> Stashed changes
+
+
+
+
 
   ngOnInit(): void {
 
@@ -85,7 +84,7 @@ export class AddPostComponent implements OnInit {
 
   test()
   {
-<<<<<<< Updated upstream
+
     this.unosAutomoto.controls['automotoVrsta'].setValue(this.automotoVrsta);
     this.unosAutomoto.controls['tabela'].setValue('automotopolja');
     this.unosAutomoto.controls['prva_slika'].setValue(this.url);
@@ -95,9 +94,9 @@ export class AddPostComponent implements OnInit {
       {
         alert("bravo")
       });
-=======
+
     console.log(this.kategorija);
->>>>>>> Stashed changes
+
 
   }
 }
