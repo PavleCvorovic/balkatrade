@@ -10,14 +10,10 @@ import { FilterComponent } from './products/filter/filter.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {NgxSliderModule} from "@angular-slider/ngx-slider";
-<<<<<<< Updated upstream
 import { UserComponent } from './user/user.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-=======
-import {FormsModule} from "@angular/forms";
->>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -37,12 +33,8 @@ import {FormsModule} from "@angular/forms";
         AppRoutingModule,
         HttpClientModule,
         NgxSliderModule,
-<<<<<<< Updated upstream
         FormsModule,
         ReactiveFormsModule
-=======
-        FormsModule
->>>>>>> Stashed changes
     ],
   providers: [ HttpClient],
   bootstrap: [AppComponent]
