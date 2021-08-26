@@ -1,127 +1,69 @@
 
-  <div class="shop-sidebar-wrap">
-    <div class="sidebar-widget padding-30px bg-white mb-30px">
+<!--  <div class="shop-sidebar-wrap">-->
 
-      <div class="accordion" id="accordionExample">
-        <div class="card">
-          <div class="card-header" id="headingOne">
-            <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">Hot Category</a>
-          </div>
+<!--    &lt;!&ndash; Sidebar single item &ndash;&gt;-->
+<!--    <div class="sidebar-widget-group mt-20 padding-30px bg-white">-->
+<!--      <h3 class="sidebar-title">Filtriraj Automoto</h3>-->
+<!--      <div class="sidebar-widget mt-20">-->
+<!--        <h4 class="pro-sidebar-title">Price</h4>-->
+
+<!--        <ngx-slider [(highValue)]="cijenaF.cijena_max"  [(value)]="cijenaF.cijena_min" [options]="options" ></ngx-slider>-->
+
+<!--      </div>-->
+
+<!--      <div class="sidebar-widget no-cba mt-20">-->
+<!--        <h4 class="pro-sidebar-title">Marka&Model</h4>-->
+<!--        <div class="sidebar-widget-list ">-->
+<!--          <div class="row">-->
+<!--         <input placeholder="marka" class="form-control bg-dark text-danger" [(ngModel)]="AutomotoF.marka"> <input placeholder="model" class="form-control bg-dark text-danger" [(ngModel)]="AutomotoF.model">-->
+<!--          </div>-->
+<!--      </div>-->
+<!--      </div>-->
+<!--      &lt;!&ndash; Sidebar single item &ndash;&gt;-->
+<!--      <div class="sidebar-widget mt-30">-->
+<!--        <h4 class="pro-sidebar-title">Godiste</h4>-->
+<!--        <div class="sidebar-widget-list">-->
+<!--          <div class="row">-->
+<!--            <input placeholder="min" type="number" class="form-control bg-dark text-danger"[(ngModel)]="AutomotoF.godistMin"> <input placeholder="max" type="number" class="form-control bg-dark text-danger"[(ngModel)]="AutomotoF.godisteMax">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="sidebar-widget mt-30">-->
+<!--        <h4 class="pro-sidebar-title">Kubikaza</h4>-->
+<!--        <div class="sidebar-widget-list">-->
+<!--          <div class="row">-->
+<!--            <input placeholder="min" type="number" class="form-control bg-dark text-danger"[(ngModel)]="AutomotoF.kubikazaMin"> <input placeholder="max" type="number" class="form-control bg-dark text-danger"[(ngModel)]="AutomotoF.kubikazaMax">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="text-center">-->
+<!--        <button class="btn btn-primary mt-2" (click)="filtrirajA()"> Filtriraj </button>-->
+<!--      </div>-->
+
+<!--    </div>-->
 
 
-        </div> <!-- card -->
+<!--  </div>-->
+<div class="shop-sidebar-wrap">
 
-      </div>
+  <!-- Sidebar single item -->
+  <div class="sidebar-widget-group mt-20 padding-30px bg-white">
+    <h3 class="sidebar-title">Filtriraj Automoto</h3>
+    <div class="sidebar-widget mt-20">
+      <h4 class="pro-sidebar-title">Cijena</h4>
+
+      <ngx-slider [(highValue)]="cijenaF.cijena_max"  [(value)]="cijenaF.cijena_min" [options]="options" ></ngx-slider>
+
     </div>
-    <!-- Sidebar single item -->
-    <div class="sidebar-widget-group mt-20 padding-30px bg-white">
-      <h3 class="sidebar-title">Filter By</h3>
-      <div class="sidebar-widget mt-20">
-        <h4 class="pro-sidebar-title">Price</h4>
 
-        <ngx-slider [(value)]="value" [options]="options"></ngx-slider>
 
-      </div>
-      <!-- Sidebar single item -->
-      <div class="sidebar-widget mt-30">
-        <h4 class="pro-sidebar-title">Size</h4>
-        <div class="sidebar-widget-list">
-          <ul>
-            <li>
-              <div class="sidebar-widget-list-left">
-                <input type="checkbox" /> <a href="#">X<span>(4)</span> </a>
-                <span class="checkmark"></span>
-              </div>
-            </li>
-            <li>
-              <div class="sidebar-widget-list-left">
-                <input type="checkbox" value="" /> <a href="#">M<span>(4)</span></a>
-                <span class="checkmark"></span>
-              </div>
-            </li>
-            <li>
-              <div class="sidebar-widget-list-left">
-                <input type="checkbox" value="" /> <a href="#">L<span>(4)</span> </a>
-                <span class="checkmark"></span>
-              </div>
-            </li>
-            <li>
-              <div class="sidebar-widget-list-left">
-                <input type="checkbox" value="" /> <a href="#">XL<span>(4)</span> </a>
-                <span class="checkmark"></span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Sidebar single item -->
-      <div class="sidebar-widget no-cba mt-20">
-        <h4 class="pro-sidebar-title">Colour</h4>
-        <div class="sidebar-widget-list">
-          <ul>
-            <li>
-              <div class="sidebar-widget-list-left">
-                <input type="checkbox" /> <a href="#">Grey<span>(2)</span> </a>
-                <span class="checkmark grey"></span>
-              </div>
-            </li>
-            <li>
-              <div class="sidebar-widget-list-left">
-                <input type="checkbox" value="" /> <a href="#">White<span>(4)</span></a>
-                <span class="checkmark white"></span>
-              </div>
-            </li>
-            <li>
-              <div class="sidebar-widget-list-left">
-                <input type="checkbox" value="" /> <a href="#">Black<span>(4)</span> </a>
-                <span class="checkmark black"></span>
-              </div>
-            </li>
-            <li>
-              <div class="sidebar-widget-list-left">
-                <input type="checkbox" value="" /> <a href="#">Camel<span>(4)</span> </a>
-                <span class="checkmark camel"></span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Sidebar single item -->
-      <div class="sidebar-widget mt-30">
-        <h4 class="pro-sidebar-title">Brand</h4>
-        <div class="sidebar-widget-list">
-          <ul>
-            <li>
-              <div class="sidebar-widget-list-left">
-                <input type="checkbox" /> <a href="#">Studio Design<span>(10)</span> </a>
-                <span class="checkmark"></span>
-              </div>
-            </li>
-            <li>
-              <div class="sidebar-widget-list-left">
-                <input type="checkbox" value="" /> <a href="#">Graphic Corner<span>(7)</span></a>
-                <span class="checkmark"></span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div class="text-center">
+      <button class="btn btn-primary mt-2" (click)="filtrirajR()"> Filtriraj </button>
     </div>
-    <!-- Sidebar single item -->
-    <div class="sidebar-widget tag mt-30px">
-      <div class="main-heading">
-        <h3 class="sidebar-title">Tags</h3>
-      </div>
-      <div class="sidebar-widget-tag">
-        <ul>
-          <li><a href="#">Electronics</a></li>
-          <li><a href="#">Audio & Video</a></li>
-          <li><a href="#">Video Games</a></li>
-          <li><a href="#">Camera & Photo</a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- Sidebar single item -->
+
   </div>
+
+
+</div>
 
 

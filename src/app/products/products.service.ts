@@ -21,6 +21,11 @@ getPostsbyType:any
     return  this.http.post('http://localhost:8000/api/getPostsAll',req);
 
   }
+  Filter(param:any){
+    return  this.http.post('http://localhost:8000/api/filter',param);
+
+
+  }
 
 
 
