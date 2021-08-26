@@ -1,0 +1,37 @@
+<select [(ngModel)] ="kategorija">
+  <option value="automoto" name ="automoto">Automoto</option>
+  <option value="tehnika" name ="tehnika">Tehnika</option>
+  <option value="odjeca" name ="odjeca">Odjeca</option>
+  <option value="nekretnine" name ="nekretnine">Nekretnine</option>
+  <option value="posao" name ="posao">Posao</option>
+  <option value="hrana" name ="hrana">Hrana</option>
+  <option value="razno" name="razno">Razno</option>
+</select>
+<button type="submit" (click)="test()">test</button>
+
+<div class="form-group" *ngIf="kategorija=='automoto'">
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Marka</label>
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Marka:</label>
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Model:</label>
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Opis</label>
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Marka</label>
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp">
+  </div>
+
+</form>
+
+</div>
