@@ -13,6 +13,7 @@ import {NgxSliderModule} from "@angular-slider/ngx-slider";
 import { UserComponent } from './user/user.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FormsModule } from '@angular/forms';
         AppRoutingModule,
         HttpClientModule,
         NgxSliderModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
   providers: [ HttpClient],
   bootstrap: [AppComponent]

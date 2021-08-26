@@ -10,28 +10,70 @@
 <button type="submit" (click)="test()">test</button>
 
 <div class="form-group" *ngIf="kategorija=='automoto'">
-<form>
   <div class="form-group">
-    <label for="exampleInputEmail1">Marka</label>
-    
+    <label for="exampleInputEmail1">automoto Vrsta</label>
+    <select [(ngModel)]="automotoVrsta">
+      <option value= "automobil" name="automobil">Automobil</option>
+    </select>
   </div>
+  <img [src]="url" height="200"> <br/>
+    <input type='file' (change)="onSelectFile($event)">
+<form [formGroup] = "unosAutomoto">
+
   <div class="form-group">
     <label for="exampleInputEmail1">Marka:</label>
-    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp">
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp" formControlName="marka">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">naizv:</label>
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp" formControlName="naziv">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Model:</label>
-    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp">
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp" formControlName="model">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Opis</label>
-    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp">
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp" formControlName="opis">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Marka</label>
-    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp">
+    <label for="exampleInputEmail1">Cijena</label>
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp" formControlName="cijena">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Kontakt</label>
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp" formControlName="kontakt">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Stanje</label>
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp" formControlName="stanje">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Kubikaza</label>
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp" formControlName="kubikaza">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Kilometraza</label>
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp" formControlName="kilometraza">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Godina proizvodnje</label>
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp" formControlName="godina_proizvodnje">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Boja</label>
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp" formControlName="boja">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Datum isteka registracije</label>
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp" formControlName="datum_isteka_registracije">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Lokacija</label>
+    <input type="text" class="form-control" style="width: 30%;" aria-describedby="emailHelp" formControlName="lokacija">
   </div>
 
+<button type="submit">Dodaj</button>
 </form>
 
 </div>
