@@ -33,11 +33,11 @@ export class AddPostComponent implements OnInit {
   unosAutomoto = this.fb.group(
     {
 
-        tabela:'',
+        tabela:'automotopolja',
         naziv:'',
         prva_slika:'',
         slike:'',
-        automotoVrsta:'',
+        automoto_vrsta:"",
         marka:'',
         model:'',
         cijena:'',
@@ -85,7 +85,7 @@ export class AddPostComponent implements OnInit {
   test()
   {
 
-    this.unosAutomoto.controls['automotoVrsta'].setValue(this.automotoVrsta);
+    this.unosAutomoto.controls['automoto_vrsta'].setValue(1);
     this.unosAutomoto.controls['tabela'].setValue('automotopolja');
     this.unosAutomoto.controls['prva_slika'].setValue(this.url);
     console.log(this.unosAutomoto.getRawValue());
