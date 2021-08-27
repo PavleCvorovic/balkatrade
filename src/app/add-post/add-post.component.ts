@@ -2,7 +2,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-
+import { HttpHeaders } from '@angular/common/http';
 
 
 
@@ -82,18 +82,18 @@ export class AddPostComponent implements OnInit {
 
   }
 
+
   test()
   {
+    var  header = new HttpHeaders();
+    header.append('Access-Control-Allow-Origin', 'http://localhost:8000');
+    header.append('Access-Control-Allow-Credentials', 'true');
 
     this.unosAutomoto.controls['automoto_vrsta'].setValue(1);
     this.unosAutomoto.controls['tabela'].setValue('automotopolja');
     this.unosAutomoto.controls['prva_slika'].setValue(this.url);
     console.log(this.unosAutomoto.getRawValue());
-    this.http.post('http://localhost:8000/api/addAsUser', this.unosAutomoto.getRawValue()).subscribe
-    (res=>
-      {
-        alert("bravo")
-      });
+    this.http.post('http://localhost:8000/api/addAsUser', this.unosAutomoto.getRawValue(),{headers:header})
 
     console.log(this.kategorija);
 

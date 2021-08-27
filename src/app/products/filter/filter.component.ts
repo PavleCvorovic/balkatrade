@@ -10,16 +10,17 @@ import {ProductsService} from "../products.service";
 export class FilterComponent implements OnInit {
 
   constructor(public s:ProductsService) { }
-  value: number = 0;
-  highValue: number = 2000;
+
+
+
   options: Options = {
     floor: 0,
     ceil: 200000
   }
 
   cijenaF:any={
-    cijena_min:'',
-    cijena_max:'',
+    cijena_min:0,
+    cijena_max:200000,
   }
 
 
