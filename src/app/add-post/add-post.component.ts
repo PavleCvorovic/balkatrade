@@ -93,7 +93,7 @@ export class AddPostComponent implements OnInit {
     this.unosAutomoto.controls['tabela'].setValue('automotopolja');
     this.unosAutomoto.controls['prva_slika'].setValue(this.url);
     console.log(this.unosAutomoto.getRawValue());
-    this.http.post('http://localhost:8000/api/addAsUser', this.unosAutomoto.getRawValue(),{headers:header})
+    this.http.post('http://localhost:8000/api/addAsUser', this.unosAutomoto.getRawValue(),{"headers":header})
 
     console.log(this.kategorija);
 
