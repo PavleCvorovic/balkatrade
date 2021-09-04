@@ -7,7 +7,8 @@
       <div class="sidebar-widget mt-20">
         <h4 class="pro-sidebar-title">Price</h4>
 
-        <ngx-slider [(highValue)]="cijenaF.cijena_max"  [(value)]="cijenaF.cijena_min" [options]="options" ></ngx-slider>
+
+        <input placeholder="Minimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="AutomotoF.cijenaMin"> <input placeholder="Maksimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="AutomotoF.cijenaMax">
 
       </div>
 
@@ -24,7 +25,7 @@
         <h4 class="pro-sidebar-title">Godiste</h4>
         <div class="sidebar-widget-list">
           <div class="row">
-            <input placeholder="min" type="number" class="form-control bg-dark text-danger"[(ngModel)]="AutomotoF.godistMin"> <input placeholder="max" type="number" class="form-control bg-dark text-danger"[(ngModel)]="AutomotoF.godisteMax">
+            <input placeholder="min" type="number" class="form-control bg-dark text-danger" [(ngModel)]="AutomotoF.godistMin"> <input placeholder="max" type="number" class="form-control bg-dark text-danger" [(ngModel)]="AutomotoF.godisteMax">
           </div>
         </div>
       </div>
@@ -32,7 +33,7 @@
         <h4 class="pro-sidebar-title">Kubikaza</h4>
         <div class="sidebar-widget-list">
           <div class="row">
-            <input placeholder="min" type="number" class="form-control bg-dark text-danger"[(ngModel)]="AutomotoF.kubikazaMin"> <input placeholder="max" type="number" class="form-control bg-dark text-danger"[(ngModel)]="AutomotoF.kubikazaMax">
+            <input placeholder="min" type="number" class="form-control bg-dark text-danger" [(ngModel)]="AutomotoF.kubikazaMin"> <input placeholder="max" type="number" class="form-control bg-dark text-danger" [(ngModel)]="AutomotoF.kubikazaMax">
           </div>
         </div>
       </div>
@@ -46,13 +47,14 @@
   </div>
 <div class="shop-sidebar-wrap" *ngIf="s.swF===2">
 
-  <!-- Sidebar single item -->
+
   <div class="sidebar-widget-group mt-20 padding-30px bg-white">
-    <h3 class="sidebar-title">Filtriraj Automoto</h3>
+    <h3 class="sidebar-title">Filtriraj Razno</h3>
     <div class="sidebar-widget mt-20">
       <h4 class="pro-sidebar-title">Cijena</h4>
+      <input placeholder="Minimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="RaznoF.cijenaMin"> <input placeholder="Maksimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="RaznoF.cijenaMax">
 
-      <ngx-slider [(highValue)]="cijenaF.cijena_max"  [(value)]="cijenaF.cijena_min" [options]="options" ></ngx-slider>
+
 
     </div>
 

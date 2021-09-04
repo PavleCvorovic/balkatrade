@@ -1,4 +1,3 @@
-import { Options } from '@angular-slider/ngx-slider';
 import { Component, OnInit } from '@angular/core';
 import {ProductsService} from "../products.service";
 
@@ -10,18 +9,6 @@ import {ProductsService} from "../products.service";
 export class FilterComponent implements OnInit {
 
   constructor(public s:ProductsService) { }
-
-
-
-  options: Options = {
-    floor: 0,
-    ceil: 200000
-  }
-
-  cijenaF:any={
-    cijena_min:0,
-    cijena_max:200000,
-  }
 
 
   AutomotoF:any={
@@ -37,38 +24,35 @@ export class FilterComponent implements OnInit {
   }
   RaznoF:any={
     tabela:'raznopolja',
-    cijenaMin:0,
-    cijenaMax:0}
+    cijenaMin:'',
+    cijenaMax:''}
 
 
 filtrirajA(){
-    this.AutomotoF.cijenaMin=this.cijenaF.cijena_min;
-  this.AutomotoF.cijenaMax=this.cijenaF.cijena_max;
+
 
   this.s.Filter(this.AutomotoF).subscribe(res=>{
     this.s.getPostsbyType=res;
   })
-this.cijenaF.cijena_min=0;
-  this.cijenaF.cijena_max=200000;
-  this.AutomotoF.cijenaMin=0;
+
+  this.AutomotoF.cijenaMin=null;
   this.AutomotoF.cijenaMax=null;
-  this.AutomotoF.godiste_min=null;
-  this.AutomotoF.godiste_max=null;
-  this.AutomotoF.kubikaza_max=null;
-  this.AutomotoF.kubikaza_min=null;
+  this.AutomotoF.godisteMin=null;
+  this.AutomotoF.godisteMax=null;
+  this.AutomotoF.kubikazaMax=null;
+  this.AutomotoF.kubikazaMin=null;
   this.AutomotoF.marka=null;
   this.AutomotoF.model=null;
 
 }
 filtrirajR(){
-  this.RaznoF.cijenaMin=this.cijenaF.cijena_min;
-  this.RaznoF.cijenaMax=this.cijenaF.cijena_max;
+
   this.s.Filter(this.RaznoF).subscribe(res=>{
     this.s.getPostsbyType=res;
   })
+this.RaznoF.cijenaMin='';
+  this.RaznoF.cijenaMax='';
 
-  this.RaznoF.cijena_max=null;
-  this.RaznoF.godiste_min=null;
 }
 
 

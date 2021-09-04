@@ -8,7 +8,7 @@ import {PocetnaService} from "../pocetna.service";
 export class ProductsService {
 
   constructor(public http:HttpClient) { }
-  swF:number=0;
+  swF:any;
   switchFilters(tabela: any) {
     switch (tabela) {
       case"automotopolja": {
@@ -17,10 +17,12 @@ export class ProductsService {
       }
       case "raznopolja":{
         this.swF=2;
+        break;
       }
 
 
     }
+    console.log(this.swF)
   }
 
 getPostsbyType:any

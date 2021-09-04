@@ -36,7 +36,12 @@ export class PocetnaService {
     return this.http.get('http://localhost:8000/api/getPosaoTip');
 
   }
-  productId:any;
+  productId:any={
+    opis:'',
+    naziv:"",
+    cijena:"",
+
+  };
   productSlike:string[]=[];
 
   getId(id:string,tabela:string){
@@ -63,7 +68,7 @@ export class PocetnaService {
         this.productSlike[3]='baner.jpg';
       }
       console.log(this.productSlike)
-    
+
 
   });
 
