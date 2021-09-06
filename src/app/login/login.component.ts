@@ -1,3 +1,5 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder, private http:HttpClient) { }
 
   ngOnInit(): void {
+  }
+
+  unosLogin= this.fb.group
+  (
+    {
+      username:'',
+      password:''
+    }
+  )
+
+
+  submit()
+  {
+      this.http.post("http://localhost:8000/api/login", this.unosLogin.getRawValue())
+      .subscribe(res=>
+        {
+          console.log("logovan");
+
+        })
+
   }
 
 }
