@@ -52,37 +52,79 @@ export class AddPostComponent implements OnInit {
         datum_isteka_registracije:''
     }
   )
-  podaci =
-  {
-        tabela:'automotopolja',
+
+  unosTehnika = this.fb.group(
+    {
+        tabela:'tehnikapolja',
+        tehnika_vrsta:'',
+        naziv:'',
         prva_slika:'',
         slike:'',
-        naziv:'sdads',
-        automoto_vrsta:1,
-        marka:'vds',
-        model:'g2',
-        cijena:'21',
-        opis:'21',
-        kontakt:'12',
-        lokacija:'21',
-        stanje:'32',
-        kubikaza:'13',
-        kilometraza:'13',
-        godina_proizvodnje:'31',
-        boja:'31',
-        datum_isteka_registracije:'32'
-  }
+        cijena:'',
+        kontakt:'',
+        opis:'',
+        lokacija:'',
+        stanje:'',
+        godina_proizvodnje:'',
+        boja:''
 
 
 
-
+    }
+  )
+  unosOdjeca = this.fb.group(
+    {
+        tabela:'odjecapolja',
+        odjeca_vrsta:'',
+        naziv:'',
+        prva_slika:'',
+        slike:'',
+        cijena:'',
+        kontakt:'',
+        opis:'',
+        lokacija:'',
+        stanje:''
+    }
+  )
+  unosNekretnine= this.fb.group(
+    {
+      tabela:'nekretninepolja',
+      nekretnine_vrsta:'',
+      naziv:'',
+      prva_slika:'',
+      slike:'',
+      cijena:'',
+      kontakt:'',
+      opis:'',
+      lokacija:'',
+      kvadratura:'',
+      tip_vlasnistva:''
+    }
+  )
 
 
   ngOnInit(): void {
 
   }
 
-  test()
+  dodajTehnika()
+  {
+
+    this.unosTehnika.controls['tehnika_vrsta'].setValue(1);
+    this.unosTehnika.controls['tabela'].setValue('tehnikapolja');
+    this.unosTehnika.controls['prva_slika'].setValue(this.url);
+    console.log(this.unosTehnika.getRawValue());
+    this.http.post('http://localhost:8000/api/addAsUser', this.unosTehnika.getRawValue()).subscribe
+    (res=>
+      {
+        alert("bravo")
+      });
+
+    console.log(this.kategorija);
+
+
+  }
+  dodajAutomoto()
   {
 
     this.unosAutomoto.controls['automoto_vrsta'].setValue(1);
@@ -97,6 +139,39 @@ export class AddPostComponent implements OnInit {
 
     console.log(this.kategorija);
 
+
+  }
+  dodajOdjeca()
+  {
+
+    this.unosOdjeca.controls['odjeca_vrsta'].setValue(1);
+    this.unosOdjeca.controls['tabela'].setValue('odjecapolja');
+    this.unosOdjeca.controls['prva_slika'].setValue(this.url);
+    console.log(this.unosOdjeca.getRawValue());
+    this.http.post('http://localhost:8000/api/addAsUser', this.unosOdjeca.getRawValue()).subscribe
+    (res=>
+      {
+        alert("bravo")
+      });
+
+    console.log(this.kategorija);
+
+
+  }
+
+  dodajNekretnina()
+  {
+    this.unosNekretnine.controls['nekretnine_vrsta'].setValue(1);
+    this.unosNekretnine.controls['tabela'].setValue('nekretninepolja');
+    this.unosNekretnine.controls['prva_slika'].setValue(this.url);
+    console.log(this.unosNekretnine.getRawValue());
+    this.http.post('http://localhost:8000/api/addAsUser', this.unosNekretnine.getRawValue()).subscribe
+    (res=>
+      {
+        alert("bravo")
+      });
+
+    console.log(this.kategorija);
 
   }
 }
