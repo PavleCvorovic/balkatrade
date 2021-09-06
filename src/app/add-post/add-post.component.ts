@@ -237,7 +237,7 @@ export class AddPostComponent implements OnInit {
   dodajHrana()
   {
     this.unosHrana.controls['hrana_vrsta'].setValue(1);
-    this.unosHrana.controls['tabela'].setValue('raznopolja');
+    this.unosHrana.controls['tabela'].setValue('hranapolja');
     this.unosHrana.controls['prva_slika'].setValue(this.url);
     console.log(this.unosHrana.getRawValue());
     this.http.post('http://localhost:8000/api/addAsUser', this.unosHrana.getRawValue()).subscribe
