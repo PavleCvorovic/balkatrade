@@ -101,6 +101,50 @@ export class AddPostComponent implements OnInit {
       tip_vlasnistva:''
     }
   )
+  unosPosao = this.fb.group(
+    {
+      tabela:'posaopolja',
+      posao_vrsta:'',
+      naziv:'',
+      prva_slika:'',
+      slike:'',
+      plata:'',
+      kontakt:'',
+      opis:'',
+      lokacija:''
+    }
+  )
+
+  unosHrana= this.fb.group
+  (
+    {
+      tabela:'hranapolja',
+      hrana_vrsta:'',
+      naziv:'',
+      prva_slika:'',
+      slike:'',
+      cijena:'',
+      kontakt:'',
+      opis:'',
+      lokacija:'',
+      kolicina:''
+    }
+  )
+
+  unosRazno= this.fb.group
+  (
+    {
+      tabela:'raznopolja',
+      razno_vrsta:'',
+      naziv:'',
+      prva_slika:'',
+      slike:'',
+      cijena:'',
+      kontakt:'',
+      opis:'',
+      lokacija:''
+    }
+  )
 
 
   ngOnInit(): void {
@@ -173,5 +217,50 @@ export class AddPostComponent implements OnInit {
 
     console.log(this.kategorija);
 
+  }
+
+  dodajPosao()
+  {
+    this.unosPosao.controls['posao_vrsta'].setValue(1);
+    this.unosPosao.controls['tabela'].setValue('posaopolja');
+    this.unosPosao.controls['prva_slika'].setValue(this.url);
+    console.log(this.unosPosao.getRawValue());
+    this.http.post('http://localhost:8000/api/addAsUser', this.unosPosao.getRawValue()).subscribe
+    (res=>
+      {
+        alert("bravo")
+      });
+
+    console.log(this.kategorija);
+  }
+
+  dodajHrana()
+  {
+    this.unosHrana.controls['hrana_vrsta'].setValue(1);
+    this.unosHrana.controls['tabela'].setValue('raznopolja');
+    this.unosHrana.controls['prva_slika'].setValue(this.url);
+    console.log(this.unosHrana.getRawValue());
+    this.http.post('http://localhost:8000/api/addAsUser', this.unosHrana.getRawValue()).subscribe
+    (res=>
+      {
+        alert("bravo")
+      });
+
+    console.log(this.kategorija);
+  }
+
+  dodajRazno()
+  {
+    this.unosRazno.controls['razno_vrsta'].setValue(1);
+    this.unosRazno.controls['tabela'].setValue('raznopolja');
+    this.unosRazno.controls['prva_slika'].setValue(this.url);
+    console.log(this.unosRazno.getRawValue());
+    this.http.post('http://localhost:8000/api/addAsUser', this.unosRazno.getRawValue()).subscribe
+    (res=>
+      {
+        alert("bravo")
+      });
+
+    console.log(this.kategorija);
   }
 }
