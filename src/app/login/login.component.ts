@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   unosLogin= this.fb.group
   (
     {
-      username:'',
+      email:'',
       password:''
     }
   )
