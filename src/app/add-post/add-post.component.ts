@@ -29,6 +29,8 @@ export class AddPostComponent implements OnInit {
             this.url = event.target?.result;
           }
         }
+        console.log();
+
     }
   unosAutomoto = this.fb.group(
     {
@@ -175,6 +177,8 @@ export class AddPostComponent implements OnInit {
     this.unosAutomoto.controls['tabela'].setValue('automotopolja');
     this.unosAutomoto.controls['prva_slika'].setValue(this.url);
     console.log(this.unosAutomoto.getRawValue());
+    console.log(this.unosAutomoto.controls['prva_slika'].value);
+
     this.http.post('http://localhost:8000/api/addAsUser', this.unosAutomoto.getRawValue()).subscribe
     (res=>
       {

@@ -22,7 +22,8 @@
               <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: whitesmoke">Podesavanja<i class="ion-ios-arrow-down "></i></button>
 
               <ul class="dropdown-menu animation slideDownIn" aria-labelledby="dropdownMenuButton">
-                <li (click)="login()"><a href="#register">Prijavi se/Registruj se</a></li>
+                <li ><a routerLink="../login" routerLinkActive="router-link-active"  >Prijavi se</a></li>
+                <li ><a routerLink="../register" routerLinkActive="router-link-active">Registruj se</a></li>
               </ul>
             </div>
 
