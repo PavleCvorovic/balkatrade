@@ -19,8 +19,26 @@ export class ProductsService {
         this.swF=2;
         break;
       }
-
-
+      case "hranapolja":{
+        this.swF=3;
+        break;
+      }
+      case "posaopolja":{
+        this.swF=4;
+        break;
+      }
+      case "odjecapolja":{
+        this.swF=5;
+        break;
+      }
+      case "nekretninepolja":{
+        this.swF=6;
+        break;
+      }
+      case "tehnikapolja":{
+        this.swF=7;
+        break;
+      }
     }
     console.log(this.swF)
   }

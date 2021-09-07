@@ -27,7 +27,31 @@ export class FilterComponent implements OnInit {
     cijenaMin:'',
     cijenaMax:''}
 
-
+  HranaF:any={
+    tabela:'hranapolja',
+    cijenaMin:'',
+    cijenaMax:'',
+    domace:''}
+  PlataF:any={
+    tabela:'posaopolja',
+    cijenaMin:'',
+    cijenaMax:'',
+   }
+  OdjecaF:any={
+    tabela:'odjecapolja',
+    cijenaMin:'',
+    cijenaMax:'',
+  }
+  TehnikaF:any={
+    tabela:'tehnikapolja',
+    cijenaMin:'',
+    cijenaMax:'',
+  }
+  NekretnineF:any={
+    tabela:'nekretninepolja',
+    cijenaMin:'',
+    cijenaMax:'',
+  }
 filtrirajA(){
 
 
@@ -55,6 +79,56 @@ this.RaznoF.cijenaMin='';
 
 }
 
+  filtrirajH(){
+    console.log(this.HranaF)
+    this.s.Filter(this.HranaF).subscribe(res=>{
+      this.s.getPostsbyType=res;
+    })
+    this.HranaF.cijenaMax='';
+    this.HranaF.cijenaMin='';
+    this.HranaF.domace=''
+
+  }
+  filtrirajP(){
+    console.log(this.PlataF)
+    this.s.Filter(this.PlataF).subscribe(res=>{
+      this.s.getPostsbyType=res;
+    })
+    this.PlataF.cijenaMax='';
+    this.PlataF.cijenaMin='';
+
+
+  }
+  filtrirajN(){
+    console.log(this.NekretnineF)
+    this.s.Filter(this.NekretnineF).subscribe(res=>{
+      this.s.getPostsbyType=res;
+    })
+    this.NekretnineF.cijenaMax='';
+    this.NekretnineF.cijenaMin='';
+
+
+  }
+  filtrirajT(){
+    console.log(this.TehnikaF)
+    this.s.Filter(this.TehnikaF).subscribe(res=>{
+      this.s.getPostsbyType=res;
+    })
+    this.TehnikaF.cijenaMax='';
+    this.TehnikaF.cijenaMin='';
+
+
+  }
+  filtrirajO(){
+    console.log(this.OdjecaF)
+    this.s.Filter(this.OdjecaF).subscribe(res=>{
+      this.s.getPostsbyType=res;
+    })
+    this.OdjecaF.cijenaMax='';
+    this.OdjecaF.cijenaMin='';
+
+
+  }
 
   ngOnInit(): void {
   }

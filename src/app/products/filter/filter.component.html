@@ -52,7 +52,7 @@
     <h3 class="sidebar-title">Filtriraj Razno</h3>
     <div class="sidebar-widget mt-20">
       <h4 class="pro-sidebar-title">Cijena</h4>
-      <input placeholder="Minimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="RaznoF.cijenaMin"> <input placeholder="Maksimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="RaznoF.cijenaMax">
+      <input type="number" placeholder="Minimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="RaznoF.cijenaMin"> <input type="number" placeholder="Maksimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="RaznoF.cijenaMax">
 
 
 
@@ -67,5 +67,68 @@
 
 
 </div>
+<div *ngIf="s.swF===3">
+  <div class="sidebar-widget-group mt-20 padding-30px bg-white">
+  <h3 class="sidebar-title ptb-10px">Filtriraj produkte</h3>
+  <div class="sidebar-widget mt-20">
+    <h4 class="pro-sidebar-title">Cijena</h4>
+    <input type="number"   placeholder="Minimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="HranaF.cijenaMin"> <input type="number" placeholder="Maksimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="HranaF.cijenaMax">
+  </div>
+  <div class="text-center">
+    <button class="btn btn-primary mt-2" (click)="filtrirajH()"> Filtriraj </button>
+  </div>
+  </div>
 
+</div>
+  <div *ngIf="s.swF===4">
+    <div class="sidebar-widget-group mt-20 padding-30px bg-white">
+      <h3 class="sidebar-title ptb-10px">Filtriraj posao</h3>
+      <div class="sidebar-widget mt-20">
+        <h4 class="pro-sidebar-title">Plata</h4>
+        <input type="number"   placeholder="Minimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="PlataF.cijenaMin"> <input type="number" placeholder="Maksimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="PlataF.cijenaMax">
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary mt-2" (click)="filtrirajP()"> Filtriraj </button>
+      </div>
+    </div>
 
+  </div>
+  <div *ngIf="s.swF===5">
+    <div class="sidebar-widget-group mt-20 padding-30px bg-white">
+      <h3 class="sidebar-title ptb-10px">Filtriraj odjecu</h3>
+      <div class="sidebar-widget mt-20">
+        <h4 class="pro-sidebar-title">Cijena</h4>
+        <input type="number"   placeholder="Minimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="OdjecaF.cijenaMin"> <input type="number" placeholder="Maksimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="OdjecaF.cijenaMax">
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary mt-2" (click)="filtrirajP()"> Filtriraj </button>
+      </div>
+    </div>
+
+  </div>
+  <div *ngIf="s.swF===6">
+    <div class="sidebar-widget-group mt-20 padding-30px bg-white">
+      <h3 class="sidebar-title ptb-10px">Filtriraj nekretnine</h3>
+      <div class="sidebar-widget mt-20">
+        <h4 class="pro-sidebar-title">Cijena</h4>
+        <input type="number"   placeholder="Minimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="NekretnineF.cijenaMin"> <input type="number" placeholder="Maksimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="NekretnineF.cijenaMax">
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary mt-2" (click)="filtrirajP()"> Filtriraj </button>
+      </div>
+    </div>
+
+  </div>
+  <div *ngIf="s.swF===7">
+    <div class="sidebar-widget-group mt-20 padding-30px bg-white">
+      <h3 class="sidebar-title ptb-10px">Filtriraj Tehnika</h3>
+      <div class="sidebar-widget mt-20">
+        <h4 class="pro-sidebar-title">Cijena</h4>
+        <input type="number"   placeholder="Minimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="TehnikaF.cijenaMin"> <input type="number" placeholder="Maksimalna cijena" class="form-control bg-dark text-danger" [(ngModel)]="TehnikaF.cijenaMax">
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary mt-2" (click)="filtrirajP()"> Filtriraj </button>
+      </div>
+    </div>
+
+  </div>
