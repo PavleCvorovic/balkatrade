@@ -44,6 +44,7 @@ export class PocetnaService {
   };
   productSlike:string[]=[];
 
+
   getId(id:string,tabela:string){
     this.productSlike=[];
     var tableId={
@@ -54,6 +55,7 @@ export class PocetnaService {
     tableId.tabela=tabela;
     return this.http.post('http://localhost:8000/api/getAllId',tableId).subscribe(res=>{
       this.productId=res;
+
       console.log(this.productId)
 
       for(let i=0 ;i<this.productId.podaci.length;i++){

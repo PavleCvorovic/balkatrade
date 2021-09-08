@@ -42,7 +42,7 @@ export class ProductsService {
     }
     console.log(this.swF)
   }
-
+  numberofProducts:number=0;
 getPostsbyType:any
   GetPostsbyType(tabela:string,tip:any){
     var req={

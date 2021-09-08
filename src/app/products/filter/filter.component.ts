@@ -73,6 +73,7 @@ filtrirajR(){
 
   this.s.Filter(this.RaznoF).subscribe(res=>{
     this.s.getPostsbyType=res;
+    this.s.numberofProducts=this.s.getPostsbyType;
   })
 this.RaznoF.cijenaMin='';
   this.RaznoF.cijenaMax='';
@@ -83,6 +84,7 @@ this.RaznoF.cijenaMin='';
     console.log(this.HranaF)
     this.s.Filter(this.HranaF).subscribe(res=>{
       this.s.getPostsbyType=res;
+      this.s.numberofProducts=this.s.getPostsbyType.length;
     })
     this.HranaF.cijenaMax='';
     this.HranaF.cijenaMin='';
@@ -93,6 +95,7 @@ this.RaznoF.cijenaMin='';
     console.log(this.PlataF)
     this.s.Filter(this.PlataF).subscribe(res=>{
       this.s.getPostsbyType=res;
+      this.s.numberofProducts=this.s.getPostsbyType.length;
     })
     this.PlataF.cijenaMax='';
     this.PlataF.cijenaMin='';
@@ -103,6 +106,7 @@ this.RaznoF.cijenaMin='';
     console.log(this.NekretnineF)
     this.s.Filter(this.NekretnineF).subscribe(res=>{
       this.s.getPostsbyType=res;
+      this.s.numberofProducts=this.s.getPostsbyType.length;
     })
     this.NekretnineF.cijenaMax='';
     this.NekretnineF.cijenaMin='';
@@ -113,6 +117,7 @@ this.RaznoF.cijenaMin='';
     console.log(this.TehnikaF)
     this.s.Filter(this.TehnikaF).subscribe(res=>{
       this.s.getPostsbyType=res;
+      this.s.numberofProducts=this.s.getPostsbyType.length;
     })
     this.TehnikaF.cijenaMax='';
     this.TehnikaF.cijenaMin='';
@@ -123,6 +128,7 @@ this.RaznoF.cijenaMin='';
     console.log(this.OdjecaF)
     this.s.Filter(this.OdjecaF).subscribe(res=>{
       this.s.getPostsbyType=res;
+      this.s.numberofProducts=this.s.getPostsbyType.length;
     })
     this.OdjecaF.cijenaMax='';
     this.OdjecaF.cijenaMin='';

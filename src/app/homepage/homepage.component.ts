@@ -28,6 +28,7 @@ export class HomepageComponent implements OnInit {
 getPostsbyType(tabela:string,tip:any){
     this.s1.GetPostsbyType(tabela,tip).subscribe(res=>{
       this.s1.getPostsbyType=res;
+ this.s1.numberofProducts=this.s1.getPostsbyType.length;
       console.log(res)
 
     })
