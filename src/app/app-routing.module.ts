@@ -1,3 +1,5 @@
+import { UserPageComponent } from './user-page/user-page.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -10,7 +12,9 @@ const routes: Routes = [
   {path:'', redirectTo:'homepage', pathMatch:'full'},
   {path:'add', component:AddPostComponent},
   {path:'login', component:LoginComponent},
-  {path:'register', component:RegisterComponent}
+  {path:'register', component:RegisterComponent},
+  {path: 'admin-page', component:AdminPageComponent},
+  {path: 'user-page', component:UserPageComponent }
 ];
 
 @NgModule({
