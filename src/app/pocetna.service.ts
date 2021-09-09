@@ -74,9 +74,11 @@ export class PocetnaService {
       console.log(this.productSlike)
 
 
-  });
+  });}
 
+  getFeaturedPosts(){
+      return  this.http.get('http://localhost:8000/api/getAll');
 
-}
+    }
 
 }

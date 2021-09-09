@@ -20,6 +20,7 @@ export class HomepageComponent implements OnInit {
     this.getTypePosao()
     this.getTypesRazno()
     this.getTypesOdjeca()
+    this.getFeaturedPosts();
 
   }
 
@@ -93,6 +94,14 @@ getPostsbyType(tabela:string,tip:any){
   }
 
 
+
+  featuredPosts:any
+getFeaturedPosts(){
+   this.s.getFeaturedPosts().subscribe(res=>{
+   this.featuredPosts=res;
+     console.log(res)
+   })
+}
 
   login()
   {
