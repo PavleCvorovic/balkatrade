@@ -1,1 +1,369 @@
-<p>admin-page works!</p>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Plus Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="/assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="/assets/vendors/flag-icon-css/css/flag-icon.min.css">
+  <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="/assets/vendors/jquery-bar-rating/css-stars.css" />
+  <link rel="stylesheet" href="/assets/vendors/font-awesome/css/font-awesome.min.css" />
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="/assets/css/demo_1/style.css" />
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href="/assets/images/favicon.png" />
+</head>
+
+<div class="col-md-12">
+  <div class="row">
+  <!-- partial:partials/_sidebar.html -->
+  <nav class="sidebar  col-md-4" id="sidebar">
+    <ul class="nav">
+      <li class="nav-item nav-profile border-bottom">
+        <a href="#" class="nav-link flex-column">
+          <div class="nav-profile-image">
+            <img src="../assets/slike/admin.jpg" alt="profile" />
+            <!--change to offline or busy as needed-->
+          </div>
+          <div class="nav-profile-text d-flex ml-0 mb-3 flex-column">
+            <span class="font-weight-semibold mb-1 mt-2 text-center">Drazen Jeknic</span>
+            <span class="text-secondary icon-sm text-center">Menadzer</span>
+          </div>
+        </a>
+      </li>
+
+
+      <li class="pt-2 pb-1">
+        <span class="nav-item-head">Meni</span>
+      </li>
+
+
+        <div class="collapse" id="ui-basic">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item">
+              <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
+            </li>
+          </ul>
+        </div>
+
+      <li class="nav-item">
+
+        <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+        <span class="menu-title">Hrana</span>
+        <i class="menu-arrow"></i>
+    <select class="form-control bg-dark " #f (change)="swichSidebar(f.value)">
+<option ></option>
+      <option value="1" class="bijela">
+      Izbrisi jelo
+      </option>
+      <option  value="2" class="bijela">
+       Dodaj jelo
+      </option>
+      <option value="3" class="bijela">
+        Modifikuj jelo
+      </option>
+
+    </select></li>
+      <li class="nav-item">
+
+        <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+        <span class="menu-title">Stolovi</span>
+        <i class="menu-arrow"></i>
+        <select class="form-control bg-dark "  #e (change)="swichSidebar(e.value)">
+          <option ></option>
+          <option value="4" class="bijela">
+            Izbrisi sto
+          </option>
+          <option  value="5" class="bijela">
+            Dodaj sto
+          </option>
+
+
+        </select></li>
+      <li class="nav-item">
+
+        <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+        <span class="menu-title">Rezervacije</span>
+        <i class="menu-arrow"></i>
+        <select class="form-control bg-dark " #r (change)="swichSidebar(r.value)">
+          <option ></option>
+          <option value="6" class="bijela">
+           Rezervisi rucno (svi)
+          </option>
+          <option  value="7" class="bijela">
+            Rezervacije od korisnika
+          </option>
+
+
+        </select></li>
+    </ul>
+
+  </nav>
+
+  <div class="col-md-6" >
+    <table class="table " *ngIf="Admintabs===1">
+      <thead>
+      <tr>
+
+        <th scope="col">Meni</th>
+        <th scope="col">Naziv</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let a of meni">
+        <th scope="row">{{a.id}}</th>
+        <td>{{a.naziv}}</td>
+        <td><button class="btn btn-danger" (click)="delMenuItem(a.id)">Izbrisi</button></td>
+      </tr>
+
+      </tbody>
+    </table>
+
+    <div class="form-control" *ngIf="Admintabs==2">
+      <h3> Dodajte jelo </h3>
+      <div class="row" >
+      <input class="form-control bg-dark"style="color:white" placeholder="Unesite naziv" [(ngModel)]="newfood.naziv">
+      <input class="form-control bg-dark"style="color:white" placeholder="Unesite opis" [(ngModel)]="newfood.opis">
+        <input class="form-control bg-dark"style="color:white"  type="number" placeholder="Unesite cijenu " [(ngModel)]="newfood.cijena">
+        <input class="form-control bg-dark"style="color:white" placeholder="Unesite url slike" [(ngModel)]="newfood.slika">
+        <button class="btn btn-primary" (click)="addfood()">Dodaj</button>
+      </div>
+    </div>
+    <div *ngIf="Admintabs==3">
+      <table class="table " >
+        <thead>
+        <tr>
+
+          <th scope="col">Meni</th>
+          <th scope="col">Naziv</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let a of meni">
+          <th scope="row">{{a.id}}</th>
+          <td>{{a.naziv}}</td>
+          <td><button class="btn btn-info" (click)="getDishId(a.id)">Modifikuj</button></td>
+        </tr>
+
+        </tbody>
+      </table>
+<div  *ngIf="tabMod===true">
+      <h3> Modifikujte jelo </h3>
+  <p> Popunite sva polja </p>
+      <div class="row" >
+        <input class="form-control bg-dark"style="color:white" placeholder="{{dish?.naziv}}" [(ngModel)]="modfood.naziv">
+        <input class="form-control bg-dark"style="color:white"  placeholder="{{dish?.opis}}" [(ngModel)]="modfood.opis">
+        <input class="form-control bg-dark"style="color:white"  type="number" placeholder="{{dish?.cijena}}" [(ngModel)]="modfood.cijena">
+        <input class="form-control bg-dark"style="color:white"  placeholder="{{dish?.slika}}"[(ngModel)]="modfood.slika">
+        <button class="btn btn-primary" (click)="editDish()">Promijeni</button>
+
+      </div>
+
+</div>
+
+
+
+
+
+
+    </div>
+<div class="table-responsive">
+    <table class="table " *ngIf="Admintabs===4">
+      <thead>
+      <tr >
+
+        <th scope="col">Sto</th>
+        <th scope="col">Kapacitet</th>
+        <th scope="col">Da li je zauzet ?</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let a of tables">
+        <th scope="row">{{a.id}}</th>
+        <td>{{a.kapacitet}}</td>
+        <td *ngIf="a.rezervisan===0"> <p class="primary">Nije</p> </td>
+        <td *ngIf="a.rezervisan===1"> <p class="danger">Jeste</p> </td>
+
+        <td><button class="btn btn-danger"   (click)="delTables(a.id)">Izbrisi</button></td>
+      </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+    <div class="form-control" *ngIf="Admintabs==5">
+      <h3> Dodajte stol </h3>
+      <div class="row" >
+        <input class="form-control bg-dark"style="color:white" [(ngModel)]="kapacitet.kapacitet" type="number"  placeholder="Unesite kapacitet" >
+
+        <button class="btn btn-primary" (click)="addTable()">Dodaj</button>
+      </div>
+    </div>
+    <div *ngIf="Admintabs===6">
+    <table class="table " >
+
+      <thead>
+      <tr >
+
+        <th scope="col">Sto</th>
+        <th scope="col">Kapacitet</th>
+
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let a of tables">
+        <th scope="row">{{a.id}}</th>
+        <td>{{a.kapacitet}}</td>
+        <td ><button class="btn btn-success" (click)="state(a.id)" >Pogledaj rezevacije </button></td>
+      </tr>
+      </tbody>
+    </table>
+
+
+      <table class="table" *ngIf="switchResId===true">
+        <thead>
+        <tr>
+
+          <th scope="col">Sto</th>
+          <th scope="col">Ime rezervacije</th>
+          <th scope="col">Broj gostiju</th>
+          <th scope="col">Pocetak rezervacije</th>
+          <th scope="col">Email</th>
+          <th scope="col">Broj telefona</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let a of ReservationId">
+
+          <td>{{a.desk_id}}</td>
+          <td>{{a.ime_gosta}}</td>
+          <td>{{a.broj_gostiju}}</td>
+          <td>{{a.datum_rezervacije}}</td>
+          <td>{{a.email}}</td>
+          <td>{{a.broj_telefon}}</td>
+          <td> <button class="btn btn-danger " (click)="delRes(a.id)"> Izbrisi</button></td>
+        </tbody>
+
+        <br>
+        <h3 >Dodaj novu rezervaciju  <button class="btn btn-facebook" (click)="sw()">Forma za rezervaciju</button></h3>
+
+      </table>
+
+
+    </div>
+    <div class="col-md-6" *ngIf="reserveTab===true">
+
+      <div class="row">
+        <div class="booking-form">
+          <div class="form-header">
+
+          </div>
+          <h1>Rezervisi sto broj : {{reserveId}}</h1>
+          <div class="form-group"> <input class="form-control" type="text" placeholder="Ime i prezime" [(ngModel)]="reservation.ime_gosta"> <span class="form-label">Ime i prezime</span> </div>
+          <div class="row">
+            <div class="col-md-5">
+              <div class="form-group"> <input  class="form-control" type="datetime-local"   required [(ngModel)]="reservation.datum"> <span class="form-label">Datum rezervacije</span> </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-10">
+              <div class="form-group"> <select class="form-control" required [(ngModel)]="reservation.broj_gostiju">
+                <option value="" selected hidden>Broj gostiju</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+              </select> </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group"> <input class="form-control" type="email" placeholder="Unesite Email" [(ngModel)]="reservation.email"> <span class="form-label">Email</span> </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group"> <input class="form-control" type="tel" placeholder="Unesite broj telefona"[(ngModel)]="reservation.broj_telefon"> <span class="form-label">Phone</span> </div>
+            </div>
+          </div>
+
+        <button class="btn btn-facebook" (click)="reserveTableAdmin(reserveId)">rezervisi</button>
+        </div>
+      </div>
+    </div>
+    <table class="table " *ngIf="Admintabs===7">
+
+      <thead>
+      <tr >
+
+        <th scope="col">Sto</th>
+
+        <th scope="col">Na ime :</th>
+        <th scope="col">Kontakt</th>
+        <th scope="col">Broj gosti</th>
+        <th scope="col">Pocetak rezervacije</th>
+
+
+      </tr>
+      </thead>
+
+      <tr *ngFor="let a of usertables">
+        <th scope="row">{{a.desk_id}}</th>
+
+        <td>{{a.ime_gosta}}</td>
+        <td>{{a.email}} i {{a.broj_telefon}}</td>
+        <td>{{a.broj_gostiju}}</td>
+        <td>{{a.datum_rezervacije}}</td>
+
+
+      </tr>
+
+
+    </table>
+  </div>
+
+  </div>
+  </div>
+
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="/assets/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="/assets/vendors/jquery-bar-rating/jquery.barrating.min.js"></script>
+<script src="/assets/vendors/chart.js/Chart.min.js"></script>
+<script src="/assets/vendors/flot/jquery.flot.js"></script>
+<script src="/assets/vendors/flot/jquery.flot.resize.js"></script>
+<script src="/assets/vendors/flot/jquery.flot.categories.js"></script>
+<script src="/assets/vendors/flot/jquery.flot.fillbetween.js"></script>
+<script src="/assets/vendors/flot/jquery.flot.stack.js"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="/assets/js/off-canvas.js"></script>
+<script src="/assets/js/hoverable-collapse.js"></script>
+<script src="/assets/js/misc.js"></script>
+<script src="/assets/js/settings.js"></script>
+<script src="/assets/js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="/assets/js/dashboard.js"></script>
+

@@ -1,5 +1,5 @@
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
@@ -21,15 +21,8 @@ export class AddPostComponent implements OnInit {
 
   url: any;
     onSelectFile(event:any) {
-        if (event.target.files && event.target.files[0]) {
-          var reader = new FileReader();
 
-          reader.readAsDataURL(event.target.files[0]);
-          reader.onload = (event) => {
-            this.url = event.target?.result;
-          }
-        }
-        console.log();
+        this.url = event.target.files[0]
 
     }
   unosAutomoto = this.fb.group(
@@ -156,6 +149,21 @@ export class AddPostComponent implements OnInit {
   dodajTehnika()
   {
 
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json')
+    var params = new FormData();
+    params.append('prva_slika', this.unosTehnika.controls['prva_slika'].value)
+    params.append('tehnika_vrsta', this.unosTehnika.controls['tehnika_vrsta'].value)
+    params.append('cijena', this.unosTehnika.controls['cijena'].value)
+    params.append('stanje', this.unosTehnika.controls['stanje'].value)
+    params.append('lokacija', this.unosTehnika.controls['lokacija'].value)
+    params.append('naziv', this.unosTehnika.controls['naziv'].value)
+    params.append('kontakt', this.unosTehnika.controls['kontakt'].value)
+    params.append('opis', this.unosTehnika.controls['opis'].value)
+    params.append('godina_proizvodnje', this.unosTehnika.controls['godina_proizvodnje'].value)
+    params.append('boja', this.unosTehnika.controls['boja'].value)
+    params.append('tabela',this.unosTehnika.controls['tabela'].value)
     this.unosTehnika.controls['tehnika_vrsta'].setValue(1);
     this.unosTehnika.controls['tabela'].setValue('tehnikapolja');
     this.unosTehnika.controls['prva_slika'].setValue(this.url);
@@ -172,14 +180,26 @@ export class AddPostComponent implements OnInit {
   }
   dodajAutomoto()
   {
-
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json')
+    var params = new FormData();
+    params.append('prva_slika', this.unosAutomoto.controls['prva_slika'].value)
+    params.append('automoto_vrsta', this.unosAutomoto.controls['automoto_vrsta'].value)
+    params.append('cijena', this.unosAutomoto.controls['cijena'].value)
+    params.append('marka', this.unosAutomoto.controls['marka'].value)
+    params.append('model', this.unosAutomoto.controls['model'].value)
+    params.append('naziv', this.unosAutomoto.controls['naziv'].value)
+    params.append('kontakt', this.unosAutomoto.controls['kontakt'].value)
+    params.append('opis', this.unosAutomoto.controls['opis'].value)
+    params.append('tabela',this.unosAutomoto.controls['tabela'].value)
     this.unosAutomoto.controls['automoto_vrsta'].setValue(1);
     this.unosAutomoto.controls['tabela'].setValue('automotopolja');
     this.unosAutomoto.controls['prva_slika'].setValue(this.url);
     console.log(this.unosAutomoto.getRawValue());
     console.log(this.unosAutomoto.controls['prva_slika'].value);
 
-    this.http.post('http://localhost:8000/api/addAsUser', this.unosAutomoto.getRawValue()).subscribe
+    this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
         alert("bravo")
@@ -191,7 +211,19 @@ export class AddPostComponent implements OnInit {
   }
   dodajOdjeca()
   {
-
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json')
+    var params = new FormData();
+    params.append('prva_slika', this.unosAutomoto.controls['prva_slika'].value)
+    params.append('automoto_vrsta', this.unosAutomoto.controls['automoto_vrsta'].value)
+    params.append('cijena', this.unosAutomoto.controls['cijena'].value)
+    params.append('marka', this.unosAutomoto.controls['marka'].value)
+    params.append('model', this.unosAutomoto.controls['model'].value)
+    params.append('naziv', this.unosAutomoto.controls['naziv'].value)
+    params.append('kontakt', this.unosAutomoto.controls['kontakt'].value)
+    params.append('opis', this.unosAutomoto.controls['opis'].value)
+    params.append('tabela',this.unosAutomoto.controls['tabela'].value)
     this.unosOdjeca.controls['odjeca_vrsta'].setValue(1);
     this.unosOdjeca.controls['tabela'].setValue('odjecapolja');
     this.unosOdjeca.controls['prva_slika'].setValue(this.url);
@@ -209,6 +241,20 @@ export class AddPostComponent implements OnInit {
 
   dodajNekretnina()
   {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json')
+    var params = new FormData();
+    params.append('prva_slika', this.unosNekretnine.controls['prva_slika'].value)
+    params.append('nekretnine_vrsta', this.unosNekretnine.controls['nekretnine_vrsta'].value)
+    params.append('cijena', this.unosNekretnine.controls['cijena'].value)
+    params.append('lokacija', this.unosNekretnine.controls['lokacija'].value)
+    params.append('naziv', this.unosNekretnine.controls['naziv'].value)
+    params.append('kontakt', this.unosNekretnine.controls['kontakt'].value)
+    params.append('opis', this.unosNekretnine.controls['opis'].value)
+    params.append('tabela',this.unosNekretnine.controls['tabela'].value)
+    params.append('kvadratura', this.unosNekretnine.controls['kvadratura'].value)
+    params.append('tip_vlasnistva', this.unosNekretnine.controls['tip_vlasnistva'].value)
     this.unosNekretnine.controls['nekretnine_vrsta'].setValue(1);
     this.unosNekretnine.controls['tabela'].setValue('nekretninepolja');
     this.unosNekretnine.controls['prva_slika'].setValue(this.url);
@@ -225,6 +271,19 @@ export class AddPostComponent implements OnInit {
 
   dodajPosao()
   {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json')
+    var params = new FormData();
+    params.append('prva_slika', this.unosAutomoto.controls['prva_slika'].value)
+    params.append('automoto_vrsta', this.unosAutomoto.controls['automoto_vrsta'].value)
+    params.append('cijena', this.unosAutomoto.controls['cijena'].value)
+    params.append('marka', this.unosAutomoto.controls['marka'].value)
+    params.append('model', this.unosAutomoto.controls['model'].value)
+    params.append('naziv', this.unosAutomoto.controls['naziv'].value)
+    params.append('kontakt', this.unosAutomoto.controls['kontakt'].value)
+    params.append('opis', this.unosAutomoto.controls['opis'].value)
+    params.append('tabela',this.unosAutomoto.controls['tabela'].value)
     this.unosPosao.controls['posao_vrsta'].setValue(1);
     this.unosPosao.controls['tabela'].setValue('posaopolja');
     this.unosPosao.controls['prva_slika'].setValue(this.url);
@@ -240,6 +299,19 @@ export class AddPostComponent implements OnInit {
 
   dodajHrana()
   {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json')
+    var params = new FormData();
+    params.append('prva_slika', this.unosHrana.controls['prva_slika'].value)
+    params.append('hrana_vrsta', this.unosHrana.controls['hrana_vrsta'].value)
+    params.append('cijena', this.unosHrana.controls['cijena'].value)
+    params.append('lokacija', this.unosHrana.controls['lokacija'].value)
+    params.append('naziv', this.unosHrana.controls['naziv'].value)
+    params.append('kontakt', this.unosHrana.controls['kontakt'].value)
+    params.append('opis', this.unosHrana.controls['opis'].value)
+    params.append('tabela',this.unosHrana.controls['tabela'].value)
+    params.append('kolicina', this.unosHrana.controls['kolicina'].value);
     this.unosHrana.controls['hrana_vrsta'].setValue(1);
     this.unosHrana.controls['tabela'].setValue('hranapolja');
     this.unosHrana.controls['prva_slika'].setValue(this.url);
@@ -255,6 +327,19 @@ export class AddPostComponent implements OnInit {
 
   dodajRazno()
   {
+
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json')
+    var params = new FormData();
+    params.append('prva_slika', this.unosRazno.controls['prva_slika'].value)
+    params.append('razno_vrsta', this.unosRazno.controls['razno_vrsta'].value)
+    params.append('cijena', this.unosRazno.controls['cijena'].value)
+    params.append('lokacija', this.unosRazno.controls['lokacija'].value)
+    params.append('naziv', this.unosRazno.controls['naziv'].value)
+    params.append('kontakt', this.unosRazno.controls['kontakt'].value)
+    params.append('opis', this.unosRazno.controls['opis'].value)
+    params.append('tabela',this.unosRazno.controls['tabela'].value)
     this.unosRazno.controls['razno_vrsta'].setValue(1);
     this.unosRazno.controls['tabela'].setValue('raznopolja');
     this.unosRazno.controls['prva_slika'].setValue(this.url);
