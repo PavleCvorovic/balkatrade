@@ -750,9 +750,10 @@
 
 
         <article class="list-product  "  *ngFor="let a of featuredPosts let i = index;">
+          <div class="col-md-3" *ngFor="let b of featuredPosts[i]">
           <div class="col-md-12">
             <div  class="row ">
-<div class="col-md-3" *ngFor="let b of featuredPosts[i]">
+
           <div class="img-block " >
             <a href="single-product.html" class="thumbnail" >
               <img class="first-img" src="assets/images/product-image/6.jpg" alt="" />
