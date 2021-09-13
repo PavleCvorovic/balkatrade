@@ -1,5 +1,34 @@
-<div _ngcontent-auy-c56="" class="header-topbg-dark ptb-30px d-xl-block d-none sticky-nav" style="background-color: #F2AA4CFF;"><div _ngcontent-auy-c56="" class="container"><div _ngcontent-auy-c56="" class="row"><div _ngcontent-auy-c56="" class="col-md-3 d-flex"><div _ngcontent-auy-c56="" class="mobile-menu-toggle home-2"><a _ngcontent-auy-c56="" href="#offcanvas-mobile-menu" class="offcanvas-toggle"><svg _ngcontent-auy-c56="" viewBox="0 0 800 600"><path _ngcontent-auy-c56="" d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path><path _ngcontent-auy-c56="" d="M300,320 L540,320" id="middle"></path><path _ngcontent-auy-c56="" d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path></svg></a></div><div _ngcontent-auy-c56="" class="logo"><a _ngcontent-auy-c56="" href="index.html"><img _ngcontent-auy-c56="" src="assets/images/logo.jpg" alt="logo.jpg" style="height: 100px; width: 200px; border-radius: 20%;"></a></div></div></div></div></div>
+<div _ngcontent-auy-c56="" class="header-top" style="background-color: #F2AA4CFF;"><div _ngcontent-auy-c56="" class="container"><div _ngcontent-auy-c56="" class="row"><div _ngcontent-auy-c56="" class="col-md-3 d-flex"><div _ngcontent-auy-c56="" class="mobile-menu-toggle home-2"><a _ngcontent-auy-c56="" href="#offcanvas-mobile-menu" class="offcanvas-toggle">
+  <svg _ngcontent-auy-c56="" viewBox="0 0 800 600"><path _ngcontent-auy-c56="" d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path><path _ngcontent-auy-c56="" d="M300,320 L540,320" id="middle"></path><path _ngcontent-auy-c56="" d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path></svg>
+</a></div><div _ngcontent-auy-c56="" class="logo"><a _ngcontent-auy-c56="" href="index.html"><img _ngcontent-auy-c56="" src="assets/images/logo.jpg" alt="logo.jpg" style="height: 100px; width: 200px; border-radius: 20%;"></a></div></div></div></div></div>
+<div _ngcontent-obr-c56="" id="offcanvas-mobile-menu" class="offcanvas offcanvas-mobile-menu offcanvas-open">
+  <div _ngcontent-obr-c56="" class="inner customScroll"><div _ngcontent-obr-c56="" class="head">
+    <span _ngcontent-obr-c56="" class="title">&nbsp;</span><button _ngcontent-obr-c56="" class="offcanvas-close">×
 
+    </button>
+  </div>
+  <div _ngcontent-obr-c56="" class="offcanvas-menu-search-form">
+
+  </div>
+  <div _ngcontent-obr-c56="" class="offcanvas-menu">
+    <ul _ngcontent-obr-c56=""><li _ngcontent-obr-c56="">
+      <span class="menu-expand">
+
+      </span>
+      <a _ngcontent-obr-c56="" href="#" >
+        <span _ngcontent-obr-c56="" class="menu-text"(click)="kategorijeDodavanje()">Dodaj kategorije</span></a>
+      </li>
+        <li _ngcontent-obr-c56=""><span class="menu-expand"></span>
+                      <a _ngcontent-obr-c56="" href="#">
+                        <span _ngcontent-obr-c56="" class="menu-text" (click)="useriAd()">Useri</span>
+                      </a>
+                    </li><li _ngcontent-obr-c56=""><span class="menu-expand"></span><a _ngcontent-obr-c56="" href="#">
+
+                      <span _ngcontent-obr-c56="" class="menu-text"(click)="oglasi()">Oglasi</span></a></li>
+
+                      <li _ngcontent-obr-c56=""><span class="menu-expand"></span><a _ngcontent-obr-c56="" href="#">
+
+                        <span _ngcontent-obr-c56="" class="menu-text">Blog</span></a></li><li _ngcontent-obr-c56=""><a _ngcontent-obr-c56="" href="contact.html">Contact Us</a></li></ul></div><div _ngcontent-obr-c56="" class="offcanvas-social mt-30px"></div></div></div>
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -65,7 +94,7 @@
   </nav>
 
 
-<div >
+<div *ngIf="kategorijeAdmin ==1" >
     <div class="form-control">
       <h3> Dodajte automoto kategoriju </h3>
       <div class="row" >
@@ -141,6 +170,36 @@
     </div>
 
   </div>
+
+  <div  *ngIf="useriAdmin==1">
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col" >ID</th>
+          <th scope="col">Ime</th>
+          <th scope="col">Email</th>
+          <th scope="col">Obrisi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor= "let u of useri">
+          <th scope="row">{{ u.id }}</th>
+          <td>{{ u.name }}</td>
+          <td>{{ u.email }}</td>
+          <td><button (click)="obrisiUsera(u.id)">Obrisi usera</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+
+  <div *ngIf="oglasiAdmin == 1">
+
+    <h1>ovdje idu postovi </h1>
+
+  </div>
+
 
   </div>
 </div>

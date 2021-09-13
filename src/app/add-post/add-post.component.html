@@ -243,9 +243,14 @@
                       <div class="form-group" *ngIf="kategorija == 'posao'">
                         <div class="form-group">
                           <label for="exampleInputEmail1">posao Vrsta</label>
+                          <select>
+                            <option>Ponuda</option>
+                            <option>Potraznja</option>
+                          </select>
                           <select [(ngModel)]="automotoVrsta">
                             <option value= "posao" name="posao" *ngFor="let e of posaoType">{{ e.tip }}</option>
                           </select>
+
                         </div>
                         <img [src]="url" height="30"> <br/>
                           <input type='file' (change)="onSelectFile($event)">

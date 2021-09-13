@@ -1,3 +1,5 @@
+import { ActivatedRoute } from '@angular/router';
+import { PocetnaService } from './../pocetna.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminPageComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private servis:PocetnaService, private route:ActivatedRoute) { }
+  kategorijeAdmin= 0;
+  useriAdmin=0;
+  oglasiAdmin= 0;
+  useri:any;
+  userId:any;
+  id = "";
 
   kategorijaAutomoto="";
   kategorijaPosao='';
@@ -21,7 +29,53 @@ export class AdminPageComponent implements OnInit {
     tip:''
   }
 
+
+
+  kategorijeDodavanje()
+  {
+      this.useriAdmin = 0;
+      this.oglasiAdmin = 0;
+      this.kategorijeAdmin= 1;
+
+      console.log(this.kategorijeAdmin);
+
+  }
+
+
   ngOnInit(): void {
+    this.servis.getUsers()
+    .subscribe(res=>{
+      this.useri=res;
+    })
+  }
+
+  useriAd()
+  {
+    this.useriAdmin = 1;
+    this.kategorijeAdmin = 0;
+    console.log(this.useriAd);
+
+  }
+
+  obrisiUsera(id:any)
+  {
+
+
+    return this.http.delete('http://localhost:8000/api/deleteUser/'+id)
+    .subscribe(res=>{
+      alert("obrisan korisnik");
+      this.useri = res;
+    });
+
+
+  }
+
+  oglasi()
+  {
+    this.useriAdmin = 0;
+    this.kategorijeAdmin = 0;
+    this.oglasiAdmin = 1;
+
   }
 
 
@@ -49,6 +103,8 @@ export class AdminPageComponent implements OnInit {
         alert('dadata kategorija')
       })
   }
+
+
 
   dodajNekretnina()
   {
