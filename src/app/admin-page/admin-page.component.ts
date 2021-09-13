@@ -10,13 +10,16 @@ export class AdminPageComponent implements OnInit {
 
   constructor(private http:HttpClient) { }
 
-  kategorijaAutomoto='';
+  kategorijaAutomoto="";
   kategorijaPosao='';
   kategorijaOdjeca='';
   kategorijaHrana='';
   kategorijaNekretnina='';
   kategorijaTehnika='';
-  tip:any;
+  tip=
+  {
+    tip:''
+  }
 
   ngOnInit(): void {
   }
@@ -25,7 +28,7 @@ export class AdminPageComponent implements OnInit {
   dodajAutomoto()
   {
 
-      this.tip = this.kategorijaAutomoto;
+      this.tip.tip = this.kategorijaAutomoto;
       console.log(this.tip);
 
       this.http.post("http://localhost:8000/api/addAutoTip",this.tip)
@@ -37,22 +40,50 @@ export class AdminPageComponent implements OnInit {
 
   dodajHrana()
   {
+    this.tip.tip = this.kategorijaHrana;
+    console.log(this.tip);
 
+    this.http.post("http://localhost:8000/api/addHranaTip",this.tip)
+    .subscribe(res=>
+      {
+        alert('dadata kategorija')
+      })
   }
 
   dodajNekretnina()
   {
+    this.tip.tip = this.kategorijaNekretnina;
+    console.log(this.tip);
 
+    this.http.post("http://localhost:8000/api/addNekretnineTip",this.tip)
+    .subscribe(res=>
+      {
+        alert('dadata kategorija')
+      })
   }
 
   dodajPosao()
   {
+    this.tip.tip = this.kategorijaPosao;
+    console.log(this.tip);
 
+    this.http.post("http://localhost:8000/api/addPosaoTip",this.tip)
+    .subscribe(res=>
+      {
+        alert('dadata kategorija')
+      })
   }
 
   dodajOdjeca()
   {
+    this.tip.tip = this.kategorijaOdjeca;
+    console.log(this.tip.tip);
 
+    this.http.post("http://localhost:8000/api/addOdjecaTip",this.tip)
+    .subscribe(res=>
+      {
+        alert('dadata kategorija')
+      })
   }
 
   dodajRazno()
@@ -62,7 +93,14 @@ export class AdminPageComponent implements OnInit {
 
   dodajTehnika()
   {
+    this.tip.tip = this.kategorijaTehnika;
+      console.log(this.tip);
 
+      this.http.post("http://localhost:8000/api/addTehnikaTip",this.tip)
+      .subscribe(res=>
+        {
+          alert('dadata kategorija')
+        })
   }
 
 }
