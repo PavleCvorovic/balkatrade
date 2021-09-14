@@ -1,7 +1,7 @@
 <div _ngcontent-auy-c56="" class="header-top" style="background-color: #F2AA4CFF;"><div _ngcontent-auy-c56="" class="container"><div _ngcontent-auy-c56="" class="row"><div _ngcontent-auy-c56="" class="col-md-3 d-flex"><div _ngcontent-auy-c56="" class="mobile-menu-toggle home-2"><a _ngcontent-auy-c56="" href="#offcanvas-mobile-menu" class="offcanvas-toggle">
   <svg _ngcontent-auy-c56="" viewBox="0 0 800 600"><path _ngcontent-auy-c56="" d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path><path _ngcontent-auy-c56="" d="M300,320 L540,320" id="middle"></path><path _ngcontent-auy-c56="" d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path></svg>
-</a></div><div _ngcontent-auy-c56="" class="logo"><a _ngcontent-auy-c56="" href="index.html"><img _ngcontent-auy-c56="" src="assets/images/logo.jpg" alt="logo.jpg" style="height: 100px; width: 200px; border-radius: 20%;"></a></div></div></div></div></div>
-<div _ngcontent-obr-c56="" id="offcanvas-mobile-menu" class="offcanvas offcanvas-mobile-menu offcanvas-open">
+</a></div><div _ngcontent-auy-c56="" class="logo"><a _ngcontent-auy-c56=""  routerLink="../homepage" ><img _ngcontent-auy-c56="" src="assets/images/logo.jpg"alt="logo.jpg" style="height: 100px; width: 200px; border-radius: 20%;"></a></div></div></div></div></div>
+<div _ngcontent-obr-c56="" id="offcanvas-mobile-menu" class="offcanvas offcanvas-mobile-menu offcanvas-close">
   <div _ngcontent-obr-c56="" class="inner customScroll"><div _ngcontent-obr-c56="" class="head">
     <span _ngcontent-obr-c56="" class="title">&nbsp;</span><button _ngcontent-obr-c56="" class="offcanvas-close">×
 
@@ -53,45 +53,13 @@
 <div class="col-md-12">
   <div class="row">
   <!-- partial:partials/_sidebar.html -->
-  <nav class="sidebar  col-md-4" id="sidebar">
-    <ul class="nav">
-      <li class="nav-item nav-profile border-bottom">
-        <a  class="nav-link flex-column">
-          <div class="nav-profile-image">
-            <img src="../assets/slike/admin.jpg" alt="profile" />
-            <!--change to offline or busy as needed-->
-          </div>
-          <div class="nav-profile-text d-flex ml-0 mb-3 flex-column">
-            <span class="font-weight-semibold mb-1 mt-2 text-center">Admin</span>
-            <span class="text-secondary icon-sm text-center">Admin</span>
-          </div>
-        </a>
-      </li>
 
-
-
-        <div class="collapse" id="ui-basic">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item">
-              <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
-            </li>
-          </ul>
-        </div>
-
-
-
-
-
-
-    </ul>
-
-  </nav>
+<div *ngIf="useriAdmin ==0 && kategorijeAdmin == 0 && oglasiAdmin == 0">
+  <div class="bg-image" style="
+      background-image: url('../assets/images/admin.jpg');
+      height: 70vh;
+    "></div>
+  </div>
 
 
 <div *ngIf="kategorijeAdmin ==1" >

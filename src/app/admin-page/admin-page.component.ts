@@ -49,10 +49,19 @@ export class AdminPageComponent implements OnInit {
     })
   }
 
+  oglasi()
+  {
+    this.useriAdmin = 0;
+    this.kategorijeAdmin = 0;
+    this.oglasiAdmin = 1;
+
+  }
+
   useriAd()
   {
-    this.useriAdmin = 1;
+    this.oglasiAdmin=0;
     this.kategorijeAdmin = 0;
+    this.useriAdmin = 1;
     console.log(this.useriAd);
 
   }
@@ -70,13 +79,7 @@ export class AdminPageComponent implements OnInit {
 
   }
 
-  oglasi()
-  {
-    this.useriAdmin = 0;
-    this.kategorijeAdmin = 0;
-    this.oglasiAdmin = 1;
 
-  }
 
 
   dodajAutomoto()
