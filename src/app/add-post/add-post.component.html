@@ -35,7 +35,7 @@
                         <div class="form-card">
                           <label for="exampleInputEmail1">automoto Vrsta</label>
                           <select [(ngModel)]="automotoVrsta">
-                            <option value= "automobil" name="automobil" *ngFor="let a of automotoType">{{ a.tip }}</option>
+                            <option value= "a.tip" name="a.tip" *ngFor="let a of automotoType">{{ a.tip }}</option>
                           </select>
                         </div>
                         <img [src]="url" height="30"> <br/>
@@ -102,7 +102,7 @@
                         <div class="form-group">
                           <label for="exampleInputEmail1">tehnika Vrsta</label>
                           <select [(ngModel)]="automotoVrsta">
-                            <option value= "tehnika" name="tehnika" *ngFor="let b of tehnikaType">{{ b.tip }}</option>
+                            <option value= "b.tip" name="b.tip" *ngFor="let b of tehnikaType">{{ b.tip }}</option>
                           </select>
                         </div>
                         <img [src]="url" height="30"> <br/>
@@ -154,7 +154,7 @@
                         <div class="form-group">
                           <label for="exampleInputEmail1">odjeca Vrsta</label>
                           <select [(ngModel)]="automotoVrsta">
-                            <option value= "odjeca" name="odjeca" *ngFor="let c of odjecaType">{{ c.tip }}</option>
+                            <option value= "c.tip" name="c.tip" *ngFor="let c of odjecaType">{{ c.tip }}</option>
                           </select>
                         </div>
                         <img [src]="url" height="30"> <br/>
@@ -196,7 +196,7 @@
                         <div class="form-group">
                           <label for="exampleInputEmail1">nekretnine Vrsta</label>
                           <select [(ngModel)]="automotoVrsta">
-                            <option value= "nekretnine" name="nekretnine" *ngFor="let d of nekretnineType">{{ d.tip }}</option>
+                            <option value= "d.tip" name="d.tip" *ngFor="let d of nekretnineType">{{ d.tip }}</option>
                           </select>
                         </div>
                         <img [src]="url" height="30"> <br/>
@@ -248,7 +248,7 @@
                             <option>Potraznja</option>
                           </select>
                           <select [(ngModel)]="automotoVrsta">
-                            <option value= "posao" name="posao" *ngFor="let e of posaoType">{{ e.tip }}</option>
+                            <option value= "e.tip" name="e.tip" *ngFor="let e of posaoType">{{ e.tip }}</option>
                           </select>
 
                         </div>
@@ -285,7 +285,7 @@
                         <div class="form-group">
                           <label for="exampleInputEmail1">hrana Vrsta</label>
                           <select [(ngModel)]="automotoVrsta">
-                            <option value= "hrana" name="hrana" *ngFor="let f of hranaType">{{ f.tip }}</option>
+                            <option value= "f.tip" name="f.tip" *ngFor="let f of hranaType">{{ f.tip }}</option>
                           </select>
                         </div>
                         <img [src]="url" height="30"> <br/>
@@ -326,7 +326,7 @@
                         <div class="form-group">
                           <label for="exampleInputEmail1">razno Vrsta</label>
                           <select [(ngModel)]="automotoVrsta">
-                            <option value= "razno" name="razno" *ngFor="let g of raznoType">{{ g.tip }}</option>
+                            <option value= "g.tip" name="g.tip" *ngFor="let g of raznoType">{{ g.tip }}</option>
                           </select>
                         </div>
                         <img [src]="url" height="30"> <br/>
