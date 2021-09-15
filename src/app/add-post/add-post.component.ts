@@ -15,7 +15,7 @@ import { FormBuilder } from '@angular/forms';
 export class AddPostComponent implements OnInit {
 
 
-  constructor(private fb:FormBuilder, private http:HttpClient, private s:PocetnaService) { }
+  constructor(private fb:FormBuilder, private http:HttpClient, private s:PocetnaService,) { }
 
 
   ngOnInit(): void {
@@ -99,6 +99,12 @@ getFeaturedPosts(){
 
   kategorija=''
   automotoVrsta=''
+  tehnikaVrsta=''
+  nekretnineVrsta=''
+  odjecaVrsta=''
+  posaoVrsta=''
+  raznoVrsta=''
+  hranaVrsta=''
 
 
 
@@ -115,7 +121,7 @@ getFeaturedPosts(){
         naziv:'',
         prva_slika:'',
         slike:'',
-        automoto_vrsta:"",
+        automoto_vrsta:this.automotoVrsta,
         marka:'',
         model:'',
         cijena:'',
@@ -134,7 +140,7 @@ getFeaturedPosts(){
   unosTehnika = this.fb.group(
     {
         tabela:'tehnikapolja',
-        tehnika_vrsta:'',
+        tehnika_vrsta:this.tehnikaVrsta,
         naziv:'',
         prva_slika:'',
         slike:'',
@@ -153,7 +159,7 @@ getFeaturedPosts(){
   unosOdjeca = this.fb.group(
     {
         tabela:'odjecapolja',
-        odjeca_vrsta:'',
+        odjeca_vrsta:this.odjecaVrsta,
         naziv:'',
         prva_slika:'',
         slike:'',
@@ -167,7 +173,7 @@ getFeaturedPosts(){
   unosNekretnine= this.fb.group(
     {
       tabela:'nekretninepolja',
-      nekretnine_vrsta:'',
+      nekretnine_vrsta:this.nekretnineVrsta,
       naziv:'',
       prva_slika:'',
       slike:'',
@@ -182,7 +188,7 @@ getFeaturedPosts(){
   unosPosao = this.fb.group(
     {
       tabela:'posaopolja',
-      posao_vrsta:'',
+      posao_vrsta:this.posaoVrsta,
       naziv:'',
       prva_slika:'',
       slike:'',
@@ -197,7 +203,7 @@ getFeaturedPosts(){
   (
     {
       tabela:'hranapolja',
-      hrana_vrsta:'',
+      hrana_vrsta:this.hranaVrsta,
       naziv:'',
       prva_slika:'',
       slike:'',
@@ -213,7 +219,7 @@ getFeaturedPosts(){
   (
     {
       tabela:'raznopolja',
-      razno_vrsta:'',
+      razno_vrsta:this.raznoVrsta,
       naziv:'',
       prva_slika:'',
       slike:'',
@@ -234,8 +240,9 @@ getFeaturedPosts(){
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json')
     var params = new FormData();
-    params.append('prva_slika', this.unosTehnika.controls['prva_slika'].value)
-    params.append('tehnika_vrsta', this.unosTehnika.controls['tehnika_vrsta'].value)
+    params.append('prva_slika', this.url)
+    this.unosTehnika.controls['tehnika_vrsta'].setValue(this.tehnikaVrsta);
+    params.append('tehnika_vrsta',this.unosTehnika.controls['tehnika_vrsta'].value )
     params.append('cijena', this.unosTehnika.controls['cijena'].value)
     params.append('stanje', this.unosTehnika.controls['stanje'].value)
     params.append('lokacija', this.unosTehnika.controls['lokacija'].value)
@@ -245,10 +252,10 @@ getFeaturedPosts(){
     params.append('godina_proizvodnje', this.unosTehnika.controls['godina_proizvodnje'].value)
     params.append('boja', this.unosTehnika.controls['boja'].value)
     params.append('tabela',this.unosTehnika.controls['tabela'].value)
-    this.unosTehnika.controls['tehnika_vrsta'].setValue(1);
-    this.unosTehnika.controls['tabela'].setValue('tehnikapolja');
-    this.unosTehnika.controls['prva_slika'].setValue(this.url);
-    console.log(this.unosTehnika.getRawValue());
+    // this.unosTehnika.controls['tehnika_vrsta'].setValue(1);
+    // this.unosTehnika.controls['tabela'].setValue('tehnikapolja');
+    // this.unosTehnika.controls['prva_slika'].setValue(this.url);
+    // console.log(this.unosTehnika.getRawValue());
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
@@ -265,8 +272,9 @@ getFeaturedPosts(){
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json')
     var params = new FormData();
-    params.append('prva_slika', this.unosAutomoto.controls['prva_slika'].value)
-    params.append('automoto_vrsta', this.unosAutomoto.controls['automoto_vrsta'].value)
+    params.append('prva_slika', this.url)
+    this.unosAutomoto.controls['automoto_vrsta'].setValue(this.automotoVrsta);
+    params.append('automoto_vrsta',this.unosAutomoto.controls['automoto_vrsta'].value )
     params.append('cijena', this.unosAutomoto.controls['cijena'].value)
     params.append('marka', this.unosAutomoto.controls['marka'].value)
     params.append('model', this.unosAutomoto.controls['model'].value)
@@ -274,19 +282,19 @@ getFeaturedPosts(){
     params.append('kontakt', this.unosAutomoto.controls['kontakt'].value)
     params.append('opis', this.unosAutomoto.controls['opis'].value)
     params.append('tabela',this.unosAutomoto.controls['tabela'].value)
+    console.log(this.unosAutomoto.controls['prva_slika'].value);
+
     // this.unosAutomoto.controls['automoto_vrsta'].setValue(1);
     // this.unosAutomoto.controls['tabela'].setValue('automotopolja');
     // this.unosAutomoto.controls['prva_slika'].setValue(this.url);
-    console.log(this.unosAutomoto.getRawValue());
-    console.log(this.unosAutomoto.controls['prva_slika'].value);
+    console.log(this.automotoVrsta);
+    console.log(this.unosAutomoto.controls['automoto_vrsta'].value);
 
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
         alert("bravo")
       });
-
-    console.log(this.kategorija);
 
 
   }
@@ -296,19 +304,20 @@ getFeaturedPosts(){
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json')
     var params = new FormData();
-    params.append('prva_slika', this.unosAutomoto.controls['prva_slika'].value)
-    params.append('automoto_vrsta', this.unosAutomoto.controls['automoto_vrsta'].value)
-    params.append('cijena', this.unosAutomoto.controls['cijena'].value)
-    params.append('marka', this.unosAutomoto.controls['marka'].value)
-    params.append('model', this.unosAutomoto.controls['model'].value)
-    params.append('naziv', this.unosAutomoto.controls['naziv'].value)
-    params.append('kontakt', this.unosAutomoto.controls['kontakt'].value)
-    params.append('opis', this.unosAutomoto.controls['opis'].value)
-    params.append('tabela',this.unosAutomoto.controls['tabela'].value)
-    this.unosOdjeca.controls['odjeca_vrsta'].setValue(1);
-    this.unosOdjeca.controls['tabela'].setValue('odjecapolja');
-    this.unosOdjeca.controls['prva_slika'].setValue(this.url);
-    console.log(this.unosOdjeca.getRawValue());
+    params.append('prva_slika', this.url)
+    this.unosOdjeca.controls['odjeca_vrsta'].setValue(this.odjecaVrsta);
+    params.append('odjeca_vrsta',this.unosOdjeca.controls['odjeca_vrsta'].value )
+    params.append('cijena', this.unosOdjeca.controls['cijena'].value)
+    params.append('marka', this.unosOdjeca.controls['marka'].value)
+    params.append('model', this.unosOdjeca.controls['model'].value)
+    params.append('naziv', this.unosOdjeca.controls['naziv'].value)
+    params.append('kontakt', this.unosOdjeca.controls['kontakt'].value)
+    params.append('opis', this.unosOdjeca.controls['opis'].value)
+    params.append('tabela',this.unosOdjeca.controls['tabela'].value)
+    // this.unosOdjeca.controls['odjeca_vrsta'].setValue(1);
+    // this.unosOdjeca.controls['tabela'].setValue('odjecapolja');
+    // this.unosOdjeca.controls['prva_slika'].setValue(this.url);
+    // console.log(this.unosOdjeca.getRawValue());
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
@@ -326,8 +335,9 @@ getFeaturedPosts(){
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json')
     var params = new FormData();
-    params.append('prva_slika', this.unosNekretnine.controls['prva_slika'].value)
-    params.append('nekretnine_vrsta', this.unosNekretnine.controls['nekretnine_vrsta'].value)
+    params.append('prva_slika',this.url)
+    this.unosNekretnine.controls['nekretnine_vrsta'].setValue(this.nekretnineVrsta);
+    params.append('nekretnine_vrsta',this.unosNekretnine.controls['nekretnine_vrsta'].value )
     params.append('cijena', this.unosNekretnine.controls['cijena'].value)
     params.append('lokacija', this.unosNekretnine.controls['lokacija'].value)
     params.append('naziv', this.unosNekretnine.controls['naziv'].value)
@@ -336,10 +346,10 @@ getFeaturedPosts(){
     params.append('tabela',this.unosNekretnine.controls['tabela'].value)
     params.append('kvadratura', this.unosNekretnine.controls['kvadratura'].value)
     params.append('tip_vlasnistva', this.unosNekretnine.controls['tip_vlasnistva'].value)
-    this.unosNekretnine.controls['nekretnine_vrsta'].setValue(1);
-    this.unosNekretnine.controls['tabela'].setValue('nekretninepolja');
-    this.unosNekretnine.controls['prva_slika'].setValue(this.url);
-    console.log(this.unosNekretnine.getRawValue());
+    // this.unosNekretnine.controls['nekretnine_vrsta'].setValue(1);
+    // this.unosNekretnine.controls['tabela'].setValue('nekretninepolja');
+    // this.unosNekretnine.controls['prva_slika'].setValue(this.url);
+    console.log("hkjnbu");
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
@@ -356,19 +366,20 @@ getFeaturedPosts(){
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json')
     var params = new FormData();
-    params.append('prva_slika', this.unosAutomoto.controls['prva_slika'].value)
-    params.append('automoto_vrsta', this.unosAutomoto.controls['automoto_vrsta'].value)
-    params.append('cijena', this.unosAutomoto.controls['cijena'].value)
-    params.append('marka', this.unosAutomoto.controls['marka'].value)
-    params.append('model', this.unosAutomoto.controls['model'].value)
-    params.append('naziv', this.unosAutomoto.controls['naziv'].value)
-    params.append('kontakt', this.unosAutomoto.controls['kontakt'].value)
-    params.append('opis', this.unosAutomoto.controls['opis'].value)
-    params.append('tabela',this.unosAutomoto.controls['tabela'].value)
-    this.unosPosao.controls['posao_vrsta'].setValue(1);
-    this.unosPosao.controls['tabela'].setValue('posaopolja');
-    this.unosPosao.controls['prva_slika'].setValue(this.url);
-    console.log(params);
+    params.append('prva_slika', this.url)
+    this.unosPosao.controls['posao_vrsta'].setValue(this.posaoVrsta);
+    params.append('posao_vrsta',this.unosPosao.controls['posao_vrsta'].value )
+    params.append('cijena', this.unosPosao.controls['cijena'].value)
+    params.append('marka', this.unosPosao.controls['marka'].value)
+    params.append('model', this.unosPosao.controls['model'].value)
+    params.append('naziv', this.unosPosao.controls['naziv'].value)
+    params.append('kontakt', this.unosPosao.controls['kontakt'].value)
+    params.append('opis', this.unosPosao.controls['opis'].value)
+    params.append('tabela',this.unosPosao.controls['tabela'].value)
+    // this.unosPosao.controls['posao_vrsta'].setValue(1);
+    // this.unosPosao.controls['tabela'].setValue('posaopolja');
+    // this.unosPosao.controls['prva_slika'].setValue(this.url);
+    // console.log(params);
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
@@ -384,8 +395,9 @@ getFeaturedPosts(){
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json')
     var params = new FormData();
-    params.append('prva_slika', this.unosHrana.controls['prva_slika'].value)
-    params.append('hrana_vrsta', this.unosHrana.controls['hrana_vrsta'].value)
+    params.append('prva_slika', this.url)
+    this.unosHrana.controls['hrana_vrsta'].setValue(this.hranaVrsta);
+    params.append('hrana_vrsta',this.unosHrana.controls['hrana_vrsta'].value )
     params.append('cijena', this.unosHrana.controls['cijena'].value)
     params.append('lokacija', this.unosHrana.controls['lokacija'].value)
     params.append('naziv', this.unosHrana.controls['naziv'].value)
@@ -393,14 +405,16 @@ getFeaturedPosts(){
     params.append('opis', this.unosHrana.controls['opis'].value)
     params.append('tabela',this.unosHrana.controls['tabela'].value)
     params.append('kolicina', this.unosHrana.controls['kolicina'].value);
-    this.unosHrana.controls['hrana_vrsta'].setValue(1);
-    this.unosHrana.controls['tabela'].setValue('hranapolja');
-    this.unosHrana.controls['prva_slika'].setValue(this.url);
-    console.log(this.unosHrana.getRawValue());
+    // this.unosHrana.controls['hrana_vrsta'].setValue(1);
+    // this.unosHrana.controls['tabela'].setValue('hranapolja');
+    // this.unosHrana.controls['prva_slika'].setValue(this.url);
+    // console.log(this.unosHrana.getRawValue());
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
         alert("bravo")
+        console.log(params);
+
       });
 
     console.log(this.kategorija);
@@ -413,22 +427,25 @@ getFeaturedPosts(){
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json')
     var params = new FormData();
-    params.append('prva_slika', this.unosRazno.controls['prva_slika'].value)
-    params.append('razno_vrsta', this.unosRazno.controls['razno_vrsta'].value)
+    params.append('prva_slika', this.url)
+    this.unosRazno.controls['razno_vrsta'].setValue(this.raznoVrsta);
+    params.append('razno_vrsta',this.unosRazno.controls['razno_vrsta'].value )
     params.append('cijena', this.unosRazno.controls['cijena'].value)
     params.append('lokacija', this.unosRazno.controls['lokacija'].value)
     params.append('naziv', this.unosRazno.controls['naziv'].value)
     params.append('kontakt', this.unosRazno.controls['kontakt'].value)
     params.append('opis', this.unosRazno.controls['opis'].value)
     params.append('tabela',this.unosRazno.controls['tabela'].value)
-    this.unosRazno.controls['razno_vrsta'].setValue(1);
-    this.unosRazno.controls['tabela'].setValue('raznopolja');
-    this.unosRazno.controls['prva_slika'].setValue(this.url);
-    console.log(this.unosRazno.getRawValue());
+    // this.unosRazno.controls['razno_vrsta'].setValue(1);
+    // this.unosRazno.controls['tabela'].setValue('raznopolja');
+    // this.unosRazno.controls['prva_slika'].setValue(this.url);
+    // console.log(this.unosRazno.getRawValue());
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
         alert("bravo")
+        console.log(params);
+
       });
 
     console.log(this.kategorija);
