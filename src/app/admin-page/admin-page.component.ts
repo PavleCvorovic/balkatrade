@@ -17,6 +17,7 @@ export class AdminPageComponent implements OnInit {
   useri:any;
   userId:any;
   id = "";
+  oglasiSvi:any;
 
   kategorijaAutomoto="";
   kategorijaPosao='';
@@ -27,6 +28,18 @@ export class AdminPageComponent implements OnInit {
   tip=
   {
     tip:''
+  }
+
+
+  getAll()
+  {
+    return this.http.get('http://localhost:8000/api/getAllNew')
+    .subscribe(res=>
+      {
+        this.oglasiSvi= res;
+        console.log(res);
+
+      })
   }
 
 

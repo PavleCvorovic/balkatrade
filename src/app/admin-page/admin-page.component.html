@@ -163,8 +163,33 @@
   </div>
 
   <div *ngIf="oglasiAdmin == 1">
-
-    <h1>ovdje idu postovi </h1>
+    <button (click)="getAll()">test</button>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col" >ID</th>
+          <th scope="col" style="width: 10%;" >User id</th>
+          <th scope="col" style="width: 10%;">Prva slika</th>
+          <th scope="col">Opis</th>
+          <th scope="col">Cijena</th>
+          <th scope="col">Kontakt</th>
+          <th scope="col">Prihvati</th>
+          <th scope="col">Odbij</th>
+        </tr>
+      </thead>
+      <tbody *ngFor= "let u of oglasiSvi">
+        <tr *ngFor= "let o of u">
+          <th scope="row">{{ o.id }}</th>
+          <td>{{ o.user_id }}</td>
+          <td><img src="http://localhost:8000/storage/file/{{o.slika[0].url}}" style="width: 100%;"></td>
+          <td>{{ o.opis }}</td>
+          <td>{{ o.cijena }}</td>
+          <th>{{ o.kontakt }}</th>
+          <td><button (click)="getAll()" class= "btn btn-primary">Prihvati</button></td>
+          <td><button (click)="getAll()" class= "btn btn-danger" >Odbij</button></td>
+        </tr>
+      </tbody>
+    </table>
 
   </div>
 
