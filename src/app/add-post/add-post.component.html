@@ -105,8 +105,13 @@
                             <option [value]= "b.id"  *ngFor="let b of tehnikaType">{{ b.tip }}</option>
                           </select>
                         </div>
+                        Unesite pocetnu sliku:
                         <img [src]="url" height="30"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
+
+                        Unesite ostale slike:
+                        <input class="btn btn-primary" type="file" id="myFile" name="slika"   style="width: 200px" (change)="onChangeFile($event)" multiple>
+                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50">
                       <div [formGroup] = "unosTehnika">
 
                         <div class="form-group">

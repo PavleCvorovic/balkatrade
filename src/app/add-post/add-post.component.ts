@@ -108,12 +108,32 @@ getFeaturedPosts(){
 
 
 
+
+
+
   url: any;
     onSelectFile(event:any) {
 
         this.url = event.target.files[0]
 
     }
+
+
+
+    urls:any = [];
+    prikazSlike:any=[];
+
+      onChangeFile(event: any): void {
+
+        {
+          this.urls = <File>event.target.files;
+
+
+        }
+
+      }
+
+
   unosAutomoto = this.fb.group(
     {
 
@@ -143,7 +163,7 @@ getFeaturedPosts(){
         tehnika_vrsta:this.tehnikaVrsta,
         naziv:'',
         prva_slika:'',
-        slike:'',
+        slike:[],
         cijena:'',
         kontakt:'',
         opis:'',
@@ -252,6 +272,12 @@ getFeaturedPosts(){
     params.append('godina_proizvodnje', this.unosTehnika.controls['godina_proizvodnje'].value)
     params.append('boja', this.unosTehnika.controls['boja'].value)
     params.append('tabela',this.unosTehnika.controls['tabela'].value)
+    for(let i=0; i<this.urls.length;i++){
+      params.append('slike[]', this.urls[i])
+    }
+    console.log(this.url);
+    console.log(this.urls)
+
     // this.unosTehnika.controls['tehnika_vrsta'].setValue(1);
     // this.unosTehnika.controls['tabela'].setValue('tehnikapolja');
     // this.unosTehnika.controls['prva_slika'].setValue(this.url);
@@ -282,7 +308,10 @@ getFeaturedPosts(){
     params.append('kontakt', this.unosAutomoto.controls['kontakt'].value)
     params.append('opis', this.unosAutomoto.controls['opis'].value)
     params.append('tabela',this.unosAutomoto.controls['tabela'].value)
-    console.log(this.unosAutomoto.controls['prva_slika'].value);
+    for(let i=0; i<this.urls.length;i++){
+      params.append('slike[]', this.urls[i])
+    }
+
 
     // this.unosAutomoto.controls['automoto_vrsta'].setValue(1);
     // this.unosAutomoto.controls['tabela'].setValue('automotopolja');
@@ -314,6 +343,9 @@ getFeaturedPosts(){
     params.append('kontakt', this.unosOdjeca.controls['kontakt'].value)
     params.append('opis', this.unosOdjeca.controls['opis'].value)
     params.append('tabela',this.unosOdjeca.controls['tabela'].value)
+    for(let i=0; i<this.urls.length;i++){
+      params.append('slike[]', this.urls[i])
+    }
     // this.unosOdjeca.controls['odjeca_vrsta'].setValue(1);
     // this.unosOdjeca.controls['tabela'].setValue('odjecapolja');
     // this.unosOdjeca.controls['prva_slika'].setValue(this.url);
@@ -346,6 +378,9 @@ getFeaturedPosts(){
     params.append('tabela',this.unosNekretnine.controls['tabela'].value)
     params.append('kvadratura', this.unosNekretnine.controls['kvadratura'].value)
     params.append('tip_vlasnistva', this.unosNekretnine.controls['tip_vlasnistva'].value)
+    for(let i=0; i<this.urls.length;i++){
+      params.append('slike[]', this.urls[i])
+    }
     // this.unosNekretnine.controls['nekretnine_vrsta'].setValue(1);
     // this.unosNekretnine.controls['tabela'].setValue('nekretninepolja');
     // this.unosNekretnine.controls['prva_slika'].setValue(this.url);
@@ -376,6 +411,9 @@ getFeaturedPosts(){
     params.append('kontakt', this.unosPosao.controls['kontakt'].value)
     params.append('opis', this.unosPosao.controls['opis'].value)
     params.append('tabela',this.unosPosao.controls['tabela'].value)
+    for(let i=0; i<this.urls.length;i++){
+      params.append('slike[]', this.urls[i])
+    }
     // this.unosPosao.controls['posao_vrsta'].setValue(1);
     // this.unosPosao.controls['tabela'].setValue('posaopolja');
     // this.unosPosao.controls['prva_slika'].setValue(this.url);
@@ -405,6 +443,9 @@ getFeaturedPosts(){
     params.append('opis', this.unosHrana.controls['opis'].value)
     params.append('tabela',this.unosHrana.controls['tabela'].value)
     params.append('kolicina', this.unosHrana.controls['kolicina'].value);
+    for(let i=0; i<this.urls.length;i++){
+      params.append('slike[]', this.urls[i])
+    }
     // this.unosHrana.controls['hrana_vrsta'].setValue(1);
     // this.unosHrana.controls['tabela'].setValue('hranapolja');
     // this.unosHrana.controls['prva_slika'].setValue(this.url);
@@ -436,6 +477,9 @@ getFeaturedPosts(){
     params.append('kontakt', this.unosRazno.controls['kontakt'].value)
     params.append('opis', this.unosRazno.controls['opis'].value)
     params.append('tabela',this.unosRazno.controls['tabela'].value)
+    for(let i=0; i<this.urls.length;i++){
+      params.append('slike[]', this.urls[i])
+    }
     // this.unosRazno.controls['razno_vrsta'].setValue(1);
     // this.unosRazno.controls['tabela'].setValue('raznopolja');
     // this.unosRazno.controls['prva_slika'].setValue(this.url);
