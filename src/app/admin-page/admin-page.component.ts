@@ -33,13 +33,7 @@ export class AdminPageComponent implements OnInit {
 
   getAll()
   {
-    return this.http.get('http://localhost:8000/api/getAllNew')
-    .subscribe(res=>
-      {
-        this.oglasiSvi= res;
-        console.log(res);
 
-      })
   }
 
 
@@ -67,6 +61,13 @@ export class AdminPageComponent implements OnInit {
     this.useriAdmin = 0;
     this.kategorijeAdmin = 0;
     this.oglasiAdmin = 1;
+    return this.http.get('http://localhost:8000/api/getAllNew')
+    .subscribe(res=>
+      {
+        this.oglasiSvi= res;
+        console.log(res);
+
+      })
 
   }
 
