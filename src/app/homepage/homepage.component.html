@@ -65,19 +65,15 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-2 custom-col-3">
-          <div class="header-menu-vertical bg-blue">
+          <div class="header-menu-vertical bg-blue" >
             <h4 class="menu-title be-af-none">All Cattegories</h4>
             <ul class="menu-content display-block">
               <li class="menu-item">
                 <a >Tehnika <i class="ion-ios-arrow-right"></i></a>
                 <ul class="sub-menu sub-menu-2 " >
-
-
-
-
                   <li>
                     <ul class="submenu-item"  *ngFor="let a of tehnikaType">
-                      <li (click)="getPostsbyType('tehnikapolja',a.id)"><a >{{a.tip}}</a> <hr></li>
+                      <li (click)="getPostsbyType('tehnikapolja',a.id)"> <a >{{a.tip}}</a> <hr></li>
 
 
                     </ul>
@@ -91,7 +87,7 @@
                 <ul class="sub-menu sub-menu-2">
                   <li>
                     <ul class="submenu-item"  *ngFor="let a of automotoType">
-                      <li (click)="getPostsbyType('automotopolja',a.id)"><a>{{a.tip}}</a> <hr></li>
+                      <li (click)="getPostsbyType('automotopolja',a.id)"><a >{{a.tip}}</a> <hr></li>
 
                     </ul>
                   </li>
@@ -103,7 +99,7 @@
                 <ul class="sub-menu sub-menu-2">
                   <li>
                     <ul class="submenu-item"  *ngFor="let a of nekretnineType ">
-                      <li  (click)="getPostsbyType('nekretninepolja',a.id)"><a>{{a.tip}}</a> <hr></li>
+                      <li  (click)="getPostsbyType('nekretninepolja',a.id)"><a >{{a.tip}}</a> <hr></li>
 
                     </ul>
                   </li>
@@ -113,7 +109,7 @@
                 <ul class="sub-menu sub-menu-2">
                   <li>
                     <ul class="submenu-item"  *ngFor="let a of posaoType">
-                      <li (click)="getPostsbyType('posaopolja',a.id)"><a>{{a.tip}}</a> <hr></li>
+                      <li (click)="getPostsbyType('posaopolja',a.id)"><a >{{a.tip}}</a> <hr></li>
 
                     </ul>
                   </li>
@@ -123,7 +119,7 @@
                 <ul class="sub-menu sub-menu-2">
                   <li>
                     <ul class="submenu-item"  *ngFor="let a of hranaType">
-                      <li (click)="getPostsbyType('hranapolja',a.id)"><a>{{a.tip}}</a> <hr></li>
+                      <li (click)="getPostsbyType('hranapolja',a.id)"><a >{{a.tip}}</a> <hr></li>
 
                     </ul>
                   </li>
@@ -133,7 +129,7 @@
                 <ul class="sub-menu sub-menu-2">
                   <li>
                     <ul class="submenu-item"  *ngFor="let a of odjecaType">
-                      <li (click)="getPostsbyType('odjecapolja',a.id)"><a>{{a.tip}}</a> <hr></li>
+                      <li (click)="getPostsbyType('odjecapolja',a.id)"><a >{{a.tip}}</a> <hr></li>
 
                     </ul>
                   </li>
@@ -143,7 +139,7 @@
                 <ul class="sub-menu sub-menu-2">
                   <li>
                     <ul class="submenu-item"  *ngFor="let a of raznoType">
-                      <li (click)="getPostsbyType('raznopolja',a.id)"><a>{{a.tip}}</a> <hr></li>
+                      <li (click)="getPostsbyType('raznopolja',a.id)"><a >{{a.tip}}</a> <hr></li>
 
                     </ul>
                   </li>
@@ -735,7 +731,7 @@
 <div class="feature-area mt-60px mb-30px">
   <div class="container">
 <div class="col-md-12">
-  <app-products></app-products>
+  <app-products ></app-products>
 </div>
       <div class="section-title">
 
@@ -749,56 +745,49 @@
       <!-- Single Item -->
 
 
-        <article class="list-product  "  *ngFor="let a of featuredPosts let i = index;">
-          <div class="col-md-3" *ngFor="let b of featuredPosts[i]">
-          <div class="col-md-12">
-            <div  class="row ">
+
+          <div  class="row " >
+
+          <div class="col-md-2 "*ngFor="let a of featuredPosts | paginate: {
+                                      itemsPerPage:6,
+                                      currentPage: p
+                                       }" >
+            <article class="list-product "  >
+
 
           <div class="img-block " >
-            <a href="single-product.html" class="thumbnail" >
-              <img class="first-img" src="assets/images/product-image/6.jpg" alt="" />
-              <img class="second-img" src="assets/images/product-image/7.jpg" alt="" />
+            <a  class="thumbnail" >
+
+              <img class="first-img card-img-top "  src="http://localhost:8000/storage/file/{{a.slika[0].url}}" >
+
             </a>
             <div class="quick-view">
-              <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
-                <i class="icon-magnifier icons"></i>
+              <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="s.getId(a.id,a.index)">
+                <i class="ion-ios-search-strong"></i>
               </a>
             </div>
           </div>
           <ul class="product-flag">
-            <li class="new">New</li>
+            <li class="new">Preporučeno</li>
           </ul>
           <div class="product-decs">
-            <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-            <h2><a href="single-product.html" class="product-link">New Balance Arishi Sport v1</a></h2>
-            <div class="rating-product">
-              <i class="ion-android-star"></i>
-              <i class="ion-android-star"></i>
-              <i class="ion-android-star"></i>
-              <i class="ion-android-star"></i>
-              <i class="ion-android-star"></i>
-            </div>
+            <a class="inner-link" ><span>{{a.naziv}}</span></a>
+            <h2><a class="product-link">{{a.opis}}</a></h2>
+
             <div class="pricing-meta">
               <ul>
-                <li class="old-price not-cut">€18.90</li>
+                <li class="old-price not-cut">{{a.cijena}}</li>
               </ul>
             </div>
           </div>
-          <div class="add-to-link">
-            <ul>
-              <li class="cart"><a class="cart-btn" href="#">ADD TO CART </a></li>
-              <li>
-                <a href="wishlist.html"><i class="icon-heart"></i></a>
-              </li>
-              <li>
-                <a href="compare.html"><i class="icon-shuffle"></i></a>
-              </li>
-            </ul>
-          </div>
+
+            </article>
 </div>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </div>
-          </div>
-        </article>
+
+
+
 </div>
 
       <!-- Single Item -->
@@ -6212,16 +6201,16 @@
             <div class="swiper-container gallery-top">
               <div class="swiper-wrapper">
                <div class="swiper-slide" >
-                <img class="img-responsive m-auto" src="http://localhost:8000/storage/file/{{s.productSlike[0]}}" >
+                <img class="img-responsive m-auto card-img-top" src="http://localhost:8000/storage/file/{{s.productSlike[0]}}" >
                </div>
                 <div class="swiper-slide">
-                  <img class="img-responsive m-auto" src="http://localhost:8000/storage/file/{{s.productSlike[1]}}" >
+                  <img class="img-responsive m-auto card-img-top" src="http://localhost:8000/storage/file/{{s.productSlike[1]}}" >
                 </div>
                 <div class="swiper-slide">
-                  <img class="img-responsive m-auto" src="http://localhost:8000/storage/file/{{s.productSlike[2]}}" >
+                  <img class="img-responsive m-auto card-img-top" src="http://localhost:8000/storage/file/{{s.productSlike[2]}}" >
                 </div>
                 <div class="swiper-slide">
-                <img class="img-responsive m-auto" src="http://localhost:8000/storage/file/{{s.productSlike[3]}}" >
+                <img class="img-responsive m-auto card-img-top" src="http://localhost:8000/storage/file/{{s.productSlike[3]}}" >
               </div>
 
 

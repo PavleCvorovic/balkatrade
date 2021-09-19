@@ -8,7 +8,9 @@ import {ProductsService} from "../products/products.service";
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-
+  pageSize = 5;
+  total = 16;
+  p = 1;
   constructor(public s: PocetnaService ,public s1: ProductsService) { }
 
   log:any;

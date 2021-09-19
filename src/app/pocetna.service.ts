@@ -86,8 +86,9 @@ export class PocetnaService {
   });}
 
   getFeaturedPosts(){
-      return  this.http.get('http://localhost:8000/api/getAll');
+      return  this.http.get('http://localhost:8000/api/getAllFeatured');
 
     }
+
 
 }

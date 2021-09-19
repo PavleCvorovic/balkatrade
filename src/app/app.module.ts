@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import { UserPageComponent } from './user-page/user-page.component';
         HttpClientModule,
         NgxSliderModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+      NgxPaginationModule
     ],
   providers: [ HttpClient],
   bootstrap: [AppComponent]

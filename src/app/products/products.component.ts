@@ -11,8 +11,11 @@ import {PocetnaService} from "../pocetna.service";
 export class ProductsComponent implements OnInit {
 
   constructor(public s1:ProductsService,public  s :PocetnaService) { }
-
+  pageSize = 5;
+  total = 16;
+  p = 1;
   ngOnInit(): void {
+    this.s1.getRandomPosts();
   }
 
 }
