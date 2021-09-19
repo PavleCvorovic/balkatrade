@@ -13,6 +13,7 @@ export class UserPageComponent implements OnInit {
   constructor(public u:ServisUserService, private route:ActivatedRoute, private servis:PocetnaService, private router:Router) { }
   ngOnInit(): void {
     this.getUserPosts();
+    this.servis.user= this.id
   }
 
 
@@ -38,8 +39,16 @@ this.u.delAsUser(req).subscribe(res=>{
 
 logout()
 {
-  this.servis.user = '';
+  this.servis.user = 0;
   this.router.navigate(['../../login']);
+}
+
+dodajKaoUser()
+{
+  setTimeout(()=>{                           // <<<---using ()=> syntax
+    this.router.navigate(['../../add']);
+  }, 100);
+
 }
 
 

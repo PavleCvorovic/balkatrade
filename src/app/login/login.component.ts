@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
             if(this.podaciLogovan.user.role == 1)
             {
               this.pocetna.logovan = true;
-              this.pocetna.user = res;
+              this.pocetna.user = this.podaciLogovan.user_id;
               this.user_id = this.podaciLogovan.user.id;
               this.router.navigate(['user-page/'+ this.user_id]);
             }else if(this.podaciLogovan.user.role == 2)
