@@ -9,7 +9,7 @@ export class PocetnaService {
   constructor(public http:HttpClient) {  }
 
   logovan = false;
-  user:any;
+  user:any=0;
 
    getTypesTehnika(){
    return this.http.get('http://localhost:8000/api/getTehnikaTip');
