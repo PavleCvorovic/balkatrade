@@ -23,7 +23,7 @@ export class HomepageComponent implements OnInit {
     this.getTypesRazno()
     this.getTypesOdjeca()
     this.getFeaturedPosts();
-
+this.getCheapPosts()
   }
 
 
@@ -104,6 +104,12 @@ getFeaturedPosts(){
      console.log(res)
    })
 }
+cheapPosts:any;
+ getCheapPosts(){
+   this.s.getCheapPosts().subscribe(res=>{
+     this.cheapPosts=res;
+   })
+ }
 
   login()
   {
