@@ -38,8 +38,16 @@
                             <option  *ngFor="let a of automotoType" [value]= "a.id">{{ a.tip }}</option>
                           </select>
                         </div>
+                        Unesite pocetnu sliku:
+                        <div>
                         <img [src]="url" height="30"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
+                        </div>
+                        Unesite ostale slike:
+                        <div>
+                          <input class="btn btn-primary" type="file"  name="slika"   style="width: 200px" (change)="onChangeFile($event)" multiple>
+                          <img *ngFor="let url of prikazSlike" [src] = "url" height="50">
+                        </div>
                       <div [formGroup] = "unosAutomoto">
 
                         <div class="form-group">
@@ -110,7 +118,7 @@
                           <input type='file' (change)="onSelectFile($event)">
 
                         Unesite ostale slike:
-                        <input class="btn btn-primary" type="file" id="myFile" name="slika"   style="width: 200px" (change)="onChangeFile($event)" multiple>
+                        <input class="btn btn-primary" type="file"  name="slika"   style="width: 200px" (change)="onChangeFile($event)" multiple>
                         <img *ngFor="let url of prikazSlike" [src] = "url" height="50">
                       <div [formGroup] = "unosTehnika">
 
@@ -162,8 +170,13 @@
                             <option [value]="c.id"  *ngFor="let c of odjecaType">{{ c.tip }}</option>
                           </select>
                         </div>
+                        Unesite pocetnu sliku
                         <img [src]="url" height="30"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
+                        Unesite ostale slike:
+                        <input class="btn btn-primary" type="file"  name="slika"   style="width: 200px" (change)="onChangeFile($event)" multiple>
+                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50">
+
                       <div [formGroup] = "unosOdjeca">
 
                         <div class="form-group">
@@ -206,6 +219,10 @@
                         </div>
                         <img [src]="url" height="30"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
+                        Unesite ostale slike:
+                        <input class="btn btn-primary" type="file" id="myFile" name="slika"   style="width: 200px" (change)="onChangeFile($event)" multiple>
+                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50">
+
                       <div [formGroup] = "unosNekretnine">
 
                         <div class="form-group">
@@ -259,6 +276,11 @@
                         </div>
                         <img [src]="url" height="30"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
+
+                        Unesite ostale slike:
+                        <input class="btn btn-primary" type="file"  name="slika"   style="width: 200px" (change)="onChangeFile($event)" multiple>
+                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50">
+
                       <div [formGroup] = "unosPosao">
 
                         <div class="form-group">
@@ -336,6 +358,10 @@
                         </div>
                         <img [src]="url" height="30"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
+                        Unesite ostale slike:
+                        <input class="btn btn-primary" type="file" name="slika"   style="width: 200px" (change)="onChangeFile($event)" multiple>
+                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50">
+
                       <div [formGroup] = "unosRazno">
 
                         <div class="form-group">

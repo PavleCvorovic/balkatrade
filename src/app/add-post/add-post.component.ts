@@ -275,9 +275,9 @@ getFeaturedPosts(){
     for(let i=0; i<this.urls.length;i++){
       params.append('slike[]', this.urls[i])
     }
-    if(this.s.user.data.token !='')
+    if(this.s.user!=0 )
     {
-      params.append('user_id', this.s.user.user.id)
+      params.append('user_id', this.s.user)
     }
     console.log(this.url);
     console.log(this.urls)
@@ -315,6 +315,10 @@ getFeaturedPosts(){
     for(let i=0; i<this.urls.length;i++){
       params.append('slike[]', this.urls[i])
     }
+    if(this.s.user!=0)
+    {
+      params.append('user_id', this.s.user)
+    }
 
 
     // this.unosAutomoto.controls['automoto_vrsta'].setValue(1);
@@ -349,6 +353,10 @@ getFeaturedPosts(){
     params.append('tabela',this.unosOdjeca.controls['tabela'].value)
     for(let i=0; i<this.urls.length;i++){
       params.append('slike[]', this.urls[i])
+    }
+    if(this.s.user!=0)
+    {
+      params.append('user_id', this.s.user)
     }
     // this.unosOdjeca.controls['odjeca_vrsta'].setValue(1);
     // this.unosOdjeca.controls['tabela'].setValue('odjecapolja');
@@ -385,6 +393,10 @@ getFeaturedPosts(){
     for(let i=0; i<this.urls.length;i++){
       params.append('slike[]', this.urls[i])
     }
+    if(this.s.user!=0 )
+    {
+      params.append('user_id', this.s.user)
+    }
     // this.unosNekretnine.controls['nekretnine_vrsta'].setValue(1);
     // this.unosNekretnine.controls['tabela'].setValue('nekretninepolja');
     // this.unosNekretnine.controls['prva_slika'].setValue(this.url);
@@ -418,6 +430,10 @@ getFeaturedPosts(){
     for(let i=0; i<this.urls.length;i++){
       params.append('slike[]', this.urls[i])
     }
+    if(this.s.user!=0 )
+    {
+      params.append('user_id', this.s.user)
+    }
     // this.unosPosao.controls['posao_vrsta'].setValue(1);
     // this.unosPosao.controls['tabela'].setValue('posaopolja');
     // this.unosPosao.controls['prva_slika'].setValue(this.url);
@@ -449,6 +465,10 @@ getFeaturedPosts(){
     params.append('kolicina', this.unosHrana.controls['kolicina'].value);
     for(let i=0; i<this.urls.length;i++){
       params.append('slike[]', this.urls[i])
+    }
+    if(this.s.user!=0)
+    {
+      params.append('user_id', this.s.user)
     }
     // this.unosHrana.controls['hrana_vrsta'].setValue(1);
     // this.unosHrana.controls['tabela'].setValue('hranapolja');
@@ -483,6 +503,10 @@ getFeaturedPosts(){
     params.append('tabela',this.unosRazno.controls['tabela'].value)
     for(let i=0; i<this.urls.length;i++){
       params.append('slike[]', this.urls[i])
+    }
+    if(this.s.user!=0)
+    {
+      params.append('user_id', this.s.user)
     }
     // this.unosRazno.controls['razno_vrsta'].setValue(1);
     // this.unosRazno.controls['tabela'].setValue('raznopolja');
