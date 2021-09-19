@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ServisUserService} from "./servis-user.service";
+import {ActivatedRoute, Router} from "@angular/router";
+import {PocetnaService} from "../pocetna.service";
 
 @Component({
   selector: 'app-user-page',
@@ -8,28 +10,37 @@ import {ServisUserService} from "./servis-user.service";
 })
 export class UserPageComponent implements OnInit {
 
-  constructor(public u:ServisUserService) { }
-
+  constructor(public u:ServisUserService, private route:ActivatedRoute, private servis:PocetnaService, private router:Router) { }
   ngOnInit(): void {
     this.getUserPosts();
   }
 
+
+  id = this.route.snapshot.params['id'];
+
   userPosts:any;
   getUserPosts(){
-    this.u.getUserPosts(1).subscribe(res=>{
+    this.u.getUserPosts(this.id).subscribe(res=>{
       this.userPosts=res
-      console.log(res)
+      console.log(this.id)
     })
   }
 delAsUser(tabela:string,id:number){
   let req={
     tabela:tabela,
     id:id,
-    user_id:1
+    user_id:this.id
   }
 this.u.delAsUser(req).subscribe(res=>{
   this.userPosts=res;
 })
 }
+
+logout()
+{
+  this.servis.user = '';
+  this.router.navigate(['../../login']);
+}
+
 
 }

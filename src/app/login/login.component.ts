@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  user_id:any;
 
   unosLogin= this.fb.group
   (
@@ -30,10 +31,13 @@ export class LoginComponent implements OnInit {
       .subscribe(res=>
         {
             this.podaciLogovan = res;
+          console.log(this.podaciLogovan)
             if(this.podaciLogovan.user.role == 1)
             {
               this.pocetna.logovan = true;
-              this.router.navigate(['homepage']);
+              this.pocetna.user = res;
+              this.user_id = this.podaciLogovan.user.id;
+              this.router.navigate(['user-page/'+ this.user_id]);
             }else if(this.podaciLogovan.user.role == 2)
             {
               this.router.navigate(['admin-page']);

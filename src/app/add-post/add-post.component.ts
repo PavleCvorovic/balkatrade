@@ -275,6 +275,10 @@ getFeaturedPosts(){
     for(let i=0; i<this.urls.length;i++){
       params.append('slike[]', this.urls[i])
     }
+    if(this.s.user.data.token !='')
+    {
+      params.append('user_id', this.s.user.user.id)
+    }
     console.log(this.url);
     console.log(this.urls)
 
