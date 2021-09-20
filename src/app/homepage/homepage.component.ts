@@ -10,7 +10,9 @@ import {ProductsService} from "../products/products.service";
 export class HomepageComponent implements OnInit {
   pageSize = 5;
   total = 16;
-  p = 1;
+  e = 1;
+  c = 1;
+  f=1;
   constructor(public s: PocetnaService ,public s1: ProductsService) { }
 
   log:any;

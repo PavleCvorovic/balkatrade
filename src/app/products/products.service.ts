@@ -9,7 +9,7 @@ export class ProductsService {
 
   constructor(public http: HttpClient) {
   }
-spiner:boolean=true;
+spiner:boolean=false;
   swF: any;
 
   switchFilters(tabela: any) {
