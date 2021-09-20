@@ -33,7 +33,7 @@
     </div>
   </div>
   <!-- Header Nav End -->
-  <div class="header-topbg-dark ptb-30px d-xl-block d-none sticky-nav" style="background-color: #F2AA4CFF">
+  <div class="header-topbg-dark ptb-30px d-xl-block d-none sticky-nav" style="background-color: #f5b82e">
     <div class="container">
       <div class="row">
         <div class="col-md-3 d-flex">
@@ -48,7 +48,7 @@
           </div>
 
           <div class="logo">
-            <a href="index.html"><img style="height:100px;width: 200px;border-radius:20%" src="assets/images/logo.jpg" alt="logo.jpg" /></a>
+            <a ><img style="height:100px;width: 200px;border-radius:50%" src="assets/images/logo.svg"  /></a>
           </div>
         </div>
 
@@ -66,7 +66,7 @@
       <div class="row">
         <div class="col-lg-2 custom-col-3">
           <div class="header-menu-vertical bg-blue" >
-            <h4 class="menu-title be-af-none">All Cattegories</h4>
+            <h4 class="menu-title be-af-none">Sve kategorije</h4>
             <ul class="menu-content display-block">
               <li class="menu-item">
                 <a >Tehnika <i class="ion-ios-arrow-right"></i></a>
@@ -267,14 +267,14 @@
 <!-- Header Section End Here -->
 
 <!-- Mobile Header Section Start -->
-<div class="mobile-header d-xl-none sticky-nav bg-white ptb-10px">
+<div class="mobile-header d-xl-none sticky-nav  ptb-10px" style=" background-color:#f5b82e">
   <div class="container">
     <div class="row align-items-center">
 
       <!-- Header Logo Start -->
       <div class="col">
         <div class="header-logo">
-          <a href="index.html"><img class="img-responsive" src="assets/images/baner.jpg" alt="baner.jpg" style="width:20%" /></a>
+          <a href="index.html"><img class="img-responsive" src="assets/images/logo.svg" alt="baner.jpg" style="width:20%" /></a>
         </div>
       </div>
       <!-- Header Logo End -->
@@ -848,8 +848,8 @@
   <div class="loader" *ngIf="spiner1===false">Loading...</div>
 
   <!-- Single Item -->
-                  <article class="list-product col-md-3 m1" *ngFor="let a of cheapPosts | paginate: {
-                                      itemsPerPage:6,
+                  <article class="list-product col-md-3 p-1" *ngFor="let a of cheapPosts | paginate: {
+                                      itemsPerPage:12,
                                       currentPage: e
                                        }">
                     <div class="img-block">
