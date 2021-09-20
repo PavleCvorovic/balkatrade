@@ -67,11 +67,12 @@
                                       itemsPerPage:12,
                                       currentPage: p
                                        }">
-      <article class="list-product">
+      <article class="list-product" style="background-color: #f5b82e">
         <div class="img-block">
           <a  class="thumbnail">
             <img class="first-img  card-img-top" src="http://localhost:8000/storage/file/{{a.slika[0].url}}" >
-            <img    *ngIf="a.slika.lenght> 1" class=" second-img  card-img-top" src="http://localhost:8000/storage/file/{{a.slika[1].url}}"  >
+            <img *ngIf="a.slika.length<=1" class=" second-img  card-img-top1" src="assets/images/logo.svg"  >
+            <img *ngIf="a.slika.length>1" class=" second-img  card-img-top1" src="http://localhost:8000/storage/file/{{a.slika[1].url}}"  >
           </a>
           <div class="quick-view">
             <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="s.getId(a.id,a.index)">
@@ -92,14 +93,15 @@
         </ul>
         <div class="product-decs">
           <a class="inner-link" href="shop-4-column.html"><span>{{a.naziv}}</span></a>
-          <h2><a href="single-product.html" class="product-link">{{a.opis}}</a></h2>
-
+         <div class="content"> <
+        </div>
           <div class="pricing-meta">
             <ul>
               <li class="old-price">€{{a.cijena}}</li>
               <li class="current-price">€{{a.cijena}}</li>
               <li class="discount-price">-5%</li>
             </ul>
+
           </div>
         </div>
 

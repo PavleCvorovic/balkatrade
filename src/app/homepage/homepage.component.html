@@ -748,19 +748,20 @@
 
           <div  class="row " >
             <div class="loader" *ngIf="spiner===false">Loading...</div>
-
-          <div class="col-md-2 "*ngFor="let a of featuredPosts | paginate: {
+<div class="col-1"></div>
+          <div class="col-md-2 m-2 "*ngFor="let a of featuredPosts | paginate: {
                                       itemsPerPage:6,
                                       currentPage: f
                                        }" >
-            <article class="list-product "  >
+            <article class="list-product " style="background-color: #f5b82e" >
 
 
           <div class="img-block " >
             <a  class="thumbnail" >
 
               <img class="first-img card-img-top "  src="http://localhost:8000/storage/file/{{a.slika[0].url}}" >
-
+              <img *ngIf="a.slika.length<=1" class=" second-img  card-img-top" src="assets/images/logo.svg"  >
+              <img *ngIf="a.slika.length>1" class=" second-img  card-img-top" src="http://localhost:8000/storage/file/{{a.slika[1].url}}"  >
             </a>
             <div class="quick-view">
               <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="s.getId(a.id,a.index)">
@@ -848,13 +849,14 @@
   <div class="loader" *ngIf="spiner1===false">Loading...</div>
 
   <!-- Single Item -->
-                  <article class="list-product col-md-3 p-1" *ngFor="let a of cheapPosts | paginate: {
+                  <article style="background-color: #f5b82e" class="list-product col-md-3 p-1" *ngFor="let a of cheapPosts | paginate: {
                                       itemsPerPage:12,
                                       currentPage: e
                                        }">
                     <div class="img-block">
                       <img class="first-img card-img-top "  src="http://localhost:8000/storage/file/{{a.slika[0].url}}" >
-
+                      <img *ngIf="a.slika.length<=1" class=" second-img  card-img-top" src="assets/images/logo.svg"  >
+                      <img *ngIf="a.slika.length>1" class=" second-img  card-img-top" src="http://localhost:8000/storage/file/{{a.slika[1].url}}"  >
 
                       <div class="quick-view">
                         <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="s.getId(a.id,a.index)">
@@ -1033,7 +1035,7 @@
 <!-- category Area End -->
 
 <!-- Recently Add area start -->
-<div class="recent-add-area mb-30px mt-60px">
+<div class="recent-add-area mb-30px mt-60px ">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -1051,10 +1053,11 @@
            }">
 
 
-          <article class="list-product m-3">
-            <div class="img-block">
+          <article class="list-product m-3 bg-dark zoom">
+            <div class="img-block "style="width:100%">
               <img class="first-img card-img-top1 "  src="http://localhost:8000/storage/file/{{a.slika[0].url}}" >
-
+              <img *ngIf="a.slika.length<=1" class=" second-img  card-img-top1" src="assets/images/logo.svg"  >
+              <img *ngIf="a.slika.length>1" class=" second-img  card-img-top1" src="http://localhost:8000/storage/file/{{a.slika[1].url}}"  >
 
               <div class="quick-view">
                 <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="s.getId(a.id,a.index)">
@@ -1065,18 +1068,19 @@
             <ul class="product-flag">
               <li class="new">Novo</li>
             </ul>
+
             <div class="product-decs">
-              <a class="inner-link" ><span>{{a.naziv}}</span></a>
-              <h2><a class="product-link">{{a.opis}}</a></h2>
+              <a class="inner-link" ><span style="color: whitesmoke">{{a.naziv}}</span></a>
+
 
               <div class="pricing-meta">
                 <ul>
-                  <li class="old-price not-cut">{{a.cijena}}</li>
+                  <li class="old-price not-cut"style="color: whitesmoke">{{a.cijena}}</li>
                 </ul>
               </div>
-<br>
 
-            <p><a class="product-link">{{a.created_at}}</a></p>
+
+            <p><a class="product-link"style="color: whitesmoke">{{a.created_at}}</a></p>
             </div></article>
 
     </div>
