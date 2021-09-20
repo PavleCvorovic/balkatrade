@@ -26,6 +26,7 @@ export class HomepageComponent implements OnInit {
     this.getTypesOdjeca()
     this.getFeaturedPosts();
 this.getCheapPosts()
+    this.getNewestPosts()
   }
 
 
@@ -114,7 +115,14 @@ cheapPosts:any;
      this.cheapPosts=res;
      this.spiner1=true   })
  }
-
+  spiner2:boolean=false;
+ newestPosts:any;
+  getNewestPosts(){
+    this.s.getNewestPosts().subscribe(res=>{
+      this.newestPosts=res;
+      this.newestPosts.reverse;
+      this.spiner2=true   })
+  }
   login()
   {
     this.log = 1;
