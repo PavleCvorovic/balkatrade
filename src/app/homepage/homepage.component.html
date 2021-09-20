@@ -1042,8 +1042,10 @@
         </div>
       </div>
     </div>
+    <div class="loader" *ngIf="spiner2===false">Loading...</div>
+
     <div class="row">
-      <div class="col-md-2" *ngFor="let a of featuredPosts  | paginate: {
+      <div class="col-md-2" *ngFor="let a of newestPosts  | paginate: {
            itemsPerPage:18,
            currentPage: c
            }">
@@ -1066,7 +1068,7 @@
             <div class="product-decs">
               <a class="inner-link" ><span>{{a.naziv}}</span></a>
               <h2><a class="product-link">{{a.opis}}</a></h2>
-
+              <h2><a class="product-link">{{a.created_at}}</a></h2>
               <div class="pricing-meta">
                 <ul>
                   <li class="old-price not-cut">{{a.cijena}}</li>

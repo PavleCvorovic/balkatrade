@@ -94,5 +94,9 @@ export class PocetnaService {
     return  this.http.get('http://localhost:8000/api/getAllCheap');
 
   }
+  getNewestPosts(){
+    return  this.http.get('http://localhost:8000/api/getNewest');
 
+
+  }
 }
