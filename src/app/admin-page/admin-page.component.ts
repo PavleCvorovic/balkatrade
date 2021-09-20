@@ -56,6 +56,25 @@ export class AdminPageComponent implements OnInit {
     })
   }
 
+  req={
+    id:'',
+    index:''
+}
+
+  prihvati(id:any, index:any)
+  {
+
+    this.req.id = id;
+    this.req.index = index;
+    console.log(this.req);
+
+    return this.http.post('http://localhost:8000/api/setAllNew', this.req)
+    .subscribe(res=>
+      {
+        alert('postavljen oglas!');
+      })
+  }
+
   oglasi()
   {
     this.useriAdmin = 0;

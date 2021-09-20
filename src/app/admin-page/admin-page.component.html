@@ -67,7 +67,7 @@
       <h3> Dodajte automoto kategoriju </h3>
       <div class="row" >
       <input class="form-control bg-dark"style="color:white;width:25%" [(ngModel)]="kategorijaAutomoto" placeholder="Unesite kategoriju" >
-        <button class="btn btn-primary"style="width:5%" (click)="dodajAutomoto()" >Dodaj</button>
+        <button class="btn btn-primary"style="width:100px" (click)="dodajAutomoto()" >Dodaj</button>
       </div>
     </div>
     <div >
@@ -75,7 +75,7 @@
       <h3> Dodaj nekretnine kategoriju </h3>
       <div class="row" >
         <input class="form-control bg-dark"style="color:white;width:25%" [(ngModel)]="kategorijaNekretnina" placeholder="Unesite kategoriju">
-        <button class="btn btn-primary" style="width:5%" (click)="dodajNekretnina()" >Dodaj</button>
+        <button class="btn btn-primary" style="width:100px" (click)="dodajNekretnina()" >Dodaj</button>
 
       </div>
 
@@ -93,7 +93,7 @@
       <div class="row" >
         <input class="form-control bg-dark"style="color:white;width:25%"  [(ngModel)]="kategorijaOdjeca"  placeholder="Unesite kategoriju" >
 
-        <button class="btn btn-primary"  style="width:5%" (click)="dodajOdjeca()">Dodaj</button>
+        <button class="btn btn-primary"  style="width:100px" (click)="dodajOdjeca()">Dodaj</button>
       </div>
     </div>
 
@@ -103,7 +103,7 @@
       <div class="row" >
         <input class="form-control bg-dark"style="color:white;width:25%"  [(ngModel)]="kategorijaHrana"   placeholder="Unesite kategoriju" >
 
-        <button class="btn btn-primary" style="width:5%" (click)="dodajHrana()">Dodaj</button>
+        <button class="btn btn-primary" style="width:100px" (click)="dodajHrana()">Dodaj</button>
       </div>
     </div>
 
@@ -112,7 +112,7 @@
       <div class="row" >
         <input class="form-control bg-dark"style="color:white;width:25%"   [(ngModel)]="kategorijaPosao" placeholder="Unesite kategoriju" >
 
-        <button class="btn btn-primary"style="width:5%" (click)="dodajPosao()" >Dodaj</button>
+        <button class="btn btn-primary"style="width:100px" (click)="dodajPosao()" >Dodaj</button>
       </div>
     </div>
 
@@ -121,7 +121,7 @@
       <div class="row" >
         <input class="form-control bg-dark"style="color:white;width:25%"  [(ngModel)]="kategorijaTehnika"  placeholder="Unesite kategoriju" >
 
-        <button class="btn btn-primary"style="width:5%"(click)="dodajTehnika()" >Dodaj</button>
+        <button class="btn btn-primary"style="width:100px"(click)="dodajTehnika()" >Dodaj</button>
       </div>
     </div>
 
@@ -185,7 +185,7 @@
           <td>{{ o.opis }}</td>
           <td>{{ o.cijena }}</td>
           <th>{{ o.kontakt }}</th>
-          <td><button (click)="getAll()" class= "btn btn-primary">Prihvati</button></td>
+          <td><button (click)="getAll()" class= "btn btn-primary" (click) = "prihvati(o.id, o.index)">Prihvati</button></td>
           <td><button (click)="getAll()" class= "btn btn-danger" >Odbij</button></td>
         </tr>
       </tbody>
