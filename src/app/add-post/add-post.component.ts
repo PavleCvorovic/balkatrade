@@ -289,7 +289,7 @@ getFeaturedPosts(){
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
-        alert("bravo")
+        alert("Uspjesno dodat oglas!")
       });
 
     console.log(this.kategorija);
@@ -330,7 +330,7 @@ getFeaturedPosts(){
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
-        alert("bravo")
+        alert("Uspjesno dodat oglas!")
       });
 
 
@@ -365,7 +365,7 @@ getFeaturedPosts(){
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
-        alert("bravo")
+        alert("Uspjesno dodat oglas!")
       });
 
     console.log(this.kategorija);
@@ -404,7 +404,7 @@ getFeaturedPosts(){
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
-        alert("bravo")
+        alert("Uspjesno dodat oglas!")
       });
 
     console.log(this.kategorija);
@@ -441,7 +441,7 @@ getFeaturedPosts(){
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
-        alert("bravo")
+        alert("Uspjesno dodat oglas!")
       });
 
     // console.log(this.kategorija);
@@ -477,7 +477,7 @@ getFeaturedPosts(){
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
-        alert("bravo")
+        alert("Uspjesno dodat oglas!")
         console.log(params);
 
       });

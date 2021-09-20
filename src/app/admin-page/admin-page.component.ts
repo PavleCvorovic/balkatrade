@@ -75,6 +75,20 @@ export class AdminPageComponent implements OnInit {
       })
   }
 
+  odbijOglas(id:any, index:any)
+  {
+    this.req.id = id;
+    this.req.index = index;
+    console.log(this.req);
+
+    return this.http.post('http://localhost:8000/api/deleteNew', this.req)
+    .subscribe(res=>
+      {
+        this.oglasiSvi= res;
+        alert('obrisan oglas!');
+      })
+  }
+
   oglasi()
   {
     this.useriAdmin = 0;
