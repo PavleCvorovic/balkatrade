@@ -98,19 +98,21 @@ getPostsbyType(tabela:string,tip:any){
   }
 
 
-
+spiner:boolean=false;
   featuredPosts:any
 getFeaturedPosts(){
    this.s.getFeaturedPosts().subscribe(res=>{
    this.featuredPosts=res;
      console.log(res)
+     this.spiner=true
    })
 }
+spiner1:boolean=false;
 cheapPosts:any;
  getCheapPosts(){
    this.s.getCheapPosts().subscribe(res=>{
      this.cheapPosts=res;
-   })
+     this.spiner1=true   })
  }
 
   login()

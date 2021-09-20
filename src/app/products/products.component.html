@@ -83,18 +83,20 @@
           </div>
         </div>
         <ul class="product-flag">
-          <li class="new">New</li>
+
+          <li class="new"*ngIf="a.index==='tehnikapolja'">Tehnika</li>
+          <li class="new"*ngIf="a.index==='raznopolja'">Razno</li>
+          <li class="new"*ngIf="a.index==='hranapolja'">Hrana</li>
+          <li class="new"*ngIf="a.index==='raznopolja'">Razno</li>
+          <li class="new"*ngIf="a.index==='nekretninepolja'">Nekretnine</li>
+          <li class="new"*ngIf="a.index==='automotopolja'">Automoto</li>
+          <li class="new"*ngIf="a.index==='odjecapolja'">Odjeca</li>
+
         </ul>
         <div class="product-decs">
-          <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-          <h2><a href="single-product.html" class="product-link">Juicy Couture Juicy Quilted T..</a></h2>
-          <div class="rating-product">
-            <i class="ion-android-star"></i>
-            <i class="ion-android-star"></i>
-            <i class="ion-android-star"></i>
-            <i class="ion-android-star"></i>
-            <i class="ion-android-star"></i>
-          </div>
+          <a class="inner-link" href="shop-4-column.html"><span>{{a.naziv}}</span></a>
+          <h2><a href="single-product.html" class="product-link">{{a.opis}}</a></h2>
+
           <div class="pricing-meta">
             <ul>
               <li class="old-price">€{{a.cijena}}</li>
