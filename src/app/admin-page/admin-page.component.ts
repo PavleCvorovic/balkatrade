@@ -51,9 +51,7 @@ export class AdminPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.servis.getUsers()
-    .subscribe(res=>{
-      this.useri=res;
-    })
+
   }
 
   req={
@@ -68,9 +66,10 @@ export class AdminPageComponent implements OnInit {
     this.req.index = index;
     console.log(this.req);
 
-    return this.http.post('http://localhost:8000/api/setAllNew', this.req)
+    this.http.post('http://localhost:8000/api/setAllNew', this.req)
     .subscribe(res=>
       {
+        this.oglasiSvi=res;
         alert('postavljen oglas!');
       })
   }
@@ -81,7 +80,7 @@ export class AdminPageComponent implements OnInit {
     this.req.index = index;
     console.log(this.req);
 
-    return this.http.post('http://localhost:8000/api/deleteNew', this.req)
+     this.http.post('http://localhost:8000/api/deleteNew', this.req)
     .subscribe(res=>
       {
         this.oglasiSvi= res;
@@ -94,7 +93,7 @@ export class AdminPageComponent implements OnInit {
     this.useriAdmin = 0;
     this.kategorijeAdmin = 0;
     this.oglasiAdmin = 1;
-    return this.http.get('http://localhost:8000/api/getAllNew')
+    this.http.get('http://localhost:8000/api/getAllNew')
     .subscribe(res=>
       {
         this.oglasiSvi= res;

@@ -177,8 +177,8 @@
           <th scope="col">Odbij</th>
         </tr>
       </thead>
-      <tbody *ngFor= "let u of oglasiSvi">
-        <tr *ngFor= "let o of u">
+      <tbody *ngFor= "let o of oglasiSvi">
+        <tr >
           <th scope="row">{{ o.id }}</th>
           <td>{{ o.user_id }}</td>
           <td><img src="http://localhost:8000/storage/file/{{o.slika[0].url}}" style="width: 100%;"></td>
