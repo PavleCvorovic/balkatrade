@@ -9,7 +9,7 @@ export class ProductsService {
 
   constructor(public http: HttpClient) {
   }
-
+spiner:boolean=true;
   swF: any;
 
   switchFilters(tabela: any) {
@@ -70,6 +70,7 @@ export class ProductsService {
     return  this.http.get('http://localhost:8000/api/getAllRandom').subscribe(res=>{
       this.getPostsbyType=res;
       this.numberofProducts=this.getPostsbyType.length;
+      this.spiner=true;
 
     })
 
