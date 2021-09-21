@@ -313,7 +313,7 @@
           <!-- Category Toggle Wrap -->
           <div class="category-toggle-wrap">
             <!-- Category Toggle -->
-            <button class="category-toggle"><i class="fa fa-bars"></i> All Categories</button>
+            <button class="category-toggle"><i class="fa fa-bars"></i> Sve kategorije</button>
           </div>
 
           <!-- Category Menu -->
@@ -672,7 +672,7 @@ f
 <div class="feature-area mt-60px mb-30px">
   <div class="container">
 <div class="col-md-12">
-  <app-products ></app-products>
+  <app-products  ></app-products>
 </div>
       <div class="section-title ">
 
@@ -752,12 +752,12 @@ f
     <div class="row">
       <div class="col-md-6 col-xs-12">
         <div class="banner-wrapper">
-          <a href="shop-4-column.html"><img src="assets/images/banner-image/7.jpg" alt="" /></a>
+          <a href="https://glovoapp.com/"><img src="https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/logo_green.svg" alt="" /></a>
         </div>
       </div>
       <div class="col-md-6 col-xs-12">
         <div class="banner-wrapper">
-          <a href="shop-4-column.html"><img src="assets/images/banner-image/8.jpg" alt="" /></a>
+          <a href="https://glovoapp.com/"><img src="https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/logo_green.svg" alt="" /></a>
         </div>
       </div>
     </div>
@@ -794,7 +794,7 @@ f
                                       itemsPerPage:9,
                                       currentPage: e
                                        }">
-                  <article class="list-product" style="background-color: #f5b82e"  >
+                  <article class="list-product" style="background-color:silver"  >
                     <div class="img-block">
                       <img class="first-img card-img-top "  src="http://localhost:8000/storage/file/{{a.slika[0].url}}" >
                       <img *ngIf="a.slika.length<=1" class=" second-img  card-img-top" src="assets/images/logo.svg"  >
@@ -850,17 +850,65 @@ f
           <div class="category-slider-bg ">
             <div class="thumb-category">
               <a href="single-product.html">
-                <img src="assets/images/product-image/2-1.jpg" alt="product-image.jpg" />
+                <img src="assets/images/automoto.jpg" alt="product-image.jpg" />
               </a>
             </div>
             <div class="category-discript">
-              <h4>Smart Electronics</h4>
-              <ul>
-                <li><a href="#">Wearable Devices</a></li>
-                <li><a href="#">Smart Home Appliances</a></li>
-                <li><a href="#">Smart Remote Controls</a></li>
-                <li><a href="#">Smart Watches</a></li>
-              </ul>
+              <h4>Automobili</h4>
+
+              <a (click)="onClick('#produkti')" class="view-all-btn">Pogledaj sve</a>
+            </div>
+          </div>
+        </div>
+        <div class="category-slider-item swiper-slide">
+          <div class="category-slider-bg ">
+            <div class="thumb-category">
+              <a>
+                <img src="assets/images/tehnika.jpg" alt="product-image.jpg" />
+              </a>
+            </div>
+            <div class="category-discript">
+              <h4>PC</h4>
+              <a (click)="onClick('#produkti')" class="view-all-btn">Pogledaj sve</a>
+            </div>
+          </div>
+        </div>
+        <div class="category-slider-item swiper-slide">
+          <div class="category-slider-bg ">
+            <div class="thumb-category">
+              <a>
+                <img src="assets/images/stan.jpg" alt="product-image.jpg" />
+              </a>
+            </div>
+            <div class="category-discript">
+              <h4>Stanovi</h4>
+              <a (click)="onClick('#produkti')" class="view-all-btn">Pogledaj sve</a>
+            </div>
+          </div>
+        </div>
+        <div class="category-slider-item swiper-slide">
+          <div class="category-slider-bg ">
+            <div class="thumb-category">
+              <a >
+                <img src="assets/images/patike.jpg" alt="product-image.jpg" />
+              </a>
+            </div>
+            <div class="category-discript">
+              <h4>Patike</h4>
+
+              <a (click)="onClick('#produkti')" class="view-all-btn">Pogledaj sve</a>
+            </div>
+          </div>
+        </div>
+        <div class="category-slider-item swiper-slide">
+          <div class="category-slider-bg ">
+            <div class="thumb-category">
+              <a >
+                <img src="assets/images/programeri.jpg" alt="product-image.jpg" />
+              </a>
+            </div>
+            <div class="category-discript">
+              <h4>Programeri</h4>
               <a href="shop-4-column.html" class="view-all-btn">View All</a>
             </div>
           </div>
@@ -868,96 +916,14 @@ f
         <div class="category-slider-item swiper-slide">
           <div class="category-slider-bg ">
             <div class="thumb-category">
-              <a href="single-product.html">
-                <img src="assets/images/product-image/2-2.jpg" alt="product-image.jpg" />
+              <a >
+                <img src="assets/images/voce.jpg" alt="product-image.jpg" />
               </a>
             </div>
             <div class="category-discript">
-              <h4>Audio & Video</h4>
-              <ul>
-                <li><a href="#">Televisions</a></li>
-                <li><a href="#">TV Receivers</a></li>
-                <li><a href="#">Projectors</a></li>
-                <li><a href="#">TV Sticks</a></li>
-              </ul>
-              <a href="shop-4-column.html" class="view-all-btn">View All</a>
-            </div>
-          </div>
-        </div>
-        <div class="category-slider-item swiper-slide">
-          <div class="category-slider-bg ">
-            <div class="thumb-category">
-              <a href="single-product.html">
-                <img src="assets/images/product-image/2-3.jpg" alt="product-image.jpg" />
-              </a>
-            </div>
-            <div class="category-discript">
-              <h4>Video Games</h4>
-              <ul>
-                <li><a href="#">Handheld Game Players</a></li>
-                <li><a href="#">Game Controllers</a></li>
-                <li><a href="#">Joysticks</a></li>
-                <li><a href="#">Stickers</a></li>
-              </ul>
-              <a href="shop-4-column.html" class="view-all-btn">View All</a>
-            </div>
-          </div>
-        </div>
-        <div class="category-slider-item swiper-slide">
-          <div class="category-slider-bg ">
-            <div class="thumb-category">
-              <a href="single-product.html">
-                <img src="assets/images/product-image/2-4.jpg" alt="product-image.jpg" />
-              </a>
-            </div>
-            <div class="category-discript">
-              <h4>Portable Audio & Video</h4>
-              <ul>
-                <li><a href="#">Headphones</a></li>
-                <li><a href="#">Speakers</a></li>
-                <li><a href="#">MP3 Players</a></li>
-                <li><a href="#">Microphones</a></li>
-              </ul>
-              <a href="shop-4-column.html" class="view-all-btn">View All</a>
-            </div>
-          </div>
-        </div>
-        <div class="category-slider-item swiper-slide">
-          <div class="category-slider-bg ">
-            <div class="thumb-category">
-              <a href="single-product.html">
-                <img src="assets/images/product-image/2-5.jpg" alt="product-image.jpg" />
-              </a>
-            </div>
-            <div class="category-discript">
-              <h4>Camera & Photo</h4>
-              <ul>
-                <li><a href="#">Digital Cameras</a></li>
-                <li><a href="#">Camcorders</a></li>
-                <li><a href="#">Camera Drones</a></li>
-                <li><a href="#">Action Cameras</a></li>
-              </ul>
-              <a href="shop-4-column.html" class="view-all-btn">View All</a>
-            </div>
-          </div>
-        </div>
-        <div class="category-slider-item swiper-slide">
-          <div class="category-slider-bg ">
-            <div class="thumb-category">
-              <a href="single-product.html">
-                <img src="assets/images/product-image/2-1.jpg" alt="product-image.jpg" />
-              </a>
-            </div>
-            <div class="category-discript">
-              <h4>Smart Electronics</h4>
-              <ul>
-                <li><a href="#">Wearable Devices</a></li>
-                <li><a href="#">Smart Home Appliances</a></li>
-                <li><a href="#">Smart Remote Controls</a></li>
-                <li><a href="#">Smart Watches</a></li>
-              </ul>
-              <a href="shop-4-column.html" class="view-all-btn">View All</a>
-            </div>
+              </div>
+            <h4>Voće</h4>
+            <a (click)="onClick('#produkti')" class="view-all-btn">Pogledaj sve</a>
           </div>
         </div>
       </div>

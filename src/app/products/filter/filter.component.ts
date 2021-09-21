@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductsService} from "../products.service";
+import {ViewportScroller} from "@angular/common";
 
 @Component({
   selector: 'app-filter',
@@ -8,7 +9,8 @@ import {ProductsService} from "../products.service";
 })
 export class FilterComponent implements OnInit {
 
-  constructor(public s:ProductsService) { }
+  constructor(public s:ProductsService,private viewportScroller: ViewportScroller) { }
+  public onClick(elementId: string): void { this.viewportScroller.scrollToAnchor(elementId); }
 
 
   AutomotoF:any={
@@ -54,7 +56,7 @@ export class FilterComponent implements OnInit {
   }
 filtrirajA(){
 
-
+ this.onClick('#produkti');
   this.s.Filter(this.AutomotoF).subscribe(res=>{
     this.s.getPostsbyType=res;
   })
@@ -70,7 +72,7 @@ filtrirajA(){
 
 }
 filtrirajR(){
-
+  this.onClick('#produkti');
   this.s.Filter(this.RaznoF).subscribe(res=>{
     this.s.getPostsbyType=res;
     this.s.numberofProducts=this.s.getPostsbyType;
@@ -81,7 +83,7 @@ this.RaznoF.cijenaMin='';
 }
 
   filtrirajH(){
-    console.log(this.HranaF)
+    this.onClick('#produkti');
     this.s.Filter(this.HranaF).subscribe(res=>{
       this.s.getPostsbyType=res;
       this.s.numberofProducts=this.s.getPostsbyType.length;
@@ -92,7 +94,7 @@ this.RaznoF.cijenaMin='';
 
   }
   filtrirajP(){
-    console.log(this.PlataF)
+    this.onClick('#produkti');
     this.s.Filter(this.PlataF).subscribe(res=>{
       this.s.getPostsbyType=res;
       this.s.numberofProducts=this.s.getPostsbyType.length;
@@ -103,7 +105,7 @@ this.RaznoF.cijenaMin='';
 
   }
   filtrirajN(){
-    console.log(this.NekretnineF)
+    this.onClick('#produkti');
     this.s.Filter(this.NekretnineF).subscribe(res=>{
       this.s.getPostsbyType=res;
       this.s.numberofProducts=this.s.getPostsbyType.length;
@@ -114,7 +116,7 @@ this.RaznoF.cijenaMin='';
 
   }
   filtrirajT(){
-    console.log(this.TehnikaF)
+    this.onClick('#produkti');
     this.s.Filter(this.TehnikaF).subscribe(res=>{
       this.s.getPostsbyType=res;
       this.s.numberofProducts=this.s.getPostsbyType.length;
@@ -125,7 +127,7 @@ this.RaznoF.cijenaMin='';
 
   }
   filtrirajO(){
-    console.log(this.OdjecaF)
+    this.onClick('#produkti');
     this.s.Filter(this.OdjecaF).subscribe(res=>{
       this.s.getPostsbyType=res;
       this.s.numberofProducts=this.s.getPostsbyType.length;
