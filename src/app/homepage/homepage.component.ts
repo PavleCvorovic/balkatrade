@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PocetnaService} from "../pocetna.service";
 import {ProductsService} from "../products/products.service";
-
+import { ViewportScroller } from '@angular/common'
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -13,7 +13,8 @@ export class HomepageComponent implements OnInit {
   e = 1;
   c = 1;
   f=1;
-  constructor(public s: PocetnaService ,public s1: ProductsService) { }
+  constructor(public s: PocetnaService ,public s1: ProductsService,private viewportScroller: ViewportScroller) { }
+  public onClick(elementId: string): void { this.viewportScroller.scrollToAnchor(elementId); }
 
   log:any;
   ngOnInit(): void {
