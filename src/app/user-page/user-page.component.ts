@@ -41,6 +41,7 @@ public modPosts(){
     this.u.modUserIdPosts(this.idPost).subscribe(res=>{
 
     })
+
 }
 
 
@@ -51,6 +52,7 @@ public modPosts(){
     else if (id==-1){
       this.modPosts();
       this.idM=id;
+
     }
      else if(id!=-1 && id!=0){
 

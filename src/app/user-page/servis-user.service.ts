@@ -16,7 +16,9 @@ export class ServisUserService {
     return this.u.post('http://localhost:8000/api/getUserPostId',req);
   }
   modUserIdPosts(req:any){
+
     return this.u.post('http://localhost:8000/api/modPostByUser',req);
+
   }
   delAsUser(req:any){
 
