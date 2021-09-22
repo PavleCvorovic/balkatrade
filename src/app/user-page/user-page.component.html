@@ -94,7 +94,7 @@
         <li>
           <a href="single-product.html" class="image"><img src="assets/images/product-image/7.jpg" alt="Cart product Image"></a>
           <div class="content">
-            <a href="single-product.html" class="title">Walnut Cutting Board</a>
+            <a  class="title">Walnut Cutting Board</a>
             <span class="quantity-price">1 x <span class="amount">$100.00</span></span>
             <a href="#" class="remove">×</a>
           </div>
@@ -232,16 +232,27 @@
                 <td class="product-thumbnail">
                   <a ><img class="img-responsive" src="http://localhost:8000/storage/file/{{b.slika[0].url}}" alt="" /></a>
                 </td>
-                <td class="product-name"><a >{{b.naziv}}</a></td>
-                <td class="product-price-cart"><span class="amount">{{b.cijena}}</span></td>
-                <td class="product-quantity">
+                <td class="product-name"*ngIf="b.id!==idM"><a >{{b.naziv}}</a></td>
+                <td class="product-price-cart"*ngIf="b.id!==idM"><span class="amount">{{b.cijena}}</span></td>
+                <td class="product-quantity"*ngIf="b.id!==idM">
                   {{b.opis}}
                 </td>
 
+                <td class="product-name"  *ngIf="b.id===idM"><input [(ngModel)]="idPost[0].naziv"[ngModelOptions]="{standalone: true}"  class="form-control" ></td>
+                <td class="product-price-cart" *ngIf="b.id===idM"><input  [(ngModel)]="idPost[0].cijena" [ngModelOptions]="{standalone: true}" class="form-control" ></td>
+                <td class="product-quantity" *ngIf="b.id===idM" >
+                 <input [(ngModel)]="idPost[0].opis" [ngModelOptions]="{standalone: true}" class="form-control" >
+                </td>
+
+
                 <td class="product-remove">
 
-                  <a  (click)="delAsUser(b.index,b.id)"><i class="icon-close"></i></a>
+                  <a *ngIf="b.id!==idM"  (click)="delAsUser(b.index,b.id)"><i class="icon-close"></i></a>
+                  <a *ngIf="b.id!==idM"> <i class="icon-pencil" (click)="sw(b.id,b.index)"></i></a>
+                  <a *ngIf="b.id===idM"  (click)="sw(0,b.index)"><i class="icon-close"></i></a>
+                  <a *ngIf="b.id===idM" (click)="sw(-1,b.index)"> <i class="icon-energy" ></i></a>
                 </td>
+
                 <td class="product-quantity">
                   <p *ngIf="b.javno ==='1'" style="color: greenyellow"> Objavljen</p>
                   <p *ngIf="b.javno!=='1'" style="color: orangered"> Na čekanju</p>

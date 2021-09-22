@@ -17,6 +17,50 @@ export class UserPageComponent implements OnInit {
   }
 
 
+  idM:number=0;
+  reqId:any={
+    tabela:'',
+    id:'',
+    user_id:1
+  }
+  idPost:any;
+  public getIdPost(id:number,tabela:string,user_id:number){
+    this.reqId.id=id;
+
+    this.reqId.tabela=tabela;
+    this.u.getUserIdPosts(this.reqId).subscribe(res=>{
+      this.idPost=res;
+      this.idM=id;
+      console.log(res)
+    })
+
+
+  }
+
+public modPosts(){
+    this.u.modUserIdPosts(this.idPost).subscribe(res=>{
+
+    })
+}
+
+
+  public sw(id:number,tabela:string){
+    if (id==0){
+      this.idM=id
+    }
+    else if (id==-1){
+      this.modPosts();
+      this.idM=id;
+    }
+     else if(id!=-1 && id!=0){
+
+    this.getIdPost(id,tabela,1);
+     }
+
+  }
+
+
+
   id = this.route.snapshot.params['id'];
 
   userPosts:any;
