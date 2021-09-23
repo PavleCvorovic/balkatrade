@@ -185,8 +185,8 @@
           <td>{{ o.opis }}</td>
           <td>{{ o.cijena }}</td>
           <th>{{ o.kontakt }}</th>
-          <td><button (click)="getAll()" class= "btn btn-primary" (click) = "prihvati(o.id, o.index)">Prihvati</button></td>
-          <td><button (click)="getAll()" class= "btn btn-danger" (click)="odbijOglas(o.id, o.index)" >Odbij</button></td>
+          <td><button  class= "btn btn-primary" (click) = "prihvati(o.id, o.index)">Prihvati</button></td>
+          <td><button  class= "btn btn-danger" (click)="odbijOglas(o.id, o.index)" >Odbij</button></td>
         </tr>
       </tbody>
     </table>

@@ -50,7 +50,10 @@ export class AdminPageComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.servis.getUsers()
+    this.servis.getUsers().subscribe(res=>
+      {
+        this.useri = res;
+      })
 
   }
 
