@@ -26,7 +26,7 @@ export class UserPageComponent implements OnInit {
   idPost:any;
   public getIdPost(id:number,tabela:string,user_id:number){
     this.reqId.id=id;
-
+this.reqId.user_id=user_id;
     this.reqId.tabela=tabela;
     this.u.getUserIdPosts(this.reqId).subscribe(res=>{
       this.idPost=res;
@@ -42,6 +42,8 @@ public modPosts(){
 
     })
 
+
+
 }
 
 
@@ -56,7 +58,7 @@ public modPosts(){
     }
      else if(id!=-1 && id!=0){
 
-    this.getIdPost(id,tabela,1);
+    this.getIdPost(id,tabela,2);
      }
 
   }
