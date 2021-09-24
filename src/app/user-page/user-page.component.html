@@ -220,20 +220,22 @@
               <tr>
                 <th>Slika produkta</th>
                 <th>Naziv produkta</th>
-                <th>Cijena produkta</th>
+                <th>Originalna cijena produkta</th>
+                <th>Modifikovana cijena</th>
                 <th>Opis produkta</th>
                 <th>Akcija</th>
                 <th>Status</th>
               </tr>
               </thead>
-
-              <tbody  *ngFor="let b of userPosts; ">
+<ng-container *ngFor="let a of userPosts ">
+              <tbody  *ngFor="let b of a ">
               <tr>
                 <td class="product-thumbnail">
                   <a ><img class="img-responsive" src="http://localhost:8000/storage/file/{{b.slika[0].url}}" alt="" /></a>
                 </td>
                 <td class="product-name"*ngIf="b.id!==idM"><a >{{b.naziv}}</a></td>
-                <td class="product-price-cart"*ngIf="b.id!==idM"><span class="amount">{{b.cijena}}</span></td>
+                <td class="product-price-cart"*ngIf="b.id!==idM "><span class="amount">{{b.cijena}}</span></td>
+                <td class="product-price-cart"*ngIf="b.id!==idM && b.modcijena!==null "><span class="amount">{{b.modcijena}}</span></td>
                 <td class="product-quantity"*ngIf="b.id!==idM">
                   {{b.opis}}
                 </td>
@@ -261,8 +263,9 @@
                 </td>
               </tr>
               </tbody>
-
+</ng-container>
             </table>
+
           </div>
           <div class="row">
             <div class="col-lg-12">
@@ -277,7 +280,7 @@
           </div>
         </form>
         <div class="row">
-          <
+
           <div class="col-lg-4 col-md-6 mb-lm-30px">
             <div class="discount-code-wrapper">
               <div class="title-wrap">

@@ -93,13 +93,15 @@
         </ul>
         <div class="product-decs">
           <a class="inner-link" href="shop-4-column.html"><span>{{a.naziv}}</span></a>
-         <div class="content"> <
+         <div class="content">
         </div>
           <div class="pricing-meta">
             <ul>
-              <li class="old-price">€{{a.cijena}}</li>
-              <li class="current-price">€{{a.cijena}}</li>
-              <li class="discount-price">-5%</li>
+              <li class="pro-price" *ngIf="a.modcijena === null ">€{{a.cijena}}</li>
+              <li class="old-price" *ngIf="a.modcijena !== null ">€{{a.cijena}}</li>
+              <li class="current-price" *ngIf="a.modcijena !== null ">€{{a.modcijena}}</li>
+              <li class="discount-price" *ngIf="a.procenat !== null && a.procenat < 0"> +{{a.procenat}}%</li>
+              <li class="discount-price" *ngIf="a.procenat !== null && a.procenat > 0"> -{{a.procenat}}%</li>
             </ul>
 
           </div>
