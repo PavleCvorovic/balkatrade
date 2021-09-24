@@ -337,6 +337,7 @@ getFeaturedPosts(){
   }
   dodajOdjeca()
   {
+
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json')
@@ -345,8 +346,8 @@ getFeaturedPosts(){
     this.unosOdjeca.controls['odjeca_vrsta'].setValue(this.odjecaVrsta);
     params.append('odjeca_vrsta',this.unosOdjeca.controls['odjeca_vrsta'].value )
     params.append('cijena', this.unosOdjeca.controls['cijena'].value)
-    params.append('marka', this.unosOdjeca.controls['marka'].value)
-    params.append('model', this.unosOdjeca.controls['model'].value)
+    params.append('stanje', this.unosOdjeca.controls['stanje'].value)
+    params.append('lokacija', this.unosOdjeca.controls['lokacija'].value)
     params.append('naziv', this.unosOdjeca.controls['naziv'].value)
     params.append('kontakt', this.unosOdjeca.controls['kontakt'].value)
     params.append('opis', this.unosOdjeca.controls['opis'].value)

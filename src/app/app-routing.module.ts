@@ -1,3 +1,4 @@
+import { AdminGuardGuard } from './admin-guard.guard';
 import { GuardGuard } from './guard.guard';
 import { UserPageComponent } from './user-page/user-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
@@ -14,7 +15,7 @@ const routes: Routes = [
   {path:'add', component:AddPostComponent},
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
-  {path: 'admin-page', component:AdminPageComponent},
+  {path: 'admin-page', component:AdminPageComponent, canActivate:[AdminGuardGuard]},
   {path: 'user-page/:id', component:UserPageComponent, canActivate:[GuardGuard]}
 ];
 

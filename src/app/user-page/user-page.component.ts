@@ -14,6 +14,10 @@ export class UserPageComponent implements OnInit {
   ngOnInit(): void {
     this.getUserPosts();
     this.servis.user= this.id
+    if(sessionStorage.getItem('userId')!= this.route.snapshot.params['id'])
+    {
+      this.router.navigate(['../../login']);
+    }
   }
 
 

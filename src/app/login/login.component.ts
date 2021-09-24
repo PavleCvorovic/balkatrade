@@ -1,3 +1,4 @@
+import { GuardGuard } from './../guard.guard';
 import { PocetnaService } from './../pocetna.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
@@ -11,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private http:HttpClient, private pocetna:PocetnaService, private router:Router) { }
+  constructor(private fb: FormBuilder, private http:HttpClient, private pocetna:PocetnaService, private router:Router, private userGuard: GuardGuard) { }
 
   ngOnInit(): void {
   }
@@ -38,9 +39,14 @@ export class LoginComponent implements OnInit {
               this.pocetna.user = this.podaciLogovan.user_id;
               this.user_id = this.podaciLogovan.user.id;
               sessionStorage.setItem('token', JSON.stringify(this.podaciLogovan.data.token));
+              sessionStorage.setItem('userId', JSON.stringify(this.podaciLogovan.user.id) );
               this.router.navigate(['user-page/'+ this.user_id]);
+              this.userGuard.userId = this.podaciLogovan.user.id;
+
             }else if(this.podaciLogovan.user.role == 2)
             {
+              sessionStorage.setItem('token', JSON.stringify(this.podaciLogovan.data.token));
+              sessionStorage.setItem('role', JSON.stringify(this.podaciLogovan.user.role) )
               this.router.navigate(['admin-page']);
             }
 
