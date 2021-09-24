@@ -226,8 +226,8 @@
                 <th>Status</th>
               </tr>
               </thead>
-              <ng-container *ngFor="let a of userPosts; ">
-              <tbody *ngFor="let b of a">
+
+              <tbody  *ngFor="let b of userPosts; ">
               <tr>
                 <td class="product-thumbnail">
                   <a ><img class="img-responsive" src="http://localhost:8000/storage/file/{{b.slika[0].url}}" alt="" /></a>
@@ -261,7 +261,7 @@
                 </td>
               </tr>
               </tbody>
-              </ng-container>
+
             </table>
           </div>
           <div class="row">

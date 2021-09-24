@@ -39,7 +39,7 @@ this.reqId.user_id=user_id;
 
 public modPosts(){
     this.u.modUserIdPosts(this.idPost).subscribe(res=>{
-
+this.userPosts=res;
     })
 
 
@@ -58,7 +58,7 @@ public modPosts(){
     }
      else if(id!=-1 && id!=0){
 
-    this.getIdPost(id,tabela,2);
+    this.getIdPost(id,tabela,1);
      }
 
   }
