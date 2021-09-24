@@ -88,6 +88,7 @@ this.u.delAsUser(req).subscribe(res=>{
 logout()
 {
   this.servis.user = 0;
+  sessionStorage.clear();
   this.router.navigate(['../../login']);
 }
 

@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
               this.pocetna.logovan = true;
               this.pocetna.user = this.podaciLogovan.user_id;
               this.user_id = this.podaciLogovan.user.id;
+              sessionStorage.setItem('token', JSON.stringify(this.podaciLogovan.data.token));
               this.router.navigate(['user-page/'+ this.user_id]);
             }else if(this.podaciLogovan.user.role == 2)
             {

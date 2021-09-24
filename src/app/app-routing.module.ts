@@ -1,3 +1,4 @@
+import { GuardGuard } from './guard.guard';
 import { UserPageComponent } from './user-page/user-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { RegisterComponent } from './register/register.component';
@@ -14,7 +15,7 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
   {path: 'admin-page', component:AdminPageComponent},
-  {path: 'user-page/:id', component:UserPageComponent }
+  {path: 'user-page/:id', component:UserPageComponent, canActivate:[GuardGuard]}
 ];
 
 @NgModule({
