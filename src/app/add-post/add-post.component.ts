@@ -3,6 +3,7 @@ import { PocetnaService } from './../pocetna.service';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 
@@ -15,9 +16,10 @@ import { FormBuilder } from '@angular/forms';
 export class AddPostComponent implements OnInit {
 
 
-  constructor(private fb:FormBuilder, private http:HttpClient, private s:PocetnaService,) { }
+  constructor(private fb:FormBuilder, private http:HttpClient, private s:PocetnaService, private router:Router) { }
 
-
+  token:any=0;
+  userId:any
   ngOnInit(): void {
     this.getTypeTehnika();
     this.getTypeAutomoto()
@@ -27,7 +29,11 @@ export class AddPostComponent implements OnInit {
     this.getTypesRazno()
     this.getTypesOdjeca()
     this.getFeaturedPosts();
-
+    if(sessionStorage.getItem('token'))
+    {
+        this.token = sessionStorage.getItem('token');
+        this.userId = sessionStorage.getItem('userId');
+    }
   }
 
   nekretnineType:any;
@@ -522,5 +528,12 @@ getFeaturedPosts(){
       });
 
     console.log(this.kategorija);
+  }
+
+  odjavi()
+  {
+    sessionStorage.clear();
+    this.router.navigate(['../login']);
+
   }
 }

@@ -9,6 +9,7 @@
         <div class="header-static-nav">
           <p style="color: whitesmoke">Dobrodošli u BalkaTrade !</p>
         </div>
+        <div *ngIf="token == 0">
         <div class="header-menu-nav">
           <ul class="menu-nav">
                 <div class="dropdown">
@@ -23,6 +24,17 @@
           </ul>
         </div>
       </div>
+      <div *ngIf="token != 0">
+        <div class="header-menu-nav">
+          <ul class="menu-nav">
+                <div class="dropdown">
+              <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: whitesmoke" (click)="logout()">Odjavi se<i class="ion-ios-arrow-down "></i></button>
+            </div>
+
+          </ul>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
   <!-- Header Nav End -->

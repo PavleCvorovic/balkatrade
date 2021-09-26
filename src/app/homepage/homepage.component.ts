@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {PocetnaService} from "../pocetna.service";
 import {ProductsService} from "../products/products.service";
@@ -13,10 +14,12 @@ export class HomepageComponent implements OnInit {
   e = 1;
   c = 1;
   f=1;
-  constructor(public s: PocetnaService ,public s1: ProductsService,private viewportScroller: ViewportScroller) { }
+  constructor(public s: PocetnaService ,public s1: ProductsService,private viewportScroller: ViewportScroller, private router:Router) { }
   public onClick(elementId: string): void { this.viewportScroller.scrollToAnchor(elementId); }
 
   log:any;
+  token:any=0;
+  userId:any;
   ngOnInit(): void {
     this.getTypeTehnika();
     this.getTypeAutomoto()
@@ -26,10 +29,21 @@ export class HomepageComponent implements OnInit {
     this.getTypesRazno()
     this.getTypesOdjeca()
     this.getFeaturedPosts();
-this.getCheapPosts()
+    this.getCheapPosts()
     this.getNewestPosts()
+    if(sessionStorage.getItem('token'))
+    {
+        this.token = sessionStorage.getItem('token');
+        this.userId = sessionStorage.getItem('userId');
+    }
   }
 
+  logout()
+  {
+    sessionStorage.clear();
+    this.token = 0;
+    this.router.navigate(['.']);
+  }
 
 
 getPostsbyType(tabela:string,tip:any){
