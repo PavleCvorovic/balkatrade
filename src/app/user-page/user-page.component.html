@@ -200,6 +200,7 @@
           <ul class="nav">
             <li><a routerLink="../../homepage">Početna</a></li>
             <li>Korisnik</li>
+
             <li><a (click)="logout()"><button>Odjavi se</button></a></li>
           </ul>
         </div>
@@ -241,10 +242,10 @@
                   {{b.opis}}
                 </td>
 
-                <td class="product-name"  *ngIf="b.id===idM"><input [(ngModel)]="idPost[0].naziv"[ngModelOptions]="{standalone: true}"  class="form-control" ></td>
-                <td class="product-price-cart" *ngIf="b.id===idM"><input  [(ngModel)]="idPost[0].cijena" [ngModelOptions]="{standalone: true}" class="form-control" ></td>
+                <td class="product-name"  *ngIf="b.id===idM"><input [(ngModel)]="idPost.naziv"[ngModelOptions]="{standalone: true}"  class="form-control" ></td>
+                <td class="product-price-cart" *ngIf="b.id===idM"><input  [(ngModel)]="idPost.cijena" [ngModelOptions]="{standalone: true}" class="form-control" ></td>
                 <td class="product-quantity" *ngIf="b.id===idM" >
-                 <input [(ngModel)]="idPost[0].opis" [ngModelOptions]="{standalone: true}" class="form-control" >
+                 <input [(ngModel)]="idPost.opis" [ngModelOptions]="{standalone: true}" class="form-control" >
                 </td>
 
 

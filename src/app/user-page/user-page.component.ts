@@ -27,7 +27,7 @@ export class UserPageComponent implements OnInit {
   reqId:any={
     tabela:'',
     id:'',
-    user_id:1
+    user_id:sessionStorage.getItem('userId')
   }
   idPost:any;
   public getIdPost(id:number,tabela:string,user_id:number){
@@ -63,8 +63,9 @@ this.userPosts=res;
 
     }
      else if(id!=-1 && id!=0){
-
-    this.getIdPost(id,tabela,1);
+    var userId:any=sessionStorage.getItem('userId')
+      console.log(userId)
+    this.getIdPost(id,tabela,this.reqId.user_id);
      }
 
   }
