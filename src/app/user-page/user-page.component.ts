@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ServisUserService} from "./servis-user.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {PocetnaService} from "../pocetna.service";
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-user-page',
@@ -10,7 +11,8 @@ import {PocetnaService} from "../pocetna.service";
 })
 export class UserPageComponent implements OnInit {
 
-  constructor(public u:ServisUserService, private route:ActivatedRoute, private servis:PocetnaService, private router:Router) { }
+  constructor(public u:ServisUserService,private viewportScroller: ViewportScroller, private route:ActivatedRoute, private servis:PocetnaService, private router:Router) { }
+  public onClick(elementId: string): void { this.viewportScroller.scrollToAnchor(elementId); }
   ngOnInit(): void {
     this.getUserPosts();
     this.servis.user= this.id

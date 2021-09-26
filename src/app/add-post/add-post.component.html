@@ -1,7 +1,7 @@
-<div _ngcontent-auy-c56="" class="header-topbg-dark ptb-30px d-xl-block d-none sticky-nav" style="background-color: #F2AA4CFF;"><div><button routerLink="../homepage" style="margin-left: 5%;">Pocetna</button></div>
+<div _ngcontent-auy-c56="" class="header-topbg-dark ptb-30px d-xl-block d-none sticky-nav" style="background-color: #f5b82e;"><div><button routerLink="../homepage" style="margin-left: 5%;">Pocetna</button></div>
 <div *ngIf="token !=0">
-  <div><button routerLink="../user-page/{{ userId }}">User page</button></div>
-  <div><button (click) = "odjavi()">Odjavi se</button></div>
+  <div><button routerLink="../user-page/{{ userId }}" style="margin-left:5%; margin-top:1%">User page</button></div>
+  <div><button (click) = "odjavi()" style="margin-left:5%; margin-top:1%">Odjavi se</button></div>
 </div>
 
 <div _ngcontent-auy-c56="" class="container"><div _ngcontent-auy-c56="" class="row"><div _ngcontent-auy-c56="" class="col-md-3 d-flex"><div _ngcontent-auy-c56="" class="mobile-menu-toggle home-2"><a _ngcontent-auy-c56="" href="#offcanvas-mobile-menu" class="offcanvas-toggle"></a></div><div _ngcontent-auy-c56="" class="logo"><a _ngcontent-auy-c56="" href="index.html"></a></div></div></div></div></div>
@@ -24,9 +24,9 @@
 
                       </div>
                       </div>
-                      <div class="form-card">
+                      <div class="form-card" >
                         Odaberite kategoriju:
-                        <select [(ngModel)] ="kategorija">
+                        <select class="form-select" aria-label="Default select example" [(ngModel)] ="kategorija">
                           <option value="automoto" name ="automoto">Automoto</option>
                           <option value="tehnika" name ="tehnika">Tehnika</option>
                           <option value="odjeca" name ="odjeca">Odjeca</option>
@@ -37,22 +37,24 @@
                         </select>
 
                       </div>
+
                       <div class="form-group" *ngIf="kategorija=='automoto'">
                         <div class="form-card">
-                          <label for="exampleInputEmail1">automoto Vrsta</label>
-                          <select [(ngModel)]="automotoVrsta" name = "automotoVrsta">
+                          <label for="exampleInputEmail1">Automoto Vrsta</label>
+                          <select class="form-select" aria-label="Default select example" [(ngModel)]="automotoVrsta" name = "automotoVrsta">
                             <option  *ngFor="let a of automotoType" [value]= "a.id">{{ a.tip }}</option>
                           </select>
                         </div>
                         Unesite pocetnu sliku:
                         <div>
-                        <img [src]="url" height="30"> <br/>
+                          <img *ngFor="let url of prikazSlike" [src] = "url" height="50"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
+
                         </div>
                         Unesite ostale slike:
                         <div>
                           <input class="btn btn-primary" type="file"  name="slika"   style="width: 200px" (change)="onChangeFile($event)" multiple>
-                          <img *ngFor="let url of prikazSlike" [src] = "url" height="50">
+
                         </div>
                       <div [formGroup] = "unosAutomoto">
 
@@ -114,18 +116,18 @@
 
                       <div class="form-group" *ngIf="kategorija == 'tehnika'">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">tehnika Vrsta</label>
-                          <select [(ngModel)]="tehnikaVrsta"  name = "tehnikaVrsta">
+                          <label for="exampleInputEmail1">Tehnika vrsta</label>
+                          <select class="form-select" aria-label="Default select example" [(ngModel)]="tehnikaVrsta"  name = "tehnikaVrsta">
                             <option [value]= "b.id"  *ngFor="let b of tehnikaType">{{ b.tip }}</option>
                           </select>
                         </div>
                         Unesite pocetnu sliku:
-                        <img [src]="url" height="30"> <br/>
+                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
 
                         Unesite ostale slike:
                         <input class="btn btn-primary" type="file"  name="slika"   style="width: 200px" (change)="onChangeFile($event)" multiple>
-                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50">
+
                       <div [formGroup] = "unosTehnika">
 
                         <div class="form-group">
@@ -171,17 +173,18 @@
                       </div>
                       <div class="form-group" *ngIf="kategorija == 'odjeca'">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">odjeca Vrsta</label>
-                          <select [(ngModel)]="odjecaVrsta"  name = "odjecaVrsta">
+                          <label for="exampleInputEmail1">Odjeca vrsta</label>
+                          <select class="form-select" aria-label="Default select example" [(ngModel)]="odjecaVrsta"  name = "odjecaVrsta">
                             <option [value]="c.id"  *ngFor="let c of odjecaType">{{ c.tip }}</option>
                           </select>
                         </div>
                         Unesite pocetnu sliku
-                        <img [src]="url" height="30"> <br/>
+                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50"><br/>
                           <input type='file' (change)="onSelectFile($event)">
+
                         Unesite ostale slike:
                         <input class="btn btn-primary" type="file"  name="slika"   style="width: 200px" (change)="onChangeFile($event)" multiple>
-                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50">
+
 
                       <div [formGroup] = "unosOdjeca">
 
@@ -218,16 +221,17 @@
 
                       <div class="form-group" *ngIf="kategorija == 'nekretnine'">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">nekretnine Vrsta</label>
-                          <select [(ngModel)]="nekretnineVrsta"  name = "nekretnineVrsta">
+                          <label for="exampleInputEmail1">Nekretnine vrsta</label>
+                          <select class="form-select" aria-label="Default select example" [(ngModel)]="nekretnineVrsta"  name = "nekretnineVrsta">
                             <option *ngFor="let d of nekretnineType" [value]= "d.id" >{{ d.tip }}</option>
                           </select>
                         </div>
-                        <img [src]="url" height="30"> <br/>
+                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50"><br/>
                           <input type='file' (change)="onSelectFile($event)">
+
                         Unesite ostale slike:
                         <input class="btn btn-primary" type="file" id="myFile" name="slika"   style="width: 200px" (change)="onChangeFile($event)" multiple>
-                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50">
+
 
                       <div [formGroup] = "unosNekretnine">
 
@@ -270,22 +274,19 @@
 
                       <div class="form-group" *ngIf="kategorija == 'posao'">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">posao Vrsta</label>
-                          <select>
-                            <option>Ponuda</option>
-                            <option>Potraznja</option>
-                          </select>
-                          <select [(ngModel)]="posaoVrsta"  name = "posaotoVrsta">
+                          <label for="exampleInputEmail1">Posao vrsta</label>
+
+                          <select class="form-select" aria-label="Default select example" [(ngModel)]="posaoVrsta"  name = "posaotoVrsta">
                             <option [value]= "e.id" *ngFor="let e of posaoType">{{ e.tip }}</option>
                           </select>
 
                         </div>
-                        <img [src]="url" height="30"> <br/>
+                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
 
                         Unesite ostale slike:
                         <input class="btn btn-primary" type="file"  name="slika"   style="width: 200px" (change)="onChangeFile($event)" multiple>
-                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50">
+
 
                       <div [formGroup] = "unosPosao">
 
@@ -316,13 +317,17 @@
 
                       <div class="form-group" *ngIf="kategorija=='hrana'">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">hrana Vrsta</label>
-                          <select [(ngModel)]="hranaVrsta" name = "hranaVrsta">
+                          <label for="exampleInputEmail1">Hrana vrsta</label>
+                          <select class="form-select" aria-label="Default select example" [(ngModel)]="hranaVrsta" name = "hranaVrsta">
                             <option [value]= "f.id"  *ngFor="let f of hranaType">{{ f.tip }}</option>
                           </select>
                         </div>
-                        <img [src]="url" height="30"> <br/>
+                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
+
+                          Unesite ostale slike:
+                        <input class="btn btn-primary" type="file"  name="slika"   style="width: 200px" (change)="onChangeFile($event)" multiple>
+
                       <div [formGroup] = "unosHrana">
 
                         <div class="form-group">
@@ -357,16 +362,17 @@
 
                       <div class="form-group" *ngIf="kategorija=='razno'">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">razno Vrsta</label>
-                          <select [(ngModel)]="raznoVrsta"  name = "raznotoVrsta">
+                          <label for="exampleInputEmail1">Razno vrsta</label>
+                          <select class="form-select" aria-label="Default select example" [(ngModel)]="raznoVrsta"  name = "raznotoVrsta">
                             <option [value]="g.id"  *ngFor="let g of raznoType">{{ g.tip }}</option>
                           </select>
                         </div>
-                        <img [src]="url" height="30"> <br/>
+                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
+
                         Unesite ostale slike:
                         <input class="btn btn-primary" type="file" name="slika"   style="width: 200px" (change)="onChangeFile($event)" multiple>
-                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50">
+
 
                       <div [formGroup] = "unosRazno">
 
@@ -412,7 +418,59 @@
 
 
 
-<div _ngcontent-pnd-c56="" class="footer-area" style="background-color: #F2AA4CFF;"><div _ngcontent-pnd-c56="" class="footer-container"><div _ngcontent-pnd-c56="" class="footer-top"><div _ngcontent-pnd-c56="" class="container"><div _ngcontent-pnd-c56="" class="row"><div _ngcontent-pnd-c56="" class="col-md-6 col-lg-4 mb-md-30px mb-lm-30px"><div _ngcontent-pnd-c56="" class="single-wedge"><h4 _ngcontent-pnd-c56="" class="footer-herading">ABOUT US</h4><p _ngcontent-pnd-c56="" class="text-infor">We are a team of designers and developers that create high quality HTML template</p><div _ngcontent-pnd-c56="" class="need-help"><p _ngcontent-pnd-c56="" class="phone-info"> NEED HELP? <span _ngcontent-pnd-c56=""> 0123456789 <br _ngcontent-pnd-c56=""> 0123456789 </span></p></div></div></div><div _ngcontent-pnd-c56="" class="col-md-6 col-lg-2 mb-md-30px mb-lm-30px"><div _ngcontent-pnd-c56="" class="single-wedge"><h4 _ngcontent-pnd-c56="" class="footer-herading">Information</h4><div _ngcontent-pnd-c56="" class="footer-links"><ul _ngcontent-pnd-c56=""><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="#">Delivery</a></li><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="about.html">About Us</a></li><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="#">Secure Payment</a></li><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="contact.html">Contact Us</a></li><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="#">Sitemap</a></li><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="#">Stores</a></li></ul></div></div></div><div _ngcontent-pnd-c56="" class="col-md-6 col-lg-2 mb-sm-30px mb-lm-30px"><div _ngcontent-pnd-c56="" class="single-wedge"><h4 _ngcontent-pnd-c56="" class="footer-herading">CUSTOM LINKS</h4><div _ngcontent-pnd-c56="" class="footer-links"><ul _ngcontent-pnd-c56=""><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="#">Legal Notice</a></li><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="#">Prices Drop</a></li><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="#">New Products</a></li><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="#">Best Sales</a></li><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="login.html">Login</a></li><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="my-account.html">My Account</a></li></ul></div></div></div><div _ngcontent-pnd-c56="" class="col-md-6 col-lg-4"><div _ngcontent-pnd-c56="" class="single-wedge"><h4 _ngcontent-pnd-c56="" class="footer-herading">NEWSLETTER</h4><div _ngcontent-pnd-c56="" class="subscrib-text"><p _ngcontent-pnd-c56="">You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p></div><div _ngcontent-pnd-c56="" id="mc_embed_signup" class="subscribe-form"><form _ngcontent-pnd-c56="" novalidate="" id="mc-embedded-subscribe-form" target="_blank" name="mc-embedded-subscribe-form" method="post" action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef" class="validate ng-untouched ng-pristine ng-valid"><div _ngcontent-pnd-c56="" id="mc_embed_signup_scroll" class="mc-form"><input _ngcontent-pnd-c56="" type="email" required="" placeholder="Enter your email here.." name="EMAIL" value="" class="email"><div _ngcontent-pnd-c56="" aria-hidden="true" class="mc-news" style="position: absolute; left: -5000px;"><input _ngcontent-pnd-c56="" type="text" value="" tabindex="-1" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef"></div><div _ngcontent-pnd-c56="" class="clear"><input _ngcontent-pnd-c56="" id="mc-embedded-subscribe" type="submit" name="subscribe" value="Sign Up" class="button"></div></div></form></div><div _ngcontent-pnd-c56="" class="social-info"><ul _ngcontent-pnd-c56=""><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="#"><i _ngcontent-pnd-c56="" class="icon-social-facebook"></i></a></li><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="#"><i _ngcontent-pnd-c56="" class="icon-social-twitter"></i></a></li><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="#"><i _ngcontent-pnd-c56="" class="icon-social-instagram"></i></a></li><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="#"><i _ngcontent-pnd-c56="" class="icon-social-google"></i></a></li><li _ngcontent-pnd-c56=""><a _ngcontent-pnd-c56="" href="#"><i _ngcontent-pnd-c56="" class="icon-social-instagram"></i></a></li></ul></div></div></div></div></div></div><div _ngcontent-pnd-c56="" class="footer-bottom"><div _ngcontent-pnd-c56="" class="container"><div _ngcontent-pnd-c56="" class="row"><div _ngcontent-pnd-c56="" class="col-md-6"></div><div _ngcontent-pnd-c56="" class="col-md-6 text-right"><img _ngcontent-pnd-c56="" src="assets/images/icons/payment.png" alt="" class="payment-img"></div></div></div></div></div></div>
+<div class="footer-area" id="#kontakt" style="background-color: #f5b82e ">
+  <div class="footer-container" >
+    <div class="footer-top ">
+      <div class="container">
+        <div class="row" >
+          <div class="col-md-6 col-lg-4 ">
+            <div class="single-wedge">
+              <h4 class="footer-herading">O nama :</h4>
+              <p class="text-infor">Mi smo mladi tim koji veruje da čist vazduh ne treba da bude luksuz ! </p>
+              <div class="need-help">
+                <p class="phone-info">
+                  Potrebna pomoć ?
+                  <span>
+                                                067-12-02-98 <br />
 
+                                            </span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex justify-content-end pt-3 pb-2">
+            <div class="text-right" >
+              <div class="single-wedge text-right">
+                <h4 class="footer-herading">Kontaktirajte nas preko email-a</h4>
+                <div class="subscrib-text">
+                  <p>Ukoliko imate imate bilo kakvih pitanja, možete nas kontaktirati preko email-a</p>
+                </div>
+                <form >
+                  <input class="form-control"  placeholder="Vaša e-mail adresa ." >
+                  <input class="form-control" placeholder="Postavite pitanje?" >
+                  <button type="submit" class="btn btn-success justify-content-center "> Pitaj !</button>
+                </form>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+  </div>
 
 

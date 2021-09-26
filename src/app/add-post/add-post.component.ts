@@ -121,6 +121,12 @@ getFeaturedPosts(){
     onSelectFile(event:any) {
 
         this.url = event.target.files[0]
+        var reader = new FileReader();
+       reader.readAsDataURL(event.target.files[0]);
+       reader.onload=(e:any)=>
+       {
+         this.prikazSlike.push(e.target.result);
+       }
 
     }
 
@@ -295,7 +301,10 @@ getFeaturedPosts(){
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
-        alert("Uspjesno dodat oglas!")
+        alert("Uspjesno dodat oglas")
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
       });
 
     console.log(this.kategorija);
@@ -336,7 +345,10 @@ getFeaturedPosts(){
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
-        alert("Uspjesno dodat oglas!")
+        alert("Uspjesno dodat oglas")
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
       });
 
 
@@ -372,7 +384,10 @@ getFeaturedPosts(){
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
-        alert("Uspjesno dodat oglas!")
+        alert("Uspjesno dodat oglas")
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
       });
 
     console.log(this.kategorija);
@@ -411,7 +426,10 @@ getFeaturedPosts(){
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
-        alert("Uspjesno dodat oglas!")
+        alert("Uspjesno dodat oglas")
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
       });
 
     console.log(this.kategorija);
@@ -420,6 +438,7 @@ getFeaturedPosts(){
 
   dodajPosao()
   {
+
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json')
@@ -427,9 +446,8 @@ getFeaturedPosts(){
     params.append('prva_slika', this.url)
     this.unosPosao.controls['posao_vrsta'].setValue(this.posaoVrsta);
     params.append('posao_vrsta',this.unosPosao.controls['posao_vrsta'].value )
-    params.append('cijena', this.unosPosao.controls['cijena'].value)
-    params.append('marka', this.unosPosao.controls['marka'].value)
-    params.append('model', this.unosPosao.controls['model'].value)
+    params.append('plata', this.unosPosao.controls['plata'].value)
+    params.append('lokacija', this.unosPosao.controls['lokacija'].value)
     params.append('naziv', this.unosPosao.controls['naziv'].value)
     params.append('kontakt', this.unosPosao.controls['kontakt'].value)
     params.append('opis', this.unosPosao.controls['opis'].value)
@@ -448,7 +466,10 @@ getFeaturedPosts(){
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
-        alert("Uspjesno dodat oglas!")
+        alert("Uspjesno dodat oglas")
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
       });
 
     // console.log(this.kategorija);
@@ -484,8 +505,10 @@ getFeaturedPosts(){
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
-        alert("Uspjesno dodat oglas!")
-        console.log(params);
+        alert("Uspjesno dodat oglas")
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
 
       });
 
@@ -494,7 +517,6 @@ getFeaturedPosts(){
 
   dodajRazno()
   {
-
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json')
@@ -522,8 +544,10 @@ getFeaturedPosts(){
     this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
     (res=>
       {
-        alert("bravo")
-        console.log(params);
+        alert("Uspjesno dodat oglas")
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
 
       });
 
