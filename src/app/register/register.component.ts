@@ -31,8 +31,14 @@ export class RegisterComponent implements OnInit {
     this.http.post("http://localhost:8000/api/register", this.unosRegister.getRawValue())
       .subscribe(res=>
         {
-          console.log("registrovan");
-          alert("Uspjesno ste se registrovali, sada se mozete ulogovati na svoj nalog!");
+          var odgovor:any ={
+            code:'',
+            message:'',
+            status:''
+          }
+           odgovor=res;
+
+          alert(odgovor.message);
           this.router.navigate(['../login'])
 
 
