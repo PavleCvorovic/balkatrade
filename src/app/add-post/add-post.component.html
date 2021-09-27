@@ -1,10 +1,10 @@
-<div _ngcontent-auy-c56="" class="header-topbg-dark ptb-30px d-xl-block d-none sticky-nav" style="background-color: #f5b82e;"><div><button routerLink="../homepage" style="margin-left: 5%;">Pocetna</button></div>
+<div  class="header-topbg-dark ptb-30px d-xl-block d-none sticky-nav" style="background-color: #f5b82e;"><div><button [routerLink]="['login']" style="margin-left: 5%;">Pocetna</button></div>
 <div *ngIf="token !=0">
   <div><button routerLink="../user-page/{{ userId }}" style="margin-left:5%; margin-top:1%">User page</button></div>
   <div><button (click) = "odjavi()" style="margin-left:5%; margin-top:1%">Odjavi se</button></div>
 </div>
 
-<div _ngcontent-auy-c56="" class="container"><div _ngcontent-auy-c56="" class="row"><div _ngcontent-auy-c56="" class="col-md-3 d-flex"><div _ngcontent-auy-c56="" class="mobile-menu-toggle home-2"><a _ngcontent-auy-c56="" href="#offcanvas-mobile-menu" class="offcanvas-toggle"></a></div><div _ngcontent-auy-c56="" class="logo"><a _ngcontent-auy-c56="" href="index.html"></a></div></div></div></div></div>
+<div  class="container"><div  class="row"><div  class="col-md-3 d-flex"><div  class="mobile-menu-toggle home-2"><a   class="offcanvas-toggle"></a></div><div  class="logo"><a  ></a></div></div></div></div></div>
 
 
 
@@ -418,7 +418,7 @@
 
 
 
-<div class="footer-area" id="#kontakt" style="background-color: #f5b82e ">
+<div class="footer-area fixed-bottom" id="#kontakt" style="background-color: #f5b82e ">
   <div class="footer-container" >
     <div class="footer-top ">
       <div class="container">

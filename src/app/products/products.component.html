@@ -33,7 +33,7 @@
   </div>
   <!-- Left Side End -->
   <!-- Right Side Start -->
-  
+
 </div>
 </div>
 
@@ -88,8 +88,8 @@
               <li class="pro-price" *ngIf="a.modcijena === null ">€{{a.cijena}}</li>
               <li class="old-price" *ngIf="a.modcijena !== null ">€{{a.cijena}}</li>
               <li class="current-price" *ngIf="a.modcijena !== null ">€{{a.modcijena}}</li>
-              <li class="discount-price" *ngIf="a.procenat !== null && a.procenat < 0"> +{{a.procenat}}%</li>
-              <li class="discount-price" *ngIf="a.procenat !== null && a.procenat > 0"> -{{a.procenat}}%</li>
+              <li class="discount-price" *ngIf="a.procenat !== null && a.procenat < a.cijena"> -{{a.procenat}}%</li>
+              <li class="discount-price" *ngIf="a.procenat !== null && a.procenat > a.cijena"> +{{a.procenat}}%</li>
             </ul>
 
           </div>

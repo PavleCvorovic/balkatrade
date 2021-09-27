@@ -244,6 +244,8 @@
 
                 <td class="product-name"  *ngIf="b.id===idM"><input [(ngModel)]="idPost.naziv"[ngModelOptions]="{standalone: true}"  class="form-control" ></td>
                 <td class="product-price-cart" *ngIf="b.id===idM"><input  [(ngModel)]="idPost.cijena" [ngModelOptions]="{standalone: true}" class="form-control" ></td>
+                <td class="product-price-cart"*ngIf=" b.modcijena!==null "><span class="amount">{{b.modcijena}}</span></td>
+
                 <td class="product-quantity" *ngIf="b.id===idM" >
                  <input [(ngModel)]="idPost.opis" [ngModelOptions]="{standalone: true}" class="form-control" >
                 </td>
