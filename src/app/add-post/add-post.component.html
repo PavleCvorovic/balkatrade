@@ -1,15 +1,17 @@
-<div  class="header-topbg-dark ptb-30px d-xl-block d-none sticky-nav" style="background-color: #f5b82e;"><div><button [routerLink]="['login']" style="margin-left: 5%;">Pocetna</button></div>
+<div class="container-fluid">
+  <div class="col-md-12">
+<div  class="header-top bg-dark ptb-30px d-xl-block d-none sticky-nav" style="background-color: #f5b82e;"><div><button class="offcanvas-close" routerLink="/homepage" style="margin-left: 5%;">Pocetna</button></div>
 <div *ngIf="token !=0">
   <div><button routerLink="../user-page/{{ userId }}" style="margin-left:5%; margin-top:1%">User page</button></div>
   <div><button (click) = "odjavi()" style="margin-left:5%; margin-top:1%">Odjavi se</button></div>
 </div>
 
-<div  class="container"><div  class="row"><div  class="col-md-3 d-flex"><div  class="mobile-menu-toggle home-2"><a   class="offcanvas-toggle"></a></div><div  class="logo"><a  ></a></div></div></div></div></div>
+<div  ><div  class="row"><div  class="col-md-3 d-flex"><div  class="mobile-menu-toggle home-2"><a   class="offcanvas-toggle"></a></div><div  class="logo"><a  ></a></div></div></div></div></div>
 
 
 
 
-<div class="container-fluid">
+<div >
   <div class="row justify-content-center">
       <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
           <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
@@ -47,7 +49,7 @@
                         </div>
                         Unesite pocetnu sliku:
                         <div>
-                          <img *ngFor="let url of prikazSlike" [src] = "url" height="50"> <br/>
+                          <img alt="" *ngFor="let url of prikazSlike" [src] = "url" height="50"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
 
                         </div>
@@ -122,7 +124,7 @@
                           </select>
                         </div>
                         Unesite pocetnu sliku:
-                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50"> <br/>
+                        <img alt="" *ngFor="let url of prikazSlike" [src] = "url" height="50"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
 
                         Unesite ostale slike:
@@ -179,7 +181,7 @@
                           </select>
                         </div>
                         Unesite pocetnu sliku
-                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50"><br/>
+                        <img alt="" *ngFor="let url of prikazSlike" [src] = "url" height="50"><br/>
                           <input type='file' (change)="onSelectFile($event)">
 
                         Unesite ostale slike:
@@ -226,7 +228,7 @@
                             <option *ngFor="let d of nekretnineType" [value]= "d.id" >{{ d.tip }}</option>
                           </select>
                         </div>
-                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50"><br/>
+                        <img alt="" *ngFor="let url of prikazSlike" [src] = "url" height="50"><br/>
                           <input type='file' (change)="onSelectFile($event)">
 
                         Unesite ostale slike:
@@ -281,7 +283,7 @@
                           </select>
 
                         </div>
-                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50"> <br/>
+                        <img alt="" *ngFor="let url of prikazSlike" [src] = "url" height="50"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
 
                         Unesite ostale slike:
@@ -322,7 +324,7 @@
                             <option [value]= "f.id"  *ngFor="let f of hranaType">{{ f.tip }}</option>
                           </select>
                         </div>
-                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50"> <br/>
+                        <img alt="" *ngFor="let url of prikazSlike" [src] = "url" height="50"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
 
                           Unesite ostale slike:
@@ -361,13 +363,13 @@
 
 
                       <div class="form-group" *ngIf="kategorija=='razno'">
-                        <div class="form-group">
+                        <div class="f orm-group">
                           <label for="exampleInputEmail1">Razno vrsta</label>
                           <select class="form-select" aria-label="Default select example" [(ngModel)]="raznoVrsta"  name = "raznotoVrsta">
                             <option [value]="g.id"  *ngFor="let g of raznoType">{{ g.tip }}</option>
                           </select>
                         </div>
-                        <img *ngFor="let url of prikazSlike" [src] = "url" height="50"> <br/>
+                        <img alt="" *ngFor="let url of prikazSlike" [src] = "url" height="50"> <br/>
                           <input type='file' (change)="onSelectFile($event)">
 
                         Unesite ostale slike:
@@ -418,59 +420,6 @@
 
 
 
-<div class="footer-area fixed-bottom" id="#kontakt" style="background-color: #f5b82e ">
-  <div class="footer-container" >
-    <div class="footer-top ">
-      <div class="container">
-        <div class="row" >
-          <div class="col-md-6 col-lg-4 ">
-            <div class="single-wedge">
-              <h4 class="footer-herading">O nama :</h4>
-              <p class="text-infor">Mi smo mladi tim koji veruje da čist vazduh ne treba da bude luksuz ! </p>
-              <div class="need-help">
-                <p class="phone-info">
-                  Potrebna pomoć ?
-                  <span>
-                                                067-12-02-98 <br />
-
-                                            </span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 d-flex justify-content-end pt-3 pb-2">
-            <div class="text-right" >
-              <div class="single-wedge text-right">
-                <h4 class="footer-herading">Kontaktirajte nas preko email-a</h4>
-                <div class="subscrib-text">
-                  <p>Ukoliko imate imate bilo kakvih pitanja, možete nas kontaktirati preko email-a</p>
-                </div>
-                <form >
-                  <input class="form-control"  placeholder="Vaša e-mail adresa ." >
-                  <input class="form-control" placeholder="Postavite pitanje?" >
-                  <button type="submit" class="btn btn-success justify-content-center "> Pitaj !</button>
-                </form>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-
-
-
-        </div>
-
-
-
-
-
-
 
   </div>
-
-
+</div>

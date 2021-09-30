@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<!-- Mirrored from htmldemo.hasthemes.com/rozer/rozer/shop-left-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 31 May 2021 10:27:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Rozer – Electronics eCommerce HTML Template</title>
+  <meta name="robots" content="noindex, follow" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon/favicon.png" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800&amp;display=swap" rel="stylesheet" />
+
+  <!-- CSS
+  ============================================ -->
+
+
+
+</head>
+<div class="shop-category-area mt-30px">
+  <div class="shop-top-bar d-flex">
+    <!-- Left Side start -->
+    <div class="shop-tab nav d-flex">
+      <a class="active"  data-toggle="tab">
+        <i class="fa fa-th"></i>
+      </a>
+      <p>Postoji {{s1.numberofProducts}}.</p>
+    </div>
+    <!-- Left Side End -->
+    <!-- Right Side Start -->
+
+  </div>
+</div>
+
+
+<body class="bg-dark">
+<div id="shop-1" class="tab-pane ">
+  <div class="col-md-12">
+
+
+      <div id="#produkti">
+        <div class="loader" *ngIf="s1.spiner===false">Loading...</div>
+        <div class="row">
+
+
+          <div class="col-md-2 " *ngFor="let a of this.s1.getPostsbyType| paginate: {
+                                      itemsPerPage:20,
+                                      currentPage: p
+                                       }">
+            <article class="list-product" style="background-color: #d9d8cd">
+              <div class="img-block">
+                <a  class="thumbnail">
+                  <img class="first-img  card-img-top" src="http://localhost:8000/storage/file/{{a.slika[0].url}}" >
+                  <img *ngIf="a.slika.length<=1" class=" second-img  card-img-top1" src="assets/images/logo.svg"  >
+                  <img *ngIf="a.slika.length>1" class=" second-img  card-img-top1" src="http://localhost:8000/storage/file/{{a.slika[1].url}}"  >
+                </a>
+                <div class="quick-view">
+                  <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="s.getId(a.id,a.index)">
+                    <i class="ion-ios-search-strong"></i>
+                  </a>
+                </div>
+              </div>
+              <ul class="product-flag">
+
+                <li class="new"*ngIf="a.index==='tehnikapolja'">Tehnika</li>
+                <li class="new"*ngIf="a.index==='raznopolja'">Razno</li>
+                <li class="new"*ngIf="a.index==='hranapolja'">Hrana</li>
+                <li class="new"*ngIf="a.index==='raznopolja'">Razno</li>
+                <li class="new"*ngIf="a.index==='nekretninepolja'">Nekretnine</li>
+                <li class="new"*ngIf="a.index==='automotopolja'">Automoto</li>
+                <li class="new"*ngIf="a.index==='odjecapolja'">Odjeca</li>
+
+              </ul>
+              <div class="product-decs">
+                <a class="inner-link" href="shop-4-column.html"><span>{{a.naziv}}</span></a>
+                <div class="content">
+                </div>
+                <div class="pricing-meta">
+                  <ul>
+                    <li class="pro-price" *ngIf="a.modcijena === null ">€{{a.cijena}}</li>
+                    <li class="old-price" *ngIf="a.modcijena !== null ">€{{a.cijena}}</li>
+                    <li class="current-price" *ngIf="a.modcijena !== null ">€{{a.modcijena}}</li>
+                    <div *ngIf="a.procenat !== null && a.modcijena < a.cijena ; then thenBlok else elseBlok  ">    </div>
+
+                    <ng-template #thenBlok >  <li class="discount-price">   -{{a.procenat}}%</li></ng-template>
+                    <ng-template #elseBlok > <li class="discount-price"> +{{a.procenat}}% </li></ng-template>
+                  </ul>
+
+                </div>
+              </div>
+
+            </article>
+
+          </div>
+          <pagination-controls (pageChange)="p = $event"
+          ></pagination-controls>
+        </div>
+      </div>
+
+    </div>
+  </div>

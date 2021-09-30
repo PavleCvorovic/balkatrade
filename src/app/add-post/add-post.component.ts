@@ -21,6 +21,12 @@ export class AddPostComponent implements OnInit {
   token:any=0;
   userId:any
   ngOnInit(): void {
+
+    if(sessionStorage.getItem('token'))
+    {
+        this.token = sessionStorage.getItem('token');
+        this.userId = sessionStorage.getItem('userId');
+    }
     this.getTypeTehnika();
     this.getTypeAutomoto()
     this.getTypeHrana()
@@ -28,12 +34,7 @@ export class AddPostComponent implements OnInit {
     this.getTypePosao()
     this.getTypesRazno()
     this.getTypesOdjeca()
-    this.getFeaturedPosts();
-    if(sessionStorage.getItem('token'))
-    {
-        this.token = sessionStorage.getItem('token');
-        this.userId = sessionStorage.getItem('userId');
-    }
+
   }
 
   nekretnineType:any;

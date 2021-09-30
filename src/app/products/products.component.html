@@ -88,8 +88,13 @@
               <li class="pro-price" *ngIf="a.modcijena === null ">€{{a.cijena}}</li>
               <li class="old-price" *ngIf="a.modcijena !== null ">€{{a.cijena}}</li>
               <li class="current-price" *ngIf="a.modcijena !== null ">€{{a.modcijena}}</li>
-              <li class="discount-price" *ngIf="a.procenat !== null && a.procenat < a.cijena"> -{{a.procenat}}%</li>
-              <li class="discount-price" *ngIf="a.procenat !== null && a.procenat > a.cijena"> +{{a.procenat}}%</li>
+
+              <div *ngIf="a.procenat !== null && a.modcijena < a.cijena ; then thenBlok else elseBlok  ">    </div>
+
+              <ng-template #thenBlok >  <li class="discount-price">   -{{a.procenat}}%</li></ng-template>
+              <ng-template #elseBlok > <li class="discount-price"> +{{a.procenat}}% </li></ng-template>
+
+
             </ul>
 
           </div>

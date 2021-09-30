@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'add', component:AddPostComponent},
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
-  {path: 'zadmin-page', component:AdminPageComponent, canActivate:[AdminGuardGuard]},
+  {path: 'admin-page', component:AdminPageComponent, canActivate:[AdminGuardGuard]},
   {path: 'user-page/:id', component:UserPageComponent, canActivate:[GuardGuard]}
 ];
 

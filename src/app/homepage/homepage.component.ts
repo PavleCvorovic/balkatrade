@@ -14,6 +14,7 @@ export class HomepageComponent implements OnInit {
   e = 1;
   c = 1;
   f=1;
+  tip:boolean=false;
   constructor(public s: PocetnaService ,public s1: ProductsService,private viewportScroller: ViewportScroller, private router:Router) { }
   public onClick(elementId: string): void { this.viewportScroller.scrollToAnchor(elementId); }
 
@@ -44,15 +45,22 @@ export class HomepageComponent implements OnInit {
     this.token = 0;
     this.router.navigate(['.']);
   }
+  odjavi()
+  {
+    sessionStorage.clear();
+    this.router.navigate(['../login']);
 
+  }
 
 getPostsbyType(tabela:string,tip:any){
+    this.tip=true;
     this.s1.GetPostsbyType(tabela,tip).subscribe(res=>{
       this.s1.getPostsbyType=res;
  this.s1.numberofProducts=this.s1.getPostsbyType.length;
  this.onClick('#produkti')
 
     })
+
 }
 
 

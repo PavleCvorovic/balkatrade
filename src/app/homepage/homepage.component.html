@@ -38,7 +38,7 @@
     </div>
   </div>
   <!-- Header Nav End -->
-  <div class="header-topbg-dark ptb-30px d-xl-block d-none sticky-nav" style="background-color: #f5b82e">
+  <div class="header-topbg-dark ptb-30px d-xl-block d-none sticky-nav bg-light-gray-2" style="">
     <div class="container">
       <div class="row">
         <div class="col-md-3 d-flex">
@@ -68,6 +68,7 @@
   <!-- Header Nav End -->
   <div class="header-menu  d-xl-block d-none bg-dark" >
     <div class="container">
+      <br><br><br>
       <div class="row">
         <div class="col-lg-2 custom-col-3">
           <div class="header-menu-vertical bg-blue" >
@@ -505,45 +506,31 @@
     </div>
     <div class="offcanvas-menu">
       <ul>
-        <li><a routerLink="../add"><span class="menu-text">Dodaj objavu</span></a>
-
-        </li>
         <li><a ><span class="menu-text">Nalog</span></a>
 
 
 
-              <ul class="sub-menu">
-                <li><a routerLink="../login" >Uloguj se</a></li>
-                <li><a routerLink="../register">Registruj se</a></li>
-              </ul>
-            </li>
+        <ul class="sub-menu">
+          <li><a routerLink="../login" >Uloguj se</a></li>
+          <li><a routerLink="../register">Registruj se</a></li>
+          <ul *ngIf="token !=0">
+            <li  routerLink="../user-page/{{ userId }}"> >User page</li>
+            <li (click) = "odjavi()">Odjavi se</li>
+          </ul>
+        </ul>
+      </li>
 
-            <li>
+        <li>
+
+        <li><a routerLink="../add"><span class="menu-text offcanvas-close">Dodaj objavu</span></a>
+
+        </li>
           </ul>
 <ul class="menu-text">
         <li><a (click)="onClick('#kontakt')">Kontaktirajte nas</a></li>
 </ul>
     </div>
 
-    <div class="offcanvas-social mt-30px">
-      <ul>
-        <li>
-          <a href="#"><i class="icon-social-facebook"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="icon-social-twitter"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="icon-social-instagram"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="icon-social-google"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="icon-social-instagram"></i></a>
-        </li>
-      </ul>
-    </div>
   </div>
 </div>
 <!-- OffCanvas Search End -->
@@ -677,8 +664,10 @@
 <div class="feature-area mt-60px mb-30px">
   <div class="container">
 <div class="col-md-12">
-  <app-products  ></app-products>
+  <app-random-produkti *ngIf="tip===false"></app-random-produkti>
+  <app-products *ngIf="tip===true" ></app-products>
 </div>
+    <br><br><br><br><br><br>
       <div class="section-title ">
 
         <h2 class="section-heading pt-2 " style="color: #ffffff;">Preporučeni produkti</h2>
@@ -731,7 +720,6 @@
 
             </article>
 </div>
-            <pagination-controls (pageChange)="f = $event"></pagination-controls>
             </div>
 
 
@@ -1160,38 +1148,11 @@
                 </ul>
               </div>
               <p class="quickview-para">{{s.productId.opis}}</p>
-              <div class="pro-details-size-color">
-                <div class="pro-details-color-wrap">
-                  <span>Color</span>
-                  <div class="pro-details-color-content">
-                    <ul>
-                      <li class="blue"></li>
-                      <li class="maroon active"></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
 
 
-              <div class="pro-details-social-info">
-                <span>Share</span>
-                <div class="social-info">
-                  <ul>
-                    <li>
-                      <a href="#"><i class="ion-social-facebook"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="ion-social-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="ion-social-google"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="ion-social-instagram"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+
+
+
             </div>
           </div>
         </div>

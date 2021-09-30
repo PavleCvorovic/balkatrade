@@ -14,7 +14,7 @@ export class ProductsComponent implements OnInit {
 
   p = 1;
   ngOnInit(): void {
-    this.s1.getRandomPosts();
+
   }
 
 }
