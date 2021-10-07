@@ -18,6 +18,8 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { RandomProduktiComponent } from './random-produkti/random-produkti.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { RandomProduktiComponent } from './random-produkti/random-produkti.compo
     AdminPageComponent,
     UserPageComponent,
     RandomProduktiComponent,
+    NavbarComponent,
+
 
 
   ],
