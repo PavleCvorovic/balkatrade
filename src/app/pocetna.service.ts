@@ -1,12 +1,20 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PocetnaService {
 
-  constructor(public http:HttpClient) {  }
+  constructor(public http:HttpClient,private dom:DomSanitizer) {
+
+  }
+
+
+  l1:string='';
+  l2:string='';
+  lokacija:any;
 
   logovan = false;
   user:any=0;
@@ -54,13 +62,14 @@ export class PocetnaService {
   };
   productSlike:string[]=[];
 
-
+lokacijaS:boolean=false;
   getId(id:string,tabela:string){
     this.productSlike=[];
     var tableId={
       id:'',
       tabela:''
     }
+
     tableId.id=id;
     tableId.tabela=tabela;
     return this.http.post('http://localhost:8000/api/getAllId',tableId).subscribe(res=>{
@@ -81,10 +90,17 @@ export class PocetnaService {
       if (this.productSlike[3]==null ){
         this.productSlike[3]='baner.jpg';
       }
-      console.log(this.productSlike)
+
+      this.l1=this.productId.sirina
+      this.l2=this.productId.duzina
+      console.log(this.l1)
+      this.lokacija="https://www.google.com/maps/embed/v1/view?key=AIzaSyABIxjqkONASaHDITaVMRTC3ZmuP2Hyyec&center="+ this.l1+","+ this.l2+"&maptype=roadmap&zoom=18";
+      this.lokacija=this.dom.bypassSecurityTrustResourceUrl(this.lokacija);
+      this.lokacijaS=true;
+  });
 
 
-  });}
+  }
 
   getFeaturedPosts(){
       return  this.http.get('http://localhost:8000/api/getAllFeatured');

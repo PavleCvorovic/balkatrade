@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import {PocetnaService} from "../pocetna.service";
 import {ProductsService} from "../products/products.service";
 import { ViewportScroller } from '@angular/common'
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+
+
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -15,8 +18,14 @@ export class HomepageComponent implements OnInit {
   c = 1;
   f=1;
   tip:boolean=false;
-  constructor(public s: PocetnaService ,public s1: ProductsService,private viewportScroller: ViewportScroller, private router:Router) { }
+  constructor(public s: PocetnaService ,public s1: ProductsService,private viewportScroller: ViewportScroller, private router:Router) {
+
+
+  }
   public onClick(elementId: string): void { this.viewportScroller.scrollToAnchor(elementId); }
+
+
+
 
   log:any;
   token:any=0;
@@ -51,6 +60,9 @@ export class HomepageComponent implements OnInit {
     this.router.navigate(['../login']);
 
   }
+  lang:number=37.4218;
+  long:number=37.4218;
+
 
 getPostsbyType(tabela:string,tip:any){
     this.tip=true;

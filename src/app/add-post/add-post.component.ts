@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import {LocationService} from "./location.service";
 
 
 
@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 export class AddPostComponent implements OnInit {
 
 
-  constructor(private fb:FormBuilder, private http:HttpClient, private s:PocetnaService, private router:Router) { }
+  constructor(private fb:FormBuilder, private http:HttpClient, private s:PocetnaService, private router:Router,private l: LocationService) { }
 
   token:any=0;
   userId:any
@@ -34,8 +34,19 @@ export class AddPostComponent implements OnInit {
     this.getTypePosao()
     this.getTypesRazno()
     this.getTypesOdjeca()
-
+this.uzmiLokaciju()
   }
+ l1:any;
+  l2:any;
+  uzmiLokaciju(){
+    this.l.getPosition().then(pos=>
+    {
+      this.l1=pos.lat;
+      this.l2=pos.lng;
+      console.log(`Positon: ${pos.lng} ${pos.lat}`);
+    });
+  }
+
 
   nekretnineType:any;
   getTypeNekretnina(){
@@ -285,6 +296,8 @@ getFeaturedPosts(){
     params.append('godina_proizvodnje', this.unosTehnika.controls['godina_proizvodnje'].value)
     params.append('boja', this.unosTehnika.controls['boja'].value)
     params.append('tabela',this.unosTehnika.controls['tabela'].value)
+    params.append('sirina',this.l1)
+    params.append('duzina',this.l2)
     for(let i=0; i<this.urls.length;i++){
       params.append('slike[]', this.urls[i])
     }
@@ -328,6 +341,8 @@ getFeaturedPosts(){
     params.append('kontakt', this.unosAutomoto.controls['kontakt'].value)
     params.append('opis', this.unosAutomoto.controls['opis'].value)
     params.append('tabela',this.unosAutomoto.controls['tabela'].value)
+    params.append('sirina',this.l1)
+    params.append('duzina',this.l2)
     for(let i=0; i<this.urls.length;i++){
       params.append('slike[]', this.urls[i])
     }
@@ -371,6 +386,9 @@ getFeaturedPosts(){
     params.append('kontakt', this.unosOdjeca.controls['kontakt'].value)
     params.append('opis', this.unosOdjeca.controls['opis'].value)
     params.append('tabela',this.unosOdjeca.controls['tabela'].value)
+    params.append('sirina',this.l1)
+    params.append('duzina',this.l2)
+
     for(let i=0; i<this.urls.length;i++){
       params.append('slike[]', this.urls[i])
     }
@@ -413,6 +431,8 @@ getFeaturedPosts(){
     params.append('tabela',this.unosNekretnine.controls['tabela'].value)
     params.append('kvadratura', this.unosNekretnine.controls['kvadratura'].value)
     params.append('tip_vlasnistva', this.unosNekretnine.controls['tip_vlasnistva'].value)
+    params.append('sirina',this.l1)
+    params.append('duzina',this.l2)
     for(let i=0; i<this.urls.length;i++){
       params.append('slike[]', this.urls[i])
     }
@@ -453,6 +473,8 @@ getFeaturedPosts(){
     params.append('kontakt', this.unosPosao.controls['kontakt'].value)
     params.append('opis', this.unosPosao.controls['opis'].value)
     params.append('tabela',this.unosPosao.controls['tabela'].value)
+    params.append('sirina',this.l1)
+    params.append('duzina',this.l2)
     for(let i=0; i<this.urls.length;i++){
       params.append('slike[]', this.urls[i])
     }
@@ -492,6 +514,8 @@ getFeaturedPosts(){
     params.append('opis', this.unosHrana.controls['opis'].value)
     params.append('tabela',this.unosHrana.controls['tabela'].value)
     params.append('kolicina', this.unosHrana.controls['kolicina'].value);
+    params.append('sirina',this.l1)
+    params.append('duzina',this.l2)
     for(let i=0; i<this.urls.length;i++){
       params.append('slike[]', this.urls[i])
     }
@@ -531,6 +555,9 @@ getFeaturedPosts(){
     params.append('kontakt', this.unosRazno.controls['kontakt'].value)
     params.append('opis', this.unosRazno.controls['opis'].value)
     params.append('tabela',this.unosRazno.controls['tabela'].value)
+    params.append('sirina',this.l1)
+    params.append('duzina',this.l2)
+    console.log(params.get('duzina'))
     for(let i=0; i<this.urls.length;i++){
       params.append('slike[]', this.urls[i])
     }
@@ -546,10 +573,6 @@ getFeaturedPosts(){
     (res=>
       {
         alert("Uspjesno dodat oglas")
-        setTimeout(() => {
-          window.location.reload();
-        }, 1500);
-
       });
 
     console.log(this.kategorija);

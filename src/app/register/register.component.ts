@@ -25,24 +25,50 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  submit()
-  {
-    this.http.post("http://localhost:8000/api/register", this.unosRegister.getRawValue())
-      .subscribe(res=>
-        {
-          var odgovor:any ={
-            code:'',
-            message:'',
-            status:''
-          }
-           odgovor=res;
-
-          alert(odgovor.message);
-          this.router.navigate(['../login'])
-
-
-        })
-  }
-
+  sub:boolean=false;
+verifikuj(){
+  this.http.post("http://localhost:8000/api/sendbasicemail",this.unosRegister.getRawValue()).subscribe(
+    res=>{
+      var odgovor0:any
+      odgovor0=res;
+if (odgovor0.status===1){
+  alert(odgovor0.message)
 }
+else if(odgovor0.status===2) {
+  alert(odgovor0.message)
+}
+else if (odgovor0.status===3){
+        alert(odgovor0.message)
+      }
+else if (odgovor0.status===4) {
+  alert('Na vašu email adresu proslijedjen je verifikacioni kod ')
+  this.sub=true;
+}
+    } )
+}
+kod:string='';
+  submit() {
+   var kod="BORO"
+    console.log(this.kod.length)
+  if ( this.kod.length==16 && this.kod.includes(kod)){
+  this.http.post("http://localhost:8000/api/register", this.unosRegister.getRawValue())
+.subscribe(res => {
+  var odgovor: any = {
+    code: '',
+    message: '',
+    status: ''
+  }
+  odgovor = res;
+
+  alert(odgovor.message);
+  this.router.navigate(['../login'])
+
+
+})}
+  else{
+
+
+
+  }
+}}
+

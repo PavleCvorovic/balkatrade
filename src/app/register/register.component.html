@@ -14,11 +14,18 @@
 
     <!-- Login Form -->
     <form [formGroup] ="unosRegister">
-      <input type="text" id="name" class="fadeIn third" name="login" placeholder="name" formControlName ="name">
-      <input type="text" id="email" class="fadeIn third" name="login" placeholder="email" formControlName ="email">
+      <input type="text" id="name" class="fadeIn first" name="login" placeholder="name" formControlName ="name">
+      <input type="text" id="email" class="fadeIn second" name="login" placeholder="email" formControlName ="email">
       <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" formControlName ="password">
       <p routerLink="../login">Login</p>
-      <input type="submit" class="fadeIn fourth" value="Registruj se" (click)="submit()">
+
+
+
+      <input *ngIf="sub===true" [(ngModel)]="kod" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Zalijepite kod ovdje">
+
+        <button class="btn btn-primary" *ngIf="sub===false" (click)="verifikuj()"> Verifikuj</button>
+       <button class="btn btn-success" *ngIf="sub===true" (click)="submit()"> Registruj</button>
+
     </form>
 
   </div>
