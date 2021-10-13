@@ -24,11 +24,11 @@
     <div class="offcanvas-menu-search-form">
 
     </div>
-    <div class="offcanvas-menu">
+    <div class="offcanvas-menu" *ngIf="user == 0">
 
       <ul>
         <li><a routerLink="../homepage"><span class="menu-text offcanvas-close">Pocetna</span></a>
-        <li><a ><span class="menu-text">Nalog</span></a>
+        <li ><a ><span class="menu-text">Nalog</span></a>
 
 
 
@@ -37,6 +37,24 @@
             <li><a routerLink="../register">Registruj se</a></li>
 
           </ul>
+        </li>
+
+        <li>
+
+        <li><a routerLink="../add"><span class="menu-text offcanvas-close">Dodaj objavu</span></a>
+
+        </li>
+      </ul>
+      <ul class="menu-text">
+
+      </ul>
+    </div>
+    <div class="offcanvas-menu" *ngIf="user != 0">
+
+      <ul>
+        <li><a routerLink="../homepage"><span class="menu-text offcanvas-close">Pocetna</span></a>
+        <li ><a ><span class="menu-text" (click)="logout()">Odjavi se</span></a>
+
         </li>
 
         <li>

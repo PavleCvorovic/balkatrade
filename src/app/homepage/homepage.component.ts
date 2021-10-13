@@ -100,7 +100,10 @@ getPostsbyType(tabela:string,tip:any){
         this.tehnikaType=res;
       }
     )
-  } posaoType:any;
+  }
+
+  posaoType:any;
+  
   getTypePosao(){
     this.s.getTypesPosao().subscribe(
       res=>{

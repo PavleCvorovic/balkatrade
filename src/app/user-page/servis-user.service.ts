@@ -24,12 +24,12 @@ export class ServisUserService {
     user_id:'',
     index:''
   }
-  req1.naziv=req.naziv
+    req1.naziv=req.naziv
     req1.cijena=req.cijena
     req1.opis=req.opis
     req1.id=req.id
     req1.user_id=req.user_id
-req1.index=req.index
+    req1.index=req.index
     console.log(req1)
     return this.u.post('http://localhost:8000/api/modPostByUser',req1);
 
