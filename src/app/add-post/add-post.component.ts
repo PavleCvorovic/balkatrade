@@ -312,7 +312,7 @@ getFeaturedPosts(){
     // this.unosTehnika.controls['tabela'].setValue('tehnikapolja');
     // this.unosTehnika.controls['prva_slika'].setValue(this.url);
     // console.log(this.unosTehnika.getRawValue());
-    this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
+    this.http.post('https://balkazon.me/Balkatrade/api/addAsUser', params).subscribe
     (res=>
       {
         alert("Uspjesno dodat oglas")
@@ -358,7 +358,7 @@ getFeaturedPosts(){
     console.log(this.automotoVrsta);
     console.log(this.unosAutomoto.controls['automoto_vrsta'].value);
 
-    this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
+    this.http.post('https://balkazon.me/Balkatrade/api/addAsUser', params).subscribe
     (res=>
       {
         alert("Uspjesno dodat oglas")
@@ -400,7 +400,7 @@ getFeaturedPosts(){
     // this.unosOdjeca.controls['tabela'].setValue('odjecapolja');
     // this.unosOdjeca.controls['prva_slika'].setValue(this.url);
     // console.log(this.unosOdjeca.getRawValue());
-    this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
+    this.http.post('https://balkazon.me/Balkatrade/api/addAsUser', params).subscribe
     (res=>
       {
         alert("Uspjesno dodat oglas")
@@ -444,7 +444,7 @@ getFeaturedPosts(){
     // this.unosNekretnine.controls['tabela'].setValue('nekretninepolja');
     // this.unosNekretnine.controls['prva_slika'].setValue(this.url);
     console.log("hkjnbu");
-    this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
+    this.http.post('https://balkazon.me/Balkatrade/api/addAsUser', params).subscribe
     (res=>
       {
         alert("Uspjesno dodat oglas")
@@ -486,7 +486,7 @@ getFeaturedPosts(){
     // this.unosPosao.controls['tabela'].setValue('posaopolja');
     // this.unosPosao.controls['prva_slika'].setValue(this.url);
     // console.log(params);
-    this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
+    this.http.post('https://balkazon.me/Balkatrade/api/addAsUser', params).subscribe
     (res=>
       {
         alert("Uspjesno dodat oglas")
@@ -527,7 +527,7 @@ getFeaturedPosts(){
     // this.unosHrana.controls['tabela'].setValue('hranapolja');
     // this.unosHrana.controls['prva_slika'].setValue(this.url);
     // console.log(this.unosHrana.getRawValue());
-    this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
+    this.http.post('https://balkazon.me/Balkatrade/api/addAsUser', params).subscribe
     (res=>
       {
         alert("Uspjesno dodat oglas")
@@ -569,7 +569,7 @@ getFeaturedPosts(){
     // this.unosRazno.controls['tabela'].setValue('raznopolja');
     // this.unosRazno.controls['prva_slika'].setValue(this.url);
     // console.log(this.unosRazno.getRawValue());
-    this.http.post('http://localhost:8000/api/addAsUser', params).subscribe
+    this.http.post('https://balkazon.me/Balkatrade/api/addAsUser', params).subscribe
     (res=>
       {
         alert("Uspjesno dodat oglas")

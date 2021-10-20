@@ -20,36 +20,36 @@ export class PocetnaService {
   user:any=0;
 
    getTypesTehnika(){
-   return this.http.get('http://localhost:8000/api/getTehnikaTip');
+   return this.http.get('https://balkazon.me/Balkatrade/api/getTehnikaTip');
 
    }
   getTypesNekretnine(){
-    return this.http.get('http://localhost:8000/api/getNekretnineTip');
+    return this.http.get('https://balkazon.me/Balkatrade/api/getNekretnineTip');
 
   }
   getTypesHrana(){
-    return this.http.get('http://localhost:8000/api/getHranaTip');
+    return this.http.get('https://balkazon.me/Balkatrade/api/getHranaTip');
 
   }
   getTypesOdjeca(){
-    return this.http.get('http://localhost:8000/api/getOdjecaTip');
+    return this.http.get('https://balkazon.me/Balkatrade/api/getOdjecaTip');
 
   }
   getTypesRazno(){
-    return this.http.get('http://localhost:8000/api/getRaznoTip');
+    return this.http.get('https://balkazon.me/Balkatrade/api/getRaznoTip');
 
   }
   getTypesAutomoto(){
-    return this.http.get('http://localhost:8000/api/getAutoTip');
+    return this.http.get('https://balkazon.me/Balkatrade/api/getAutoTip');
 
   }
   getTypesPosao(){
-    return this.http.get('http://localhost:8000/api/getPosaoTip');
+    return this.http.get('https://balkazon.me/Balkatrade/api/getPosaoTip');
 
   }
   getUsers()
   {
-    return this.http.get('http://localhost:8000/api/showUsers');
+    return this.http.get('https://balkazon.me/Balkatrade/api/showUsers');
   }
 
 
@@ -72,7 +72,7 @@ lokacijaS:boolean=false;
 
     tableId.id=id;
     tableId.tabela=tabela;
-    return this.http.post('http://localhost:8000/api/getAllId',tableId).subscribe(res=>{
+    return this.http.post('https://balkazon.me/Balkatrade/api/getAllId',tableId).subscribe(res=>{
       this.productId=res;
 
       console.log(this.productId)
@@ -103,15 +103,15 @@ lokacijaS:boolean=false;
   }
 
   getFeaturedPosts(){
-      return  this.http.get('http://localhost:8000/api/getAllFeatured');
+      return  this.http.get('https://balkazon.me/Balkatrade/api/getAllFeatured');
 
     }
   getCheapPosts(){
-    return  this.http.get('http://localhost:8000/api/getAllCheap');
+    return  this.http.get('https://balkazon.me/Balkatrade/api/getAllCheap');
 
   }
   getNewestPosts(){
-    return  this.http.get('http://localhost:8000/api/getNewest');
+    return  this.http.get('https://balkazon.me/Balkatrade/api/getNewest');
 
 
   }

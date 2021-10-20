@@ -10,10 +10,10 @@ export class ServisUserService {
 
 
   getUserPosts(id:number){
-    return this.u.get('http://localhost:8000/api/GetPostByUser/'+id);
+    return this.u.get('https://balkazon.me/Balkatrade/api/GetPostByUser/'+id);
   }
   getUserIdPosts(req:any){
-    return this.u.post('http://localhost:8000/api/getUserPostId',req);
+    return this.u.post('https://balkazon.me/Balkatrade/api/getUserPostId',req);
   }
   modUserIdPosts(req:any){
   var req1={
@@ -31,12 +31,12 @@ export class ServisUserService {
     req1.user_id=req.user_id
     req1.index=req.index
     console.log(req1)
-    return this.u.post('http://localhost:8000/api/modPostByUser',req1);
+    return this.u.post('https://balkazon.me/Balkatrade/api/modPostByUser',req1);
 
   }
   delAsUser(req:any){
 
-    return this.u.post('http://localhost:8000/api/delAsUser',req);
+    return this.u.post('https://balkazon.me/Balkatrade/api/delAsUser',req);
 
 
   }

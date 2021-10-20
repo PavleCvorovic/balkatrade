@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
   }
   sub:boolean=false;
 verifikuj(){
-  this.http.post("http://localhost:8000/api/sendbasicemail",this.unosRegister.getRawValue()).subscribe(
+  this.http.post("https://balkazon.me/Balkatrade/api/sendbasicemail",this.unosRegister.getRawValue()).subscribe(
     res=>{
       var odgovor0:any
       odgovor0=res;
@@ -51,7 +51,7 @@ kod:string='';
    var kod="BORO"
     console.log(this.kod.length)
   if ( this.kod.length==16 && this.kod.includes(kod)){
-  this.http.post("http://localhost:8000/api/register", this.unosRegister.getRawValue())
+  this.http.post("https://balkazon.me/Balkatrade/api/register", this.unosRegister.getRawValue())
 .subscribe(res => {
   var odgovor: any = {
     code: '',

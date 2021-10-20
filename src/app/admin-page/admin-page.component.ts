@@ -69,7 +69,7 @@ export class AdminPageComponent implements OnInit {
     this.req.index = index;
     console.log(this.req);
 
-    this.http.post('http://localhost:8000/api/setAllNew', this.req)
+    this.http.post('https://balkazon.me/Balkatrade/api/setAllNew', this.req)
     .subscribe(res=>
       {
         this.oglasiSvi=res;
@@ -83,7 +83,7 @@ export class AdminPageComponent implements OnInit {
     this.req.index = index;
     console.log(this.req);
 
-     this.http.post('http://localhost:8000/api/deleteNew', this.req)
+     this.http.post('https://balkazon.me/Balkatrade/api/deleteNew', this.req)
     .subscribe(res=>
       {
         this.oglasiSvi= res;
@@ -96,7 +96,7 @@ export class AdminPageComponent implements OnInit {
     this.useriAdmin = 0;
     this.kategorijeAdmin = 0;
     this.oglasiAdmin = 1;
-    this.http.get('http://localhost:8000/api/getAllNew')
+    this.http.get('https://balkazon.me/Balkatrade/api/getAllNew')
     .subscribe(res=>
       {
         this.oglasiSvi= res;
@@ -119,7 +119,7 @@ export class AdminPageComponent implements OnInit {
   {
 
 
-    return this.http.delete('http://localhost:8000/api/deleteUser/'+id)
+    return this.http.delete('https://balkazon.me/Balkatrade/api/deleteUser/'+id)
     .subscribe(res=>{
       alert("obrisan korisnik");
       this.useri = res;
@@ -137,7 +137,7 @@ export class AdminPageComponent implements OnInit {
       this.tip.tip = this.kategorijaAutomoto;
       console.log(this.tip);
 
-      this.http.post("http://localhost:8000/api/addAutoTip",this.tip)
+      this.http.post("https://balkazon.me/Balkatrade/api/addAutoTip",this.tip)
       .subscribe(res=>
         {
           alert('dadata kategorija')
@@ -149,7 +149,7 @@ export class AdminPageComponent implements OnInit {
     this.tip.tip = this.kategorijaHrana;
     console.log(this.tip);
 
-    this.http.post("http://localhost:8000/api/addHranaTip",this.tip)
+    this.http.post("https://balkazon.me/Balkatrade/api/addHranaTip",this.tip)
     .subscribe(res=>
       {
         alert('dadata kategorija')
@@ -163,7 +163,7 @@ export class AdminPageComponent implements OnInit {
     this.tip.tip = this.kategorijaNekretnina;
     console.log(this.tip);
 
-    this.http.post("http://localhost:8000/api/addNekretnineTip",this.tip)
+    this.http.post("https://balkazon.me/Balkatrade/api/addNekretnineTip",this.tip)
     .subscribe(res=>
       {
         alert('dadata kategorija')
@@ -175,7 +175,7 @@ export class AdminPageComponent implements OnInit {
     this.tip.tip = this.kategorijaPosao;
     console.log(this.tip);
 
-    this.http.post("http://localhost:8000/api/addPosaoTip",this.tip)
+    this.http.post("https://balkazon.me/Balkatrade/api/addPosaoTip",this.tip)
     .subscribe(res=>
       {
         alert('dadata kategorija')
@@ -187,7 +187,7 @@ export class AdminPageComponent implements OnInit {
     this.tip.tip = this.kategorijaOdjeca;
     console.log(this.tip.tip);
 
-    this.http.post("http://localhost:8000/api/addOdjecaTip",this.tip)
+    this.http.post("https://balkazon.me/Balkatrade/api/addOdjecaTip",this.tip)
     .subscribe(res=>
       {
         alert('dadata kategorija')
@@ -204,7 +204,7 @@ export class AdminPageComponent implements OnInit {
     this.tip.tip = this.kategorijaTehnika;
       console.log(this.tip);
 
-      this.http.post("http://localhost:8000/api/addTehnikaTip",this.tip)
+      this.http.post("https://balkazon.me/Balkatrade/api/addTehnikaTip",this.tip)
       .subscribe(res=>
         {
           alert('dadata kategorija')

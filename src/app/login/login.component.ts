@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   podaciLogovan:any;
   submit()
   {
-      this.http.post("http://localhost:8000/api/login", this.unosLogin.getRawValue())
+      this.http.post("https://balkazon.me/Balkatrade/api/login", this.unosLogin.getRawValue())
       .subscribe(res=>
         {
             this.podaciLogovan = res;

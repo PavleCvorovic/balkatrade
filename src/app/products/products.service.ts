@@ -57,17 +57,17 @@ spiner:boolean=false;
     this.switchFilters(tabela);
     req.tabela = tabela;
     req.tip = tip;
-    return this.http.post('http://localhost:8000/api/getPostsAll', req);
+    return this.http.post('https://balkazon.me/Balkatrade/api/getPostsAll', req);
 
   }
 
   Filter(param: any) {
-    return this.http.post('http://localhost:8000/api/filter', param);
+    return this.http.post('https://balkazon.me/Balkatrade/api/filter', param);
 
 
   }
   getRandomPosts(){
-    return  this.http.get('http://localhost:8000/api/getAllRandom').subscribe(res=>{
+    return  this.http.get('https://balkazon.me/Balkatrade/api/getAllRandom').subscribe(res=>{
       this.getPostsbyType=res;
       this.numberofProducts=this.getPostsbyType.length;
       this.spiner=true;
