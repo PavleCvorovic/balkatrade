@@ -19,6 +19,7 @@ import { UserPageComponent } from './user-page/user-page.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { RandomProduktiComponent } from './random-produkti/random-produkti.component';
 import { NavbarComponent } from './navbar/navbar.component';
+ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -48,7 +49,7 @@ import { NavbarComponent } from './navbar/navbar.component';
         ReactiveFormsModule,
       NgxPaginationModule
     ],
-  providers: [ HttpClient],
+  providers: [ HttpClient, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
